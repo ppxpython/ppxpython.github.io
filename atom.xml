@@ -6,7 +6,7 @@
   <link href="https://ppxpython.github.io/atom.xml" rel="self"/>
   
   <link href="https://ppxpython.github.io/"/>
-  <updated>2020-09-27T15:49:31.804Z</updated>
+  <updated>2020-09-28T01:00:01.074Z</updated>
   <id>https://ppxpython.github.io/</id>
   
   <author>
@@ -17,19 +17,106 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>01vue标签指令</title>
+    <link href="https://ppxpython.github.io/01vue%E6%A0%87%E7%AD%BE%E6%8C%87%E4%BB%A4/"/>
+    <id>https://ppxpython.github.io/01vue%E6%A0%87%E7%AD%BE%E6%8C%87%E4%BB%A4/</id>
+    <published>2020-09-28T00:56:11.000Z</published>
+    <updated>2020-09-28T01:00:01.074Z</updated>
+    
+    <content type="html"><![CDATA[<p><img data-src="https://img-blog.csdnimg.cn/20200928085720982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://img-blog.csdnimg.cn/20200928085720982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aH</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="vue" scheme="https://ppxpython.github.io/categories/computer-science/vue/"/>
+    
+    <category term="初学vue框架" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-study1/"/>
+    
+    
+    <category term="vue" scheme="https://ppxpython.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01Django中出现OperationalError问题</title>
+    <link href="https://ppxpython.github.io/computer-science/python/django-error1/01Django%E4%B8%AD%E5%87%BA%E7%8E%B0OperationalError%E9%97%AE%E9%A2%98/"/>
+    <id>https://ppxpython.github.io/computer-science/python/django-error1/01Django%E4%B8%AD%E5%87%BA%E7%8E%B0OperationalError%E9%97%AE%E9%A2%98/</id>
+    <published>2020-09-28T00:47:08.000Z</published>
+    <updated>2020-09-28T00:50:40.004Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>&lt;font color=#999AAA&gt; Django 中连接数据库时出现错误，采用了一个大牛的博客解决的，这里附上链接 https://blog.csdn.net/Wathet_blue/article/details/105401717?utm_medium=distribute.pc_relevant.none-task-blog-title-2&amp;spm=1001.2101.3001.4242<br>&lt;/font&gt;<br>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p>&lt;font color=#999AAA&gt; 出现错误！OperationalError: (1366, “Incorrect string value: ‘\xE4\xB9\x8B\xE7\xBE\x8E’ for column ‘name’ at row 1”)</p><p>&lt;/font&gt;</p><p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>&lt;font color=#999AAA&gt; 数据库的编码规则没有使用 utf8，而在存储数据时添加了中文数据，导致报错。</p><p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>&lt;font color=#999AAA &gt;<br> 删除数据库 (有数据先备份)</p><figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">drop</span> <span class="token keyword">database</span> <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><p>指定编码重建数据库 或者 修改数据库编码后重建数据库</p><figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">create</span> <span class="token keyword">database</span> <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span> <span class="token keyword">default</span> <span class="token keyword">character</span> <span class="token keyword">set</span> utf8 <span class="token keyword">collate</span> utf8_general_ci<span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><pre><code class="language-ptyhon">show variables like 'character%';// 查看mysql的编码set character_set_client=utf8;// 设置客户端的编码为utf8set character_set_connection=utf8;set character_set_database=utf8;set character_set_results=utf8; set character_set_server=utf8;set character_set_system=utf8;create database [database_name];// 新创建数据库使用的编码规则是utf8</code></pre><p>重新迁移数据库</p><figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>python manage<span class="token punctuation">.</span>py makemigrations</pre></td></tr><tr><td data-num="2"></td><td><pre>python manage<span class="token punctuation">.</span>py migrate</pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;&amp;lt;font color=#999AAA&amp;gt; Django 中连接数据库时出现错误，采用了一个大牛的博客解决的，这里附上链接 https://</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
+    
+    <category term="前端Django中常见的错误集合" scheme="https://ppxpython.github.io/categories/computer-science/python/django-error1/"/>
+    
+    
+    <category term="Django中error,Django框架" scheme="https://ppxpython.github.io/tags/Django%E4%B8%ADerror-Django%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01vue运行出错Cannot find module &#39;stylus&#39;</title>
+    <link href="https://ppxpython.github.io/computer-science/vue/vue-error1/01vue%E4%B8%AD%E5%8C%85%E5%AF%BC%E5%85%A5%E5%87%BA%E9%94%99code-ENOLOCAL/"/>
+    <id>https://ppxpython.github.io/computer-science/vue/vue-error1/01vue%E4%B8%AD%E5%8C%85%E5%AF%BC%E5%85%A5%E5%87%BA%E9%94%99code-ENOLOCAL/</id>
+    <published>2020-09-27T23:08:53.000Z</published>
+    <updated>2020-09-28T01:00:10.498Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>&lt;font color=#999AAA&gt; 本人小白记录在初学 vue 中的一些小问题，在使用 npm run serve 运行 vue 项目时，出现错误<br> &lt;/font&gt;<br>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p>&lt;font color=#999AAA&gt; 出现错误<br><img data-src="https://img-blog.csdnimg.cn/20200928080259916.png#pic_center" alt="在这里插入图片描述"></p><p>&lt;/font&gt;</p><p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>&lt;font color=#999AAA&gt; 没有引入相关依赖<br> &lt;/font&gt;</p><p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>&lt;font color=#999AAA &gt;<br> 需要执行</p><figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>npm install</pre></td></tr></tbody></table></figure><p>引入相关依赖即可解决问题</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;&amp;lt;font color=#999AAA&amp;gt; 本人小白记录在初学 vue 中的一些小问题，在使用 npm run serve 运行 vue 项</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="vue" scheme="https://ppxpython.github.io/categories/computer-science/vue/"/>
+    
+    <category term="前端vue中常见问题集合" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-error1/"/>
+    
+    
+    <category term="vue" scheme="https://ppxpython.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>02django带app的网站创建</title>
     <link href="https://ppxpython.github.io/computer-science/python/course-1/02django%E5%B8%A6app%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%9B%E5%BB%BA/"/>
     <id>https://ppxpython.github.io/computer-science/python/course-1/02django%E5%B8%A6app%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%9B%E5%BB%BA/</id>
     <published>2020-09-27T08:27:27.000Z</published>
-    <updated>2020-09-27T15:49:31.804Z</updated>
+    <updated>2020-09-27T16:00:37.914Z</updated>
     
-    <content type="html"><![CDATA[<p><span class="label primary">前端框架</span><br><img data-src="https://img-blog.csdnimg.cn/20191006171226655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><figure class="highlight java"><figcaption data-lang="java"><span>标题</span></figcaption><table><tbody><tr class="marked"><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">Scanner</span> in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span> <span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">// 输入 Scan 之后，按下键盘 Alt + “/” 键，Eclipse 下自动补全。</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr class="marked"><td data-num="6"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span>println <span class="token punctuation">(</span>in<span class="token punctuation">.</span>nextLine <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr class="marked"><td data-num="7"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span>println <span class="token punctuation">(</span><span class="token string">"Hello"</span> <span class="token operator">+</span> <span class="token string">"world."</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td data-command="[root@localhost] $"></td><td><pre><span class="token builtin class-name">pwd</span></pre></td></tr><tr><td data-num="2"></td><td data-command=""></td><td><pre>/usr/home/chris/bin</pre></td></tr><tr><td data-num="3"></td><td data-command=""></td><td><pre><span class="token function">ls</span> -la</pre></td></tr><tr><td data-num="4"></td><td data-command="[admin@remotehost] #"></td><td><pre>total <span class="token number">2</span></pre></td></tr><tr><td data-num="5"></td><td data-command="[admin@remotehost] #"></td><td><pre>drwxr-xr-x   <span class="token number">2</span> chris  chris     <span class="token number">11</span> Jan <span class="token number">10</span> <span class="token number">16</span>:48 <span class="token builtin class-name">.</span></pre></td></tr><tr><td data-num="6"></td><td data-command="[admin@remotehost] #"></td><td><pre>drwxr--r-x  <span class="token number">45</span> chris  chris     <span class="token number">92</span> Feb <span class="token number">14</span> <span class="token number">11</span>:10 <span class="token punctuation">..</span></pre></td></tr><tr><td data-num="7"></td><td data-command=""></td><td><pre>-rwxr-xr-x   <span class="token number">1</span> chris  chris    <span class="token number">444</span> Aug <span class="token number">25</span>  <span class="token number">2013</span> backup</pre></td></tr><tr><td data-num="8"></td><td data-command=""></td><td><pre>-rwxr-xr-x   <span class="token number">1</span> chris  chris    <span class="token number">642</span> Jan <span class="token number">17</span> <span class="token number">14</span>:42 deploy</pre></td></tr></tbody></table></figure><ol><li class="quiz true"><p>编译时多态主要指运算符重载与函数重载，而运行时多态主要指虚函数。</p></li><li class="quiz multi"><p>有基类  <code>SHAPE</code> ，派生类  <code>CIRCLE</code> ，声明如下变量： </p><figure class="highlight cpp"><figcaption data-lang="C++"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>SHAPE shape1<span class="token punctuation">,</span><span class="token operator">*</span>p1<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>CIRCLE circle1<span class="token punctuation">,</span><span class="token operator">*</span>q1<span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><p>下列哪些项是 “派生类对象替换基类对象”。</p><ul class="options"><li class="correct"><code>p1=&amp;circle1;</code> </li><li><code>q1=&amp;shape1;</code></li><li class="correct"><code>shape1=circle1;</code> </li><li><code>circle1=shape1;</code></li></ul><blockquote><ul class="options"><li>✔️ 令基类对象的指针指向派生类对象</li><li>❌ 派生类指针指向基类的引用</li><li>✔️ 派生类对象给基类对象赋值</li><li>❌ 基类对象给派生类对象赋值</li></ul></blockquote></li><li class="quiz"><p>下列叙述正确的是 <span class="gap"></span> 。</p><ul class="options"><li>虚函数只能定义成无参函数</li><li>虚函数不能有返回值</li><li>能定义虚构造函数</li><li class="correct">A、B、C 都不对</li></ul></li><li class="quiz fill"><p>如果定义  <code>int e=8; double f=6.4, g=8.9;</code> ，则表达式  <code>f+int (e/3*int (f+g)/2)%4</code>  的值为 <span class="gap">9.4</span>。</p><blockquote><p>注意运算顺序和数据类型<br><span class="mistake"> 8.4</span></p></blockquote></li></ol><p>😘<br>💍<br>🎶</p><p>&lt;!-- <span class="label">default</span><br><span class="label primary">primary</span><br><span class="label info">info</span><br><span class="label success">✔️success</span><br><span class="label warning">warning</span><br><span class="label danger">💔danger</span> --&gt;</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[<p><span class="label">python</span><br><span class="label primary"> 前端框架</span><br><img data-src="https://img-blog.csdnimg.cn/20191006171226655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><figure class="highlight java"><figcaption data-lang="java"><span>标题</span></figcaption><table><tbody><tr class="marked"><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">Scanner</span> in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span> <span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">// 输入 Scan 之后，按下键盘 Alt + “/” 键，Eclipse 下自动补全。</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr class="marked"><td data-num="6"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span>println <span class="token punctuation">(</span>in<span class="token punctuation">.</span>nextLine <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr class="marked"><td data-num="7"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span>println <span class="token punctuation">(</span><span class="token string">"Hello"</span> <span class="token operator">+</span> <span class="token string">"world."</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td data-command="[root@localhost] $"></td><td><pre><span class="token builtin class-name">pwd</span></pre></td></tr><tr><td data-num="2"></td><td data-command=""></td><td><pre>/usr/home/chris/bin</pre></td></tr><tr><td data-num="3"></td><td data-command=""></td><td><pre><span class="token function">ls</span> -la</pre></td></tr><tr><td data-num="4"></td><td data-command="[admin@remotehost] #"></td><td><pre>total <span class="token number">2</span></pre></td></tr><tr><td data-num="5"></td><td data-command="[admin@remotehost] #"></td><td><pre>drwxr-xr-x   <span class="token number">2</span> chris  chris     <span class="token number">11</span> Jan <span class="token number">10</span> <span class="token number">16</span>:48 <span class="token builtin class-name">.</span></pre></td></tr><tr><td data-num="6"></td><td data-command="[admin@remotehost] #"></td><td><pre>drwxr--r-x  <span class="token number">45</span> chris  chris     <span class="token number">92</span> Feb <span class="token number">14</span> <span class="token number">11</span>:10 <span class="token punctuation">..</span></pre></td></tr><tr><td data-num="7"></td><td data-command=""></td><td><pre>-rwxr-xr-x   <span class="token number">1</span> chris  chris    <span class="token number">444</span> Aug <span class="token number">25</span>  <span class="token number">2013</span> backup</pre></td></tr><tr><td data-num="8"></td><td data-command=""></td><td><pre>-rwxr-xr-x   <span class="token number">1</span> chris  chris    <span class="token number">642</span> Jan <span class="token number">17</span> <span class="token number">14</span>:42 deploy</pre></td></tr></tbody></table></figure><ol><li class="quiz true"><p>编译时多态主要指运算符重载与函数重载，而运行时多态主要指虚函数。</p></li><li class="quiz multi"><p>有基类  <code>SHAPE</code> ，派生类  <code>CIRCLE</code> ，声明如下变量： </p><figure class="highlight cpp"><figcaption data-lang="C++"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>SHAPE shape1<span class="token punctuation">,</span><span class="token operator">*</span>p1<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>CIRCLE circle1<span class="token punctuation">,</span><span class="token operator">*</span>q1<span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><p>下列哪些项是 “派生类对象替换基类对象”。</p><ul class="options"><li class="correct"><code>p1=&amp;circle1;</code> </li><li><code>q1=&amp;shape1;</code></li><li class="correct"><code>shape1=circle1;</code> </li><li><code>circle1=shape1;</code></li></ul><blockquote><ul class="options"><li>✔️ 令基类对象的指针指向派生类对象</li><li>❌ 派生类指针指向基类的引用</li><li>✔️ 派生类对象给基类对象赋值</li><li>❌ 基类对象给派生类对象赋值</li></ul></blockquote></li><li class="quiz"><p>下列叙述正确的是 <span class="gap"></span> 。</p><ul class="options"><li>虚函数只能定义成无参函数</li><li>虚函数不能有返回值</li><li>能定义虚构造函数</li><li class="correct">A、B、C 都不对</li></ul></li><li class="quiz fill"><p>如果定义  <code>int e=8; double f=6.4, g=8.9;</code> ，则表达式  <code>f+int (e/3*int (f+g)/2)%4</code>  的值为 <span class="gap">9.4</span>。</p><blockquote><p>注意运算顺序和数据类型<br><span class="mistake"> 8.4</span></p></blockquote></li></ol><p>😘<br>💍<br>🎶</p><p><span class="label">python</span><br><span class="label primary">primary</span><br><span class="label info">info</span><br><span class="label success">✔️success</span><br><span class="label warning">warning</span><br><span class="label danger">💔danger</span></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;span class=&quot;label primary&quot;&gt;前端框架&lt;/span&gt;&lt;br&gt;
-&lt;img data-src=&quot;https://img-blog.csdnimg.cn/20191006171226655.png?x-oss-process=image/watermar</summary>
+    <summary type="html">&lt;p&gt;&lt;span class=&quot;label&quot;&gt;python&lt;/span&gt;&lt;br&gt;
+&lt;span class=&quot;label primary&quot;&gt; 前端框架&lt;/span&gt;&lt;br&gt;
+&lt;img data-src=&quot;https://img-blog.csdnimg.cn/20191006171</summary>
       
     
     
@@ -50,15 +137,16 @@
     <link href="https://ppxpython.github.io/computer-science/python/course-1/01django-hello-world%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90/"/>
     <id>https://ppxpython.github.io/computer-science/python/course-1/01django-hello-world%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90/</id>
     <published>2020-09-27T08:23:25.000Z</published>
-    <updated>2020-09-27T15:41:51.007Z</updated>
+    <updated>2020-09-28T00:10:51.940Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="01django-hello-world简单例子"><a class="anchor" href="#01django-hello-world简单例子">#</a> 01django-hello world 简单例子</h2><p><strong>加粗样式</strong><br>日期：2019——09——26<br>IT 人： 小海豚 学习内容：<br>创建一个新的 django 文件 命令：</p><pre><code class="language-bash"> django—admin startproject mywebsite创建文件 开启服务器</code></pre><p><img data-src="https://img-blog.csdnimg.cn/20190927111611939.png" alt="在这里插入图片描述"></p><pre><code class="language-bash"> Python manage.py runserver</code></pre><p>启动服务器<br>成功<br><img data-src="https://img-blog.csdnimg.cn/20190927111633701.png" alt="在这里插入图片描述"><br>创建一个 views 文件 Python 的 在其中编辑<br><img data-src="https://img-blog.csdnimg.cn/20190927111715673.png" alt="在这里插入图片描述"><br>在 url 中修改<br><img data-src="https://img-blog.csdnimg.cn/20190927111722806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在浏览器中进行刷新<br><img data-src="https://img-blog.csdnimg.cn/2019092711173328.png" alt="在这里插入图片描述"><br>注意：服务器要开启</p><pre><code class="language-bash">Python manage.py runserve </code></pre><pre><code> 原文出自[易百教程] 转载请保留原文链接: https://www.yiibai.com/geek/detail/1184</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[<p><span class="label">python</span><br><span class="label primary"> 前端框架</span></p><h2 id="01django-hello-world简单例子"><a class="anchor" href="#01django-hello-world简单例子">#</a> 01django-hello world 简单例子</h2><p><strong>加粗样式</strong><br>日期：2019——09——26<br>IT 人： 小海豚 学习内容：<br>创建一个新的 django 文件 命令：</p><pre><code class="language-bash"> django—admin startproject mywebsite创建文件 开启服务器</code></pre><p><img data-src="https://img-blog.csdnimg.cn/20190927111611939.png" alt="在这里插入图片描述"></p><pre><code class="language-bash"> Python manage.py runserver</code></pre><p>启动服务器<br>成功<br><img data-src="https://img-blog.csdnimg.cn/20190927111633701.png" alt="在这里插入图片描述"><br>创建一个 views 文件 Python 的 在其中编辑<br><img data-src="https://img-blog.csdnimg.cn/20190927111715673.png" alt="在这里插入图片描述"><br>在 url 中修改<br><img data-src="https://img-blog.csdnimg.cn/20190927111722806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在浏览器中进行刷新<br><img data-src="https://img-blog.csdnimg.cn/2019092711173328.png" alt="在这里插入图片描述"><br>注意：服务器要开启</p><pre><code class="language-bash">Python manage.py runserve </code></pre><pre><code> 原文出自[易百教程] 转载请保留原文链接: https://www.yiibai.com/geek/detail/1184</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;01django-hello-world简单例子&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#01django-hello-world简单例子&quot;&gt;#&lt;/a&gt; 01django-hello world 简单例子&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;加粗样式&lt;/s</summary>
+    <summary type="html">&lt;p&gt;&lt;span class=&quot;label&quot;&gt;python&lt;/span&gt;&lt;br&gt;
+&lt;span class=&quot;label primary&quot;&gt; 前端框架&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;01django-hello-world简单例子&quot;&gt;&lt;a class=&quot;anchor&quot; hr</summary>
       
     
     
@@ -70,7 +158,7 @@
     <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/course-1/"/>
     
     
-    <category term="yyyy" scheme="https://ppxpython.github.io/tags/yyyy/"/>
+    <category term="Django框架" scheme="https://ppxpython.github.io/tags/Django%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
