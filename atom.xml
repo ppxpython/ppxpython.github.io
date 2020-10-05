@@ -6,7 +6,7 @@
   <link href="https://ppxpython.github.io/atom.xml" rel="self"/>
   
   <link href="https://ppxpython.github.io/"/>
-  <updated>2020-09-29T10:34:52.585Z</updated>
+  <updated>2020-10-05T08:30:10.744Z</updated>
   <id>https://ppxpython.github.io/</id>
   
   <author>
@@ -17,13 +17,323 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>03VUE---拦截路径挂载的问题</title>
+    <link href="https://ppxpython.github.io/computer-science/vue/vue-error1/03VUE-%E6%8B%A6%E6%88%AA%E8%B7%AF%E5%BE%84%E6%8C%82%E8%BD%BD%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://ppxpython.github.io/computer-science/vue/vue-error1/03VUE-%E6%8B%A6%E6%88%AA%E8%B7%AF%E5%BE%84%E6%8C%82%E8%BD%BD%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2020-10-05T08:25:40.000Z</published>
+    <updated>2020-10-05T08:30:10.744Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>vscode 中没有报错，但在网页的控制台中出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p>vscode 中没有报错，但在网页的控制台中<br><img data-src="https://img-blog.csdnimg.cn/2020100516264293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>拦截路径挂载的问题<br><img data-src="https://img-blog.csdnimg.cn/20201005162702325.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>在上面添加<br> // 出现问题时使用<br> const originalPush=VueRouter.prototype.push<br>VueRouter.prototype.push=function push(location,onResolve,onReject)<ruby>    if(onResolve <rp>(</rp><rt>| onReject) return  originalPush.call(this,location,onResolve,onReject)      return originalPush.call(this,location).catch(err =&gt; err)</rt><rp>)</rp></ruby></p><p><img data-src="https://img-blog.csdnimg.cn/20201005162735676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;vscode 中没有报错，但在网页的控制台中出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Vue" scheme="https://ppxpython.github.io/categories/computer-science/vue/"/>
+    
+    <category term="前端Vue中常见问题集合" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-error1/"/>
+    
+    
+    <category term="VUE" scheme="https://ppxpython.github.io/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>02VUE---没有引入依赖包</title>
+    <link href="https://ppxpython.github.io/computer-science/vue/vue-error1/02VUE-%E6%B2%A1%E6%9C%89%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96%E5%8C%85/"/>
+    <id>https://ppxpython.github.io/computer-science/vue/vue-error1/02VUE-%E6%B2%A1%E6%9C%89%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96%E5%8C%85/</id>
+    <published>2020-10-05T08:22:04.000Z</published>
+    <updated>2020-10-05T08:29:58.195Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>在运行 vscode 时，出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005162316181.png#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>没有引入依赖包 npm</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>输入</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">npm</span> <span class="token function">install</span></pre></td></tr></tbody></table></figure><p>即可</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;在运行 vscode 时，出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;&gt;#&lt;/a&gt; 问题</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Vue" scheme="https://ppxpython.github.io/categories/computer-science/vue/"/>
+    
+    <category term="前端Vue中常见问题集合" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-error1/"/>
+    
+    
+    <category term="VUE" scheme="https://ppxpython.github.io/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01web开发需要了解的技术2020-09-02</title>
+    <link href="https://ppxpython.github.io/computer-science/vue/vue-study1/01web%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E6%8A%80%E6%9C%AF2020-09-02/"/>
+    <id>https://ppxpython.github.io/computer-science/vue/vue-study1/01web%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E6%8A%80%E6%9C%AF2020-09-02/</id>
+    <published>2020-10-05T08:09:30.000Z</published>
+    <updated>2020-10-05T08:29:52.654Z</updated>
+    
+    <content type="html"><![CDATA[<p>日期：2020——09——02<br>IT 人：小海豚<br>学习内容：<br>大数据<br> oop（面向对象的编程）<br>ood（面向对象的设计）<br>web 开发：<br>Html<br>Js（JavaScript）面向对象语言<br> Css<br> 前端框架：<br>Vue（js 库与后端的一套接口），jquery，react<br> 组件库：<br>Element UI（界面） 常与（VUE 框架一起）<br>Easy UI（界面）</p><p>工具：<br>测试集成在开发过程中<br>移动布局<br> webscocket 协议<br> Git<br> 测试 / 调试工具<br> firebug，postmon<br> 后端：<br>java，python,C#,mysql (构建)<br> 后端框架<br> jsp/selvlet<br>ssm 框架（spring，struts，mybatis）<br>Spring boost：最新框架</p><p>前端后端公共技术<br> svn/git 工具</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;日期：2020——09——02&lt;br&gt;
+IT 人：小海豚&lt;br&gt;
+学习内容：&lt;br&gt;
+大数据&lt;br&gt;
+ oop（面向对象的编程）&lt;br&gt;
+ood（面向对象的设计）&lt;br&gt;
+web 开发：&lt;br&gt;
+Html&lt;br&gt;
+Js（JavaScript）面向对象语言&lt;br&gt;
+ Css&lt;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Vue" scheme="https://ppxpython.github.io/categories/computer-science/vue/"/>
+    
+    <category term="初学Vue框架" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-study1/"/>
+    
+    
+    <category term="VUE" scheme="https://ppxpython.github.io/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>08django---的装换器</title>
+    <link href="https://ppxpython.github.io/computer-science/python/django/course-1/08django-%E7%9A%84%E8%A3%85%E6%8D%A2%E5%99%A8/"/>
+    <id>https://ppxpython.github.io/computer-science/python/django/course-1/08django-%E7%9A%84%E8%A3%85%E6%8D%A2%E5%99%A8/</id>
+    <published>2020-10-05T08:04:50.000Z</published>
+    <updated>2020-10-05T08:13:28.458Z</updated>
+    
+    <content type="html"><![CDATA[<p>日期：20019——10——07<br>IT 人：小海豚<br>学习内容：<br>装换器<br><span class="exturl" data-url="aHR0cHM6Ly9uZXdzLjE2My5jb20vMTkvMDQwNS8wOC9FQzAxN1JGSzAwMDE4OTlPLmh0bWw="> https://news.163.com/19/0405/08/EC017RFK0001899O.html</span></p><p><span class="exturl" data-url="aHR0cHM6Ly9uZXdzLjE2My5jb20vMTkvMDQwNS8wOC9FQzAxSFNTVDAwMDE4OUZILmh0bWw=">https://news.163.com/19/0405/08/EC01HSST000189FH.html</span></p><p>在 app bookapp 的 urls 中<br><img data-src="https://img-blog.csdnimg.cn/20201005160601964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>注意：&lt;html&gt; 表示可以是任何字母<br>在 app bookapp 的 views 中写入</p><p><img data-src="https://img-blog.csdnimg.cn/20201005160613503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在项目的 urls 中修改以下</p><p><img data-src="https://img-blog.csdnimg.cn/20201005160624600.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在浏览器中输入网址<br><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwLzE5LzA0MDUvMDgvRUMwMUhTU1QwMDAxODlGSC5odG1s"> http://127.0.0.1:8000/19/0405/08/EC01HSST000189FH.html</span></p><p><img data-src="https://img-blog.csdnimg.cn/20201005160639658.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>地址装唤器装换<br>字符串 ——》变量接收 ——》传递 path 中的 &lt;html&gt; 变量 ——》在 app bookapp 中的 index 函数的 html 变量接收到 ——》在 format 中输出地址信息<br>第二个地址<br>在浏览器中输入<br><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwLzE5LzA0MDUvMDgvRUMwMTdSRkswMDAxODk5Ty5odG1s"> http://127.0.0.1:8000/19/0405/08/EC017RFK0001899O.html</span></p><p>​<img data-src="https://img-blog.csdnimg.cn/20201005160650493.png#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;日期：20019——10——07&lt;br&gt;
+IT 人：小海豚&lt;br&gt;
+学习内容：&lt;br&gt;
+装换器&lt;br&gt;
+&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9uZXdzLjE2My5jb20vMTkvMDQwNS8wOC9FQzAxN1JGSz</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
+    
+    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
+    
+    <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/course-1/"/>
+    
+    
+    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>07django--path的语法</title>
+    <link href="https://ppxpython.github.io/computer-science/python/django/course-1/07django-path%E7%9A%84%E8%AF%AD%E6%B3%95/"/>
+    <id>https://ppxpython.github.io/computer-science/python/django/course-1/07django-path%E7%9A%84%E8%AF%AD%E6%B3%95/</id>
+    <published>2020-10-05T08:02:33.000Z</published>
+    <updated>2020-10-05T08:13:28.441Z</updated>
+    
+    <content type="html"><![CDATA[<p>日期：2019——10——06<br>IT 人：小海豚<br>学习内容：<br>Path 的语法<br>从 django2.1 以后用 path 之前用的是 url<br> 标准语法<br> Path (route,view,name=None,**kwargs)<br>Route:<br> 端口以后 url 的地址，到 / 结束，表示路径<br> View:<br> 表示路径匹配成功后，需要调用的视图，必须是个函数如果是 class 的话，必须要用 as_view () 函数装换为函数<br> name：<br>表示别名<br> **kwargs：<br>表示一个字典</p><p>前面两个是必选项<br>创建的 newwebsite002 是之前的，查看 06django<br> 教程<br>在之前的 views 不变<br><img data-src="https://img-blog.csdnimg.cn/20201005160009690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在之前创建的 app book 的 urls 中</p><p><img data-src="https://img-blog.csdnimg.cn/20201005160022822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>打开项目所在地址 cmd 开启服务器</p><p>​<img data-src="https://img-blog.csdnimg.cn/20201005160032813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>成功</p><p><img data-src="https://img-blog.csdnimg.cn/20201005160042503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>证明服务器已经跑起来了<br>继续刷新</p><p><img data-src="https://img-blog.csdnimg.cn/20201005160052289.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>修改 app bookapp 中的 urls</p><p>​<img data-src="https://img-blog.csdnimg.cn/20201005160101176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>在输入网址查看<br><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2luZGV4"> http://127.0.0.1:8000/index</span></p><p><img data-src="https://img-blog.csdnimg.cn/20201005160110848.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>输入 http://127.0.0.1:8000/index/web/<br> 查看</p><p>​<img data-src="https://img-blog.csdnimg.cn/20201005160119998.png#pic_center" alt="在这里插入图片描述"></p><p>也可以写成多分级目录<br>修改 app bookapp 中的 urls<br> 注释 #path ('',views.index,name='index'),</p><p><img data-src="https://img-blog.csdnimg.cn/2020100516012813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在浏览器中执行<br><span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo4MDAwL2luZGV4L3dlYi9hL2IvYy9pbmRleC5odG1sLw=="> http://127.0.0.1:8000/index/web/a/b/c/index.html/</span></p><p>​<img data-src="https://img-blog.csdnimg.cn/2020100516013813.png#pic_center" alt="在这里插入图片描述"></p><p>成功<br>注意：当出现路径相同时，会自动匹配第一个之后机就默认不匹配了</p><p>​<img data-src="https://img-blog.csdnimg.cn/2020100516014867.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>结果一直是：</p><p><img data-src="https://img-blog.csdnimg.cn/20201005160156332.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;日期：2019——10——06&lt;br&gt;
+IT 人：小海豚&lt;br&gt;
+学习内容：&lt;br&gt;
+Path 的语法&lt;br&gt;
+从 django2.1 以后用 path 之前用的是 url&lt;br&gt;
+ 标准语法&lt;br&gt;
+ Path (route,view,name=None,**kwargs</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
+    
+    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
+    
+    <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/course-1/"/>
+    
+    
+    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>06django--url的讲解</title>
+    <link href="https://ppxpython.github.io/computer-science/python/django/course-1/06django-url%E7%9A%84%E8%AE%B2%E8%A7%A3/"/>
+    <id>https://ppxpython.github.io/computer-science/python/django/course-1/06django-url%E7%9A%84%E8%AE%B2%E8%A7%A3/</id>
+    <published>2020-10-05T07:57:17.000Z</published>
+    <updated>2020-10-05T08:13:28.430Z</updated>
+    
+    <content type="html"><![CDATA[<p>日期：2019——09——28<br>IT 人：小海豚<br>学习内容：<br>统一资源定位器<br>协议 protocol：http，https，ftp<br> 域名 hostname + 端口 port<br> 路径 path<br> 参数 parmeters<br> 查询 query<br> 描点 fragment<br>django 中配置 urls<br> 创建一个 newwebsite002 的 django 文件和 book 的 app<br> 命令行输入</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>django-admin startproject newwebsite002</pre></td></tr></tbody></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token builtin class-name">cd</span> newwebsite002</pre></td></tr></tbody></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>ptrhon manage.py startapp book</pre></td></tr></tbody></table></figure><p><img data-src="https://img-blog.csdnimg.cn/20201005155244250.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>显示出</p><p><img data-src="https://img-blog.csdnimg.cn/20201005155505621.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在浏览器中检查<br>开启服务器</p><p><img data-src="https://img-blog.csdnimg.cn/20201005155519786.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>成功</p><p><img data-src="https://img-blog.csdnimg.cn/20201005155528944.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在 setting 中配置注册 app book<br> 添加 'book',</p><p><img data-src="https://img-blog.csdnimg.cn/20201005155537408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在 app views 视图中写入两个函数</p><p><img data-src="https://img-blog.csdnimg.cn/20201005155546495.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在 app book 中创建一个 urls 文件<br>进行配置</p><p><img data-src="https://img-blog.csdnimg.cn/202010051555572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在 app book urls 中编码</p><p><img data-src="https://img-blog.csdnimg.cn/2020100515560640.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>在项目中做个映射<br>在项目 newwebsite002 的 urls 中编码</p><p>​<br><img data-src="https://img-blog.csdnimg.cn/20201005155615113.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>成功</p><p><img data-src="https://img-blog.csdnimg.cn/20201005155623854.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>切换网址后</p><p>​<img data-src="https://img-blog.csdnimg.cn/20201005155631652.png#pic_center" alt="在这里插入图片描述"></p><p>表示成功<br>注意：在 path 语句中在路径中要加上 /</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;日期：2019——09——28&lt;br&gt;
+IT 人：小海豚&lt;br&gt;
+学习内容：&lt;br&gt;
+统一资源定位器&lt;br&gt;
+协议 protocol：http，https，ftp&lt;br&gt;
+ 域名 hostname + 端口 port&lt;br&gt;
+ 路径 path&lt;br&gt;
+ 参数 parmete</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
+    
+    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
+    
+    <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/course-1/"/>
+    
+    
+    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>05django--mvt介绍</title>
+    <link href="https://ppxpython.github.io/computer-science/python/django/course-1/05django-mvt%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://ppxpython.github.io/computer-science/python/django/course-1/05django-mvt%E4%BB%8B%E7%BB%8D/</id>
+    <published>2020-10-05T07:50:40.000Z</published>
+    <updated>2020-10-05T08:13:28.419Z</updated>
+    
+    <content type="html"><![CDATA[<p>日期：20019——09——27</p><p>IT 人：小海豚</p><p>学习内容：</p><p>django 的设计模式</p><p>Models 作用</p><p>封装数据库，</p><p>对数据库进行访问，</p><p>对数据进行增删改查，</p><p>Views 作用</p><p>进行业务逻辑的处理，</p><p>teplates 作用</p><p>模板，主要进行展示，前端</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;日期：20019——09——27&lt;/p&gt;
+&lt;p&gt;IT 人：小海豚&lt;/p&gt;
+&lt;p&gt;学习内容：&lt;/p&gt;
+&lt;p&gt;django 的设计模式&lt;/p&gt;
+&lt;p&gt;Models 作用&lt;/p&gt;
+&lt;p&gt;封装数据库，&lt;/p&gt;
+&lt;p&gt;对数据库进行访问，&lt;/p&gt;
+&lt;p&gt;对数据进行增删改查，&lt;/p&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
+    
+    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
+    
+    <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/course-1/"/>
+    
+    
+    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>04django--整体讲解</title>
+    <link href="https://ppxpython.github.io/computer-science/python/django/course-1/04django-%E6%95%B4%E4%BD%93%E8%AE%B2%E8%A7%A3/"/>
+    <id>https://ppxpython.github.io/computer-science/python/django/course-1/04django-%E6%95%B4%E4%BD%93%E8%AE%B2%E8%A7%A3/</id>
+    <published>2020-10-05T07:48:26.000Z</published>
+    <updated>2020-10-05T08:13:28.408Z</updated>
+    
+    <content type="html"><![CDATA[<p>日期：2019——09——27<br>IT 人：小海豚<br>学习内容：<br>导包的文件</p><p><img data-src="https://img-blog.csdnimg.cn/20201005154700648.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>一般都不用但不能够删除</p><p>​<img data-src="https://img-blog.csdnimg.cn/2020100515471044.png#pic_center" alt=""></p><p>settings 配置文件<br> urls 统一资源编译器<br> wsgi 网管接口<br> app 中<br> News<br> 大部分功能在 app news 中完成<br> Mingrations</p><p><img data-src="https://img-blog.csdnimg.cn/20201005154746558.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>数据库映射时使用，一般不修改<br><img data-src="https://img-blog.csdnimg.cn/20201005154754927.png#pic_center" alt="在这里插入图片描述"></p><p>​</p><p>admin 管理文件<br> apps 定义 app 名字<br> models 模型写数据库<br> tests 测试文件<br> urls 配置 app 的 urls，和项目的 urls 进行交互<br> views 视图文件<br> Bd.sqlite3 默认使用的数据库<br> Manage.py 项目管理文件</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;日期：2019——09——27&lt;br&gt;
+IT 人：小海豚&lt;br&gt;
+学习内容：&lt;br&gt;
+导包的文件&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;https://img-blog.csdnimg.cn/20201005154700648.png#pic_center&quot; alt=</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
+    
+    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
+    
+    <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/course-1/"/>
+    
+    
+    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>03django--带有模板的html文件百度</title>
+    <link href="https://ppxpython.github.io/computer-science/python/django/course-1/03django-%E5%B8%A6%E6%9C%89%E6%A8%A1%E6%9D%BF%E7%9A%84html%E6%96%87%E4%BB%B6%E7%99%BE%E5%BA%A6/"/>
+    <id>https://ppxpython.github.io/computer-science/python/django/course-1/03django-%E5%B8%A6%E6%9C%89%E6%A8%A1%E6%9D%BF%E7%9A%84html%E6%96%87%E4%BB%B6%E7%99%BE%E5%BA%A6/</id>
+    <published>2020-10-05T07:44:36.000Z</published>
+    <updated>2020-10-05T08:13:28.398Z</updated>
+    
+    <content type="html"><![CDATA[<p>日期：2019——09——27<br>IT 人：小海豚<br>学习内容：<br>启动服务器</p><p><img data-src="https://img-blog.csdnimg.cn/20201005154029546.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>在上一次创建的 app news 中创建一个<br>模板文件<br><img data-src="https://img-blog.csdnimg.cn/20201005154040619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>叫<br><img data-src="https://img-blog.csdnimg.cn/2020100515405267.png#pic_center" alt="在这里插入图片描述"></p><p>在创建一个 html 文件<br><img data-src="https://img-blog.csdnimg.cn/20201005154103843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>叫 baidu</p><p><img data-src="https://img-blog.csdnimg.cn/20201005154113203.png#pic_center" alt="在这里插入图片描述"></p><p>把百度拉入模板文件中，生成目录</p><p><img data-src="https://img-blog.csdnimg.cn/20201005154122534.png#pic_center" alt="在这里插入图片描述"></p><p>打开浏览器搜索百度</p><p><img data-src="https://img-blog.csdnimg.cn/20201005154129176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p><img data-src="https://img-blog.csdnimg.cn/2020100515414714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>复制全部源代码<br>在 html 中使用 baidu<br><img data-src="https://img-blog.csdnimg.cn/20201005154200775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>修改视图 app news 中的 views</p><p>效果生成<br><img data-src="https://img-blog.csdnimg.cn/20201005154212477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p><img data-src="https://img-blog.csdnimg.cn/20201005154221255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;日期：2019——09——27&lt;br&gt;
+IT 人：小海豚&lt;br&gt;
+学习内容：&lt;br&gt;
+启动服务器&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;https://img-blog.csdnimg.cn/20201005154029546.png?x-oss-process=im</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
+    
+    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
+    
+    <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/course-1/"/>
+    
+    
+    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
     <title>工具教程网址</title>
     <link href="https://ppxpython.github.io/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B%E7%BD%91%E5%9D%80/"/>
     <id>https://ppxpython.github.io/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B%E7%BD%91%E5%9D%80/</id>
     <published>2020-09-29T07:35:50.000Z</published>
-    <updated>2020-09-29T10:34:52.585Z</updated>
+    <updated>2020-09-30T01:53:57.189Z</updated>
     
-    <content type="html"><![CDATA[<p></p><div class="links"><div class="item" style="--block-color:#e9546b;" title="Vue官网教程"><span class="exturl image" data-url="aHR0cHM6Ly9jbi52dWVqcy5vcmcvdjIvZ3VpZGUv" data-background-image="https://image.baidu.com/search/detail?ct=503316480&amp;z=0&amp;ipn=d&amp;word=vue&amp;step_word=&amp;hs=0&amp;pn=1&amp;spn=0&amp;di=3300&amp;pi=0&amp;rn=1&amp;tn=baiduimagedetail&amp;is=0%2C0&amp;istype=0&amp;ie=utf-8&amp;oe=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;cs=3866427781%2C859233610&amp;os=4083456895%2C2180831939&amp;simid=150579757%2C808925494&amp;adpicid=0&amp;lpn=0&amp;ln=1859&amp;fr=&amp;fmq=1601365324969_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;hd=undefined&amp;latest=undefined&amp;copyright=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;ist=&amp;jit=&amp;cg=&amp;bdtype=0&amp;oriquery=&amp;objurl=http%3A%2F%2Fwww.linchaoqun.com%3A6003%2F2018-2-23%2Fa67cb6e0c68988848f41c1b92f8a569477c80920adb86b1c3a252d92d1cc07f5.jpg&amp;fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bstgviw5q7g_z%26e3Bv54AzdH3Fip4sAzdH3Fv4fAzdH3Fv5gpjgp_z%26e3B3fr%3F4jg7%3De7j3f%26t1%3Dum0lu0jj-lk80-9dbb-kdca-0n8djcmkd9wl&amp;gsm=2&amp;rpstart=0&amp;rpnum=0&amp;islist=&amp;querylist=&amp;force=undefinedimages/avatar.jpg"></span>          <div class="info">          <span class="exturl title" data-url="aHR0cHM6Ly9jbi52dWVqcy5vcmcvdjIvZ3VpZGUv">Vue官网中文教程</span>          <p class="desc">Vue官网中文教程</p>          </div></div><div class="item" style="--block-color:#666;" title="Vue菜鸟教程"><span class="exturl image" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS92dWUyL3Z1ZS10dXRvcmlhbC5odG1s" data-background-image="https://image.baidu.com/search/detail?ct=503316480&amp;z=0&amp;ipn=d&amp;word=vue&amp;step_word=&amp;hs=0&amp;pn=1&amp;spn=0&amp;di=3300&amp;pi=0&amp;rn=1&amp;tn=baiduimagedetail&amp;is=0%2C0&amp;istype=0&amp;ie=utf-8&amp;oe=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;cs=3866427781%2C859233610&amp;os=4083456895%2C2180831939&amp;simid=150579757%2C808925494&amp;adpicid=0&amp;lpn=0&amp;ln=1859&amp;fr=&amp;fmq=1601365324969_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;hd=undefined&amp;latest=undefined&amp;copyright=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;ist=&amp;jit=&amp;cg=&amp;bdtype=0&amp;oriquery=&amp;objurl=http%3A%2F%2Fwww.linchaoqun.com%3A6003%2F2018-2-23%2Fa67cb6e0c68988848f41c1b92f8a569477c80920adb86b1c3a252d92d1cc07f5.jpg&amp;fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bstgviw5q7g_z%26e3Bv54AzdH3Fip4sAzdH3Fv4fAzdH3Fv5gpjgp_z%26e3B3fr%3F4jg7%3De7j3f%26t1%3Dum0lu0jj-lk80-9dbb-kdca-0n8djcmkd9wl&amp;gsm=2&amp;rpstart=0&amp;rpnum=0&amp;islist=&amp;querylist=&amp;force=undefinedimages/avatar.jpg"></span>          <div class="info">          <span class="exturl title" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS92dWUyL3Z1ZS10dXRvcmlhbC5odG1s">Vue菜鸟教程</span>          <p class="desc">https://www.runoob.com/vue2/vue-tutorial.html</p>          </div></div><div class="item" style="--block-color:#9d5b8b;" title="優萌初華"><span class="exturl image" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=" data-background-image="/images/404.png"></span>          <div class="info">          <span class="exturl title" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=">優萌初華</span>          <p class="desc">琉璃的医学 &amp; 编程笔记</p>          </div></div></div><p></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[<p></p><div class="links"><div class="item" style="--block-color:#e9546b;" title="Vue官网教程"><span class="exturl image" data-url="aHR0cHM6Ly9jbi52dWVqcy5vcmcvdjIvZ3VpZGUv" data-background-image="https://image.baidu.com/search/detail?ct=503316480&amp;z=0&amp;ipn=d&amp;word=vue&amp;step_word=&amp;hs=0&amp;pn=1&amp;spn=0&amp;di=3300&amp;pi=0&amp;rn=1&amp;tn=baiduimagedetail&amp;is=0%2C0&amp;istype=0&amp;ie=utf-8&amp;oe=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;cs=3866427781%2C859233610&amp;os=4083456895%2C2180831939&amp;simid=150579757%2C808925494&amp;adpicid=0&amp;lpn=0&amp;ln=1859&amp;fr=&amp;fmq=1601365324969_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;hd=undefined&amp;latest=undefined&amp;copyright=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;ist=&amp;jit=&amp;cg=&amp;bdtype=0&amp;oriquery=&amp;objurl=http%3A%2F%2Fwww.linchaoqun.com%3A6003%2F2018-2-23%2Fa67cb6e0c68988848f41c1b92f8a569477c80920adb86b1c3a252d92d1cc07f5.jpg&amp;fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bstgviw5q7g_z%26e3Bv54AzdH3Fip4sAzdH3Fv4fAzdH3Fv5gpjgp_z%26e3B3fr%3F4jg7%3De7j3f%26t1%3Dum0lu0jj-lk80-9dbb-kdca-0n8djcmkd9wl&amp;gsm=2&amp;rpstart=0&amp;rpnum=0&amp;islist=&amp;querylist=&amp;force=undefinedimages/avatar.jpg"></span>          <div class="info">          <span class="exturl title" data-url="aHR0cHM6Ly9jbi52dWVqcy5vcmcvdjIvZ3VpZGUv">Vue官网中文教程</span>          <p class="desc">Vue官网中文教程</p>          </div></div><div class="item" style="--block-color:#666;" title="Vue菜鸟教程"><span class="exturl image" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS92dWUyL3Z1ZS10dXRvcmlhbC5odG1s" data-background-image="https://image.baidu.com/search/detail?ct=503316480&amp;z=0&amp;ipn=d&amp;word=vue&amp;step_word=&amp;hs=0&amp;pn=1&amp;spn=0&amp;di=3300&amp;pi=0&amp;rn=1&amp;tn=baiduimagedetail&amp;is=0%2C0&amp;istype=0&amp;ie=utf-8&amp;oe=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;cs=3866427781%2C859233610&amp;os=4083456895%2C2180831939&amp;simid=150579757%2C808925494&amp;adpicid=0&amp;lpn=0&amp;ln=1859&amp;fr=&amp;fmq=1601365324969_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;hd=undefined&amp;latest=undefined&amp;copyright=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;ist=&amp;jit=&amp;cg=&amp;bdtype=0&amp;oriquery=&amp;objurl=http%3A%2F%2Fwww.linchaoqun.com%3A6003%2F2018-2-23%2Fa67cb6e0c68988848f41c1b92f8a569477c80920adb86b1c3a252d92d1cc07f5.jpg&amp;fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bstgviw5q7g_z%26e3Bv54AzdH3Fip4sAzdH3Fv4fAzdH3Fv5gpjgp_z%26e3B3fr%3F4jg7%3De7j3f%26t1%3Dum0lu0jj-lk80-9dbb-kdca-0n8djcmkd9wl&amp;gsm=2&amp;rpstart=0&amp;rpnum=0&amp;islist=&amp;querylist=&amp;force=undefinedimages/avatar.jpg"></span>          <div class="info">          <span class="exturl title" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS92dWUyL3Z1ZS10dXRvcmlhbC5odG1s">Vue菜鸟教程</span>          <p class="desc">https://www.runoob.com/vue2/vue-tutorial.html</p>          </div></div><div class="item" style="--block-color:#9d5b8b;" title="Redis官方中文教程"><span class="exturl image" data-url="aHR0cDovL3d3dy5yZWRpcy5jbi8=" data-background-image="https://image.baidu.com/search/detail?ct=503316480&amp;z=0&amp;ipn=d&amp;word=vue&amp;step_word=&amp;hs=0&amp;pn=1&amp;spn=0&amp;di=3300&amp;pi=0&amp;rn=1&amp;tn=baiduimagedetail&amp;is=0%2C0&amp;istype=0&amp;ie=utf-8&amp;oe=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;cs=3866427781%2C859233610&amp;os=4083456895%2C2180831939&amp;simid=150579757%2C808925494&amp;adpicid=0&amp;lpn=0&amp;ln=1859&amp;fr=&amp;fmq=1601365324969_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;hd=undefined&amp;latest=undefined&amp;copyright=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;ist=&amp;jit=&amp;cg=&amp;bdtype=0&amp;oriquery=&amp;objurl=http%3A%2F%2Fwww.linchaoqun.com%3A6003%2F2018-2-23%2Fa67cb6e0c68988848f41c1b92f8a569477c80920adb86b1c3a252d92d1cc07f5.jpg&amp;fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bstgviw5q7g_z%26e3Bv54AzdH3Fip4sAzdH3Fv4fAzdH3Fv5gpjgp_z%26e3B3fr%3F4jg7%3De7j3f%26t1%3Dum0lu0jj-lk80-9dbb-kdca-0n8djcmkd9wl&amp;gsm=2&amp;rpstart=0&amp;rpnum=0&amp;islist=&amp;querylist=&amp;force=undefinedimages/avatar.jpg"></span>          <div class="info">          <span class="exturl title" data-url="aHR0cDovL3d3dy5yZWRpcy5jbi8=">Redis官方中文教程</span>          <p class="desc">Redis官方中文教程</p>          </div></div><div class="item" style="--block-color:#9d5b8b;" title="Jmeter官方教程"><span class="exturl image" data-url="aHR0cHM6Ly9qbWV0ZXIuYXBhY2hlLm9yZy91c2VybWFudWFsL2dldC1zdGFydGVkLmh0bWw=" data-background-image="https://image.baidu.com/search/detail?ct=503316480&amp;z=0&amp;ipn=d&amp;word=vue&amp;step_word=&amp;hs=0&amp;pn=1&amp;spn=0&amp;di=3300&amp;pi=0&amp;rn=1&amp;tn=baiduimagedetail&amp;is=0%2C0&amp;istype=0&amp;ie=utf-8&amp;oe=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;cs=3866427781%2C859233610&amp;os=4083456895%2C2180831939&amp;simid=150579757%2C808925494&amp;adpicid=0&amp;lpn=0&amp;ln=1859&amp;fr=&amp;fmq=1601365324969_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;hd=undefined&amp;latest=undefined&amp;copyright=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;ist=&amp;jit=&amp;cg=&amp;bdtype=0&amp;oriquery=&amp;objurl=http%3A%2F%2Fwww.linchaoqun.com%3A6003%2F2018-2-23%2Fa67cb6e0c68988848f41c1b92f8a569477c80920adb86b1c3a252d92d1cc07f5.jpg&amp;fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bstgviw5q7g_z%26e3Bv54AzdH3Fip4sAzdH3Fv4fAzdH3Fv5gpjgp_z%26e3B3fr%3F4jg7%3De7j3f%26t1%3Dum0lu0jj-lk80-9dbb-kdca-0n8djcmkd9wl&amp;gsm=2&amp;rpstart=0&amp;rpnum=0&amp;islist=&amp;querylist=&amp;force=undefinedimages/avatar.jpg"></span>          <div class="info">          <span class="exturl title" data-url="aHR0cHM6Ly9qbWV0ZXIuYXBhY2hlLm9yZy91c2VybWFudWFsL2dldC1zdGFydGVkLmh0bWw=">Jmeter官方教程</span>          <p class="desc">Jmeter官方教程</p>          </div></div><div class="item" style="--block-color:#9d5b8b;" title="優萌初華"><span class="exturl image" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=" data-background-image="/images/404.png"></span>          <div class="info">          <span class="exturl title" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=">優萌初華</span>          <p class="desc">琉璃的医学 &amp; 编程笔记</p>          </div></div></div><p></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
     
       
@@ -106,7 +416,7 @@
     <link href="https://ppxpython.github.io/computer-science/vue/vue-study1/01vue%E6%A0%87%E7%AD%BE%E6%8C%87%E4%BB%A4/"/>
     <id>https://ppxpython.github.io/computer-science/vue/vue-study1/01vue%E6%A0%87%E7%AD%BE%E6%8C%87%E4%BB%A4/</id>
     <published>2020-09-28T00:56:11.000Z</published>
-    <updated>2020-09-28T02:59:09.688Z</updated>
+    <updated>2020-10-05T08:12:30.920Z</updated>
     
     <content type="html"><![CDATA[<p><img data-src="https://img-blog.csdnimg.cn/20200928085720982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
@@ -125,7 +435,7 @@
     <category term="初学Vue框架" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-study1/"/>
     
     
-    <category term="vue" scheme="https://ppxpython.github.io/tags/vue/"/>
+    <category term="VUE" scheme="https://ppxpython.github.io/tags/VUE/"/>
     
   </entry>
   
