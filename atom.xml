@@ -6,7 +6,7 @@
   <link href="https://ppxpython.github.io/atom.xml" rel="self"/>
   
   <link href="https://ppxpython.github.io/"/>
-  <updated>2020-10-05T08:30:10.744Z</updated>
+  <updated>2020-10-05T09:20:35.496Z</updated>
   <id>https://ppxpython.github.io/</id>
   
   <author>
@@ -17,11 +17,267 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>08Springboot-- 依赖错误NoClassDefFoundError</title>
+    <link href="https://ppxpython.github.io/08Springboot-%E4%BE%9D%E8%B5%96%E9%94%99%E8%AF%AFNoClassDefFoundError/"/>
+    <id>https://ppxpython.github.io/08Springboot-%E4%BE%9D%E8%B5%96%E9%94%99%E8%AF%AFNoClassDefFoundError/</id>
+    <published>2020-10-05T09:17:21.000Z</published>
+    <updated>2020-10-05T09:20:35.496Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>前后端启动成功没有错误，但在登录是出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p>前后端启动成功没有错误，但在登录是出现<img data-src="https://img-blog.csdnimg.cn/20201005171754870.png#pic_center" alt="在这里插入图片描述"><br>后端呢 SpringBoot 报出错误</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>ERROR c.e.c.f.w.e.GlobalExceptionHandler - <span class="token punctuation">[</span>handleException,83<span class="token punctuation">]</span> - Handler dispatch failed<span class="token punctuation">;</span> nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter</pre></td></tr></tbody></table></figure><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>JDK 版本号是：<br><img data-src="https://img-blog.csdnimg.cn/20201005171833209.png#pic_center" alt="在这里插入图片描述"><br>今天在使用 JDK 13.0 环境下使用 IDEA 时候出现了这个错误，错误日志如下：<br>我是采用了增加依赖解决的<br>故障原因：<br>JAXB API 是 java EE 的 API，因此在 java SE 9.0 中不再包含这个 Jar 包。<br>java 9 中引入了模块的概念，默认情况下，Java SE 中将不再包含 java EE 的 Jar 包<br>而在 java 6/7 / 8 时关于这个 API 都是捆绑在一起的</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><h2 id="解决方案一"><a class="anchor" href="#解决方案一">#</a> 解决方案一：</h2><p>降低 JDK 版本到 JDK 8</p><h2 id="解决方案二亲测可行"><a class="anchor" href="#解决方案二亲测可行">#</a> 解决方案二:（亲测可行）</h2><p>手动加入这些依赖 Jar 包</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-api<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com.sun.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-impl<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com.sun.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-core<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.activation<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>activation<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">1.1</span>.<span class="token operator"><span class="token file-descriptor important">1</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;前后端启动成功没有错误，但在登录是出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;&gt;#&lt;/a</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Java" scheme="https://ppxpython.github.io/categories/computer-science/java/"/>
+    
+    <category term="SpringBoot框架" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/"/>
+    
+    <category term="SpringBoot框架常见错误集合" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/springboot-error1/"/>
+    
+    
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>07Springboot--  导包运行报错IllegalStateException</title>
+    <link href="https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/07Springboot-%E5%AF%BC%E5%8C%85%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99IllegalStateException/"/>
+    <id>https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/07Springboot-%E5%AF%BC%E5%8C%85%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99IllegalStateException/</id>
+    <published>2020-10-05T09:12:30.000Z</published>
+    <updated>2020-10-05T09:16:01.275Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>运行 IDEA 时出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer</pre></td></tr></tbody></table></figure><p><img data-src="https://img-blog.csdnimg.cn/202010051712559.png#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>依赖</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>org.springframework.boot<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring-boot-starter-tomcat<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">!</span>--<span class="token operator">&lt;</span>scope<span class="token operator">&gt;</span>provided<span class="token operator">&lt;</span>/scope<span class="token operator">&gt;</span>--<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><p>在 pom.xml 文件中将 scope 注释<br>再加上</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.servlet<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>javax.servlet-api<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">3.1</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;运行 IDEA 时出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;&gt;#&lt;/a&gt; 问题描述：&lt;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Java" scheme="https://ppxpython.github.io/categories/computer-science/java/"/>
+    
+    <category term="SpringBoot框架" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/"/>
+    
+    <category term="SpringBoot框架常见错误集合" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/springboot-error1/"/>
+    
+    
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>06Springboot-- 导包错误</title>
+    <link href="https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/06Springboot-%E5%AF%BC%E5%8C%85%E9%94%99%E8%AF%AF/"/>
+    <id>https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/06Springboot-%E5%AF%BC%E5%8C%85%E9%94%99%E8%AF%AF/</id>
+    <published>2020-10-05T09:06:52.000Z</published>
+    <updated>2020-10-05T09:15:56.909Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>运行 IDEA 时出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>Cannot resolve org.apache.tomcat.embed:tomcat-embed-core:9.0.36</pre></td></tr></tbody></table></figure><p><img data-src="https://img-blog.csdnimg.cn/20201005170459456.png#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>刚刚想学习 springboot 的缓冲机制 在新建项目的时候发现了这么一个错误<br><img data-src="https://img-blog.csdnimg.cn/20201005170723193.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img data-src="https://img-blog.csdnimg.cn/20201005170731919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>这两个都在指明 tomcat9.0.36 无法下载成功<br>但是你之前运行其他的 spring boot 项目是 web 依赖的 tomcat 是可以运行的<br>这个时候你就会联想到是版本的问题了吧</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>所以我们可以打开一个之前可以运行的 springboot 项目<br>找到右边的 maven，点击<br><img data-src="https://img-blog.csdnimg.cn/2020100517084951.png#pic_center" alt="在这里插入图片描述"><br><img data-src="https://img-blog.csdnimg.cn/20201005170839795.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>你会发现你的 tomcat 的版本是其他 我这里是 9.0.35， 所以这个时候嘛<br>我们打开之前无法使用的 springboot 项目<br>打开它的 pox.xml</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>properties<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token operator">&lt;</span>java.version<span class="token operator">&gt;</span><span class="token number">1</span>.<span class="token operator"><span class="token file-descriptor important">8</span>&lt;</span>/java.version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token operator">&lt;</span>/properties<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><p>只需添加成</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>properties<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token operator">&lt;</span>java.version<span class="token operator">&gt;</span><span class="token number">1</span>.<span class="token operator"><span class="token file-descriptor important">8</span>&lt;</span>/java.version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token operator">&lt;</span>tomcat.version<span class="token operator">&gt;</span>你的tomcat版本号<span class="token operator">&lt;</span>/tomcat.version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token operator">&lt;</span>/properties<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><p>然后点击左边的 maven 再 install 就 ok 了<img data-src="https://img-blog.csdnimg.cn/20201005170947274.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p><img data-src="https://img-blog.csdnimg.cn/20201005170956861.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;运行 IDEA 时出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;&gt;#&lt;/a&gt; 问题描述：&lt;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Java" scheme="https://ppxpython.github.io/categories/computer-science/java/"/>
+    
+    <category term="SpringBoot框架" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/"/>
+    
+    <category term="SpringBoot框架常见错误集合" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/springboot-error1/"/>
+    
+    
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>05Springboot--数据库拼写错误BindingException: Invalid bound statement </title>
+    <link href="https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/05Springboot-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8B%BC%E5%86%99%E9%94%99%E8%AF%AFBindingException-Invalid-bound-statement/"/>
+    <id>https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/05Springboot-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8B%BC%E5%86%99%E9%94%99%E8%AF%AFBindingException-Invalid-bound-statement/</id>
+    <published>2020-10-05T09:04:01.000Z</published>
+    <updated>2020-10-05T09:15:52.841Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>运行 IDEA 时出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>org.apache.ibatis.binding.BindingException: Invalid bound statement <span class="token punctuation">(</span>not found<span class="token punctuation">)</span>: com.example.mysportjava.dao.UserDao.getUserByMassage</pre></td></tr></tbody></table></figure><p><img data-src="https://img-blog.csdnimg.cn/20201005170459456.png#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>映射文件拼写错误</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005170519357.png#pic_center" alt="在这里插入图片描述"><br> 1 问题实质: dao 层 (又叫 mapper 接口) 跟 mapper.xml 文件没有映射<br> 2 问题原因：出现这种映射问题的原因分为低级原因和更低级原因两种<br>更低级原因:<br>(1) dao 层的方法和 mapper.xml 中的方法不一样；<br>(2) mapper 中的 namespace resultParameter 和对应的 dao 层 entity 层不一样<br> (3) 拼写错误 如漏写 少写 多写....<br> 上述这些原因都会导致两者不能映射 这些检查和修正的工作自己来吧不会的百度就行<br>低级原因: spring 配置文件中关于 mybatis 的与 xml 文件路径寻找相关的配置没有写<br>导致调用 dao 层方法时，没有寻找 dao.xml 文件的正确路径 结果 dao 迷路了 从而两者无法映射<br> 3 解决思路：把 dao.xml (或 mapper.xml) 路径配置写好！！！！<br> 既然出发点 (dao) 已经确定，目的地 (dao.xml/mapper.xml) 也确定了<br>想到到达就必须画一条到 dao.xml 的路<br> 4 解决步骤:<br>(1) 打开 spring-context.xml 配置文件<br> (2) 找到 class 为 org.mybatis.spring.SqlSessionFactoryBean 这个 bean<br> (3) 找到 name 为 mapperLocations 的 property<br> (4) 在 list 标签中添加一个 value<br> 例如:<br>&lt;value&gt;classpath:/info/mappings/**/*.xml&lt;/value&gt;<br> 重启，问题解决！！！<br> 注:classpath 是配置好的类路径 要想知道表示什么 最简单的方式是参考其他 list 看一眼比对项目结构就了然了</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;运行 IDEA 时出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;&gt;#&lt;/a&gt; 问题描述：&lt;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Java" scheme="https://ppxpython.github.io/categories/computer-science/java/"/>
+    
+    <category term="SpringBoot框架" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/"/>
+    
+    <category term="SpringBoot框架常见错误集合" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/springboot-error1/"/>
+    
+    
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>05Springboot--出现BindingException</title>
+    <link href="https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/05Springboot-%E5%87%BA%E7%8E%B0BindingException/"/>
+    <id>https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/05Springboot-%E5%87%BA%E7%8E%B0BindingException/</id>
+    <published>2020-10-05T09:00:28.000Z</published>
+    <updated>2020-10-05T09:15:49.280Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>IDEA 在启动时出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005170050317.png#pic_center" alt="在这里插入图片描述"></p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token number">2020</span>-09-21 <span class="token number">21</span>:08:06.650 ERROR <span class="token number">23480</span> --- <span class="token punctuation">[</span>nio-9000-exec-3<span class="token punctuation">]</span> o.a.c.c.C.<span class="token punctuation">[</span>.<span class="token punctuation">[</span>.<span class="token punctuation">[</span>/<span class="token punctuation">]</span>.<span class="token punctuation">[</span>dispatcherServlet<span class="token punctuation">]</span>    <span class="token builtin class-name">:</span> Servlet.service<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> servlet <span class="token punctuation">[</span>dispatcherServlet<span class="token punctuation">]</span> <span class="token keyword">in</span> context with path <span class="token punctuation">[</span><span class="token punctuation">]</span> threw exception <span class="token punctuation">[</span>Request processing failed<span class="token punctuation">;</span> nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement <span class="token punctuation">(</span>not found<span class="token punctuation">)</span>: com.example.mysportjava.dao.UserDao.getUserByMassage<span class="token punctuation">]</span> with root cause</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>org.apache.ibatis.binding.BindingException: Invalid bound statement <span class="token punctuation">(</span>not found<span class="token punctuation">)</span>: com.example.mysportjava.dao.UserDao.getUserByMa</pre></td></tr></tbody></table></figure><p><img data-src="https://img-blog.csdnimg.cn/20201005170117931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>多出空格</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005170138566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;IDEA 在启动时出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;&gt;#&lt;/a&gt; 问题描述：&lt;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Java" scheme="https://ppxpython.github.io/categories/computer-science/java/"/>
+    
+    <category term="SpringBoot框架" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/"/>
+    
+    <category term="SpringBoot框架常见错误集合" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/springboot-error1/"/>
+    
+    
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>04Springboot-- 数据库错误</title>
+    <link href="https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/04Springboot-%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%99%E8%AF%AF/"/>
+    <id>https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/04Springboot-%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%99%E8%AF%AF/</id>
+    <published>2020-10-05T08:57:24.000Z</published>
+    <updated>2020-10-05T09:02:35.731Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>IDEA 在启动时出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005165807631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>Error starting ApplicationContext. To display the conditions report re-run your application with <span class="token string">'debug'</span> enabled.</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token number">2020</span>-09-21 <span class="token number">21</span>:01:19.269 ERROR <span class="token number">25820</span> --- <span class="token punctuation">[</span>           main<span class="token punctuation">]</span> o.s.boot.SpringApplication               <span class="token builtin class-name">:</span> Application run failed</pre></td></tr></tbody></table></figure><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>注释</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005165847835.png#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;IDEA 在启动时出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;&gt;#&lt;/a&gt; 问题描述：&lt;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Java" scheme="https://ppxpython.github.io/categories/computer-science/java/"/>
+    
+    <category term="SpringBoot框架" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/"/>
+    
+    <category term="SpringBoot框架常见错误集合" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/springboot-error1/"/>
+    
+    
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>02Springboot启动类错误</title>
+    <link href="https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/02Springboot%E5%90%AF%E5%8A%A8%E7%B1%BB%E9%94%99%E8%AF%AF/"/>
+    <id>https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/02Springboot%E5%90%AF%E5%8A%A8%E7%B1%BB%E9%94%99%E8%AF%AF/</id>
+    <published>2020-10-05T08:53:47.000Z</published>
+    <updated>2020-10-05T09:02:21.609Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>IDEA 在启动时出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005165440714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005165456829.png#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
+&lt;p&gt;IDEA 在启动时出现错误&lt;/p&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#问题描述&quot;&gt;#&lt;/a&gt; 问题描述：&lt;</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Java" scheme="https://ppxpython.github.io/categories/computer-science/java/"/>
+    
+    <category term="SpringBoot框架" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/"/>
+    
+    <category term="SpringBoot框架常见错误集合" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/springboot-error1/"/>
+    
+    
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Springboot--01错误记录</title>
+    <link href="https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/Springboot-01%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
+    <id>https://ppxpython.github.io/computer-science/java/springboot/springboot-error1/Springboot-01%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/</id>
+    <published>2020-10-05T08:46:35.000Z</published>
+    <updated>2020-10-05T09:02:28.881Z</updated>
+    
+    <content type="html"><![CDATA[<p>问题 1：<br>Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.<br><img data-src="https://img-blog.csdnimg.cn/20201005164657909.png#pic_center" alt="在这里插入图片描述"><br><img data-src="https://img-blog.csdnimg.cn/2020100516470549.png#pic_center" alt="在这里插入图片描述"></p><p>问题 2<br><img data-src="https://img-blog.csdnimg.cn/2020100516471577.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>二、解决方式：<br>1. 检查自己写的注解是否错了，并没有。<br>2. 在网上查找解决方式：如下所示：<br>步骤一：<br>　　在 springboot 的配置文件添加，mybatis 的配置如下所示：</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>mybatis:</pre></td></tr><tr><td data-num="2"></td><td><pre>  typeAliasesPackage: com.xxx.xxx.dao.entity</pre></td></tr><tr><td data-num="3"></td><td><pre>  mapperLocations: classpath:mapper/*.xml</pre></td></tr></tbody></table></figure><p>步骤二：<br>　　①将接口与对应的实现类放在与 application 启动类的同一个目录或者他的子目录下，这样注解可以被扫描到，这是最省事的办法。（没测试）<br>　　②或者在启动类上加上 @MapperScan 或者 @ComponentScan 注解，手动指定 application 类要扫描哪些包下的注解，如下所示：</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>@SpringBootApplication</pre></td></tr><tr><td data-num="2"></td><td><pre>@ComponentScan<span class="token punctuation">(</span>basePackages <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"com.xxx.xxx.dao"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>　　③或者在接口上添加@Mapper注解。</pre></td></tr><tr><td data-num="4"></td><td><pre>@Mapper</pre></td></tr><tr><td data-num="5"></td><td><pre>public interface UserMapper <span class="token punctuation">{</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">}</span></pre></td></tr></tbody></table></figure><p>问题 3：<br><img data-src="https://img-blog.csdnimg.cn/20201005164810350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>原因：<br>修改了 mapper 类的名称对应要修改路径<br><img data-src="https://img-blog.csdnimg.cn/20201005164820942.png#pic_center" alt="在这里插入图片描述"></p><p>问题 4：<br>添加数据时未添加外键<br><img data-src="https://img-blog.csdnimg.cn/20201005164831130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>添加 sql 输入外键 unit_ID<br><img data-src="https://img-blog.csdnimg.cn/2020100516484178.png#pic_center" alt="在这里插入图片描述"></p><p>问题 5:</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>Error starting ApplicationContext. To display the conditions report re-run your application with <span class="token string">'debug'</span> enabled.</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token number">2020</span>-09-12 <span class="token number">14</span>:40:39.211 ERROR <span class="token number">60268</span> --- <span class="token punctuation">[</span>           main<span class="token punctuation">]</span> o.s.boot.SpringApplication               <span class="token builtin class-name">:</span> Application run failed</pre></td></tr></tbody></table></figure><p>常见注释错误，查看代码中的 @注释<br>问题 6:<br><img data-src="https://img-blog.csdnimg.cn/20201005164915811.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>问题 7：<br>在测试的时候报出<br> 415<br> 更改一下请求头</p><p><img data-src="https://img-blog.csdnimg.cn/20201005165030667.png#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;问题 1：&lt;br&gt;
+Identify and stop the process that&#39;s listening on port 8080 or configure this application to listen on another port.&lt;br&gt;
+&lt;img d</summary>
+      
+    
+    
+    
+    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
+    
+    <category term="Java" scheme="https://ppxpython.github.io/categories/computer-science/java/"/>
+    
+    <category term="SpringBoot框架" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/"/>
+    
+    <category term="SpringBoot框架常见错误集合" scheme="https://ppxpython.github.io/categories/computer-science/java/springboot/springboot-error1/"/>
+    
+    
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
     <title>03VUE---拦截路径挂载的问题</title>
     <link href="https://ppxpython.github.io/computer-science/vue/vue-error1/03VUE-%E6%8B%A6%E6%88%AA%E8%B7%AF%E5%BE%84%E6%8C%82%E8%BD%BD%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://ppxpython.github.io/computer-science/vue/vue-error1/03VUE-%E6%8B%A6%E6%88%AA%E8%B7%AF%E5%BE%84%E6%8C%82%E8%BD%BD%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2020-10-05T08:25:40.000Z</published>
-    <updated>2020-10-05T08:30:10.744Z</updated>
+    <updated>2020-10-05T08:41:11.594Z</updated>
     
     <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>vscode 中没有报错，但在网页的控制台中出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p>vscode 中没有报错，但在网页的控制台中<br><img data-src="https://img-blog.csdnimg.cn/2020100516264293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>拦截路径挂载的问题<br><img data-src="https://img-blog.csdnimg.cn/20201005162702325.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>在上面添加<br> // 出现问题时使用<br> const originalPush=VueRouter.prototype.push<br>VueRouter.prototype.push=function push(location,onResolve,onReject)<ruby>    if(onResolve <rp>(</rp><rt>| onReject) return  originalPush.call(this,location,onResolve,onReject)      return originalPush.call(this,location).catch(err =&gt; err)</rt><rp>)</rp></ruby></p><p><img data-src="https://img-blog.csdnimg.cn/20201005162735676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
@@ -42,7 +298,7 @@
     <category term="前端Vue中常见问题集合" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-error1/"/>
     
     
-    <category term="VUE" scheme="https://ppxpython.github.io/tags/VUE/"/>
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
     
   </entry>
   
@@ -51,7 +307,7 @@
     <link href="https://ppxpython.github.io/computer-science/vue/vue-error1/02VUE-%E6%B2%A1%E6%9C%89%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96%E5%8C%85/"/>
     <id>https://ppxpython.github.io/computer-science/vue/vue-error1/02VUE-%E6%B2%A1%E6%9C%89%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96%E5%8C%85/</id>
     <published>2020-10-05T08:22:04.000Z</published>
-    <updated>2020-10-05T08:29:58.195Z</updated>
+    <updated>2020-10-05T08:41:05.448Z</updated>
     
     <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>在运行 vscode 时，出现错误</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p><img data-src="https://img-blog.csdnimg.cn/20201005162316181.png#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>没有引入依赖包 npm</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>输入</p><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">npm</span> <span class="token function">install</span></pre></td></tr></tbody></table></figure><p>即可</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
@@ -72,7 +328,7 @@
     <category term="前端Vue中常见问题集合" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-error1/"/>
     
     
-    <category term="VUE" scheme="https://ppxpython.github.io/tags/VUE/"/>
+    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
     
   </entry>
   
@@ -408,200 +664,6 @@ IT 人：小海豚&lt;br&gt;
     
     
     <category term="SpringBoot" scheme="https://ppxpython.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01vue标签指令</title>
-    <link href="https://ppxpython.github.io/computer-science/vue/vue-study1/01vue%E6%A0%87%E7%AD%BE%E6%8C%87%E4%BB%A4/"/>
-    <id>https://ppxpython.github.io/computer-science/vue/vue-study1/01vue%E6%A0%87%E7%AD%BE%E6%8C%87%E4%BB%A4/</id>
-    <published>2020-09-28T00:56:11.000Z</published>
-    <updated>2020-10-05T08:12:30.920Z</updated>
-    
-    <content type="html"><![CDATA[<p><img data-src="https://img-blog.csdnimg.cn/20200928085720982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://img-blog.csdnimg.cn/20200928085720982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aH</summary>
-      
-    
-    
-    
-    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
-    
-    <category term="Vue" scheme="https://ppxpython.github.io/categories/computer-science/vue/"/>
-    
-    <category term="初学Vue框架" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-study1/"/>
-    
-    
-    <category term="VUE" scheme="https://ppxpython.github.io/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01Django中出现OperationalError问题</title>
-    <link href="https://ppxpython.github.io/computer-science/python/django/django-error1/01Django%E4%B8%AD%E5%87%BA%E7%8E%B0OperationalError%E9%97%AE%E9%A2%98/"/>
-    <id>https://ppxpython.github.io/computer-science/python/django/django-error1/01Django%E4%B8%AD%E5%87%BA%E7%8E%B0OperationalError%E9%97%AE%E9%A2%98/</id>
-    <published>2020-09-28T00:47:08.000Z</published>
-    <updated>2020-09-28T04:23:19.581Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>Django 中连接数据库时出现错误，采用了一个大牛的博客解决的，这里附上链接 https://blog.csdn.net/Wathet_blue/article/details/105401717?utm_medium=distribute.pc_relevant.none-task-blog-title-2&amp;spm=1001.2101.3001.4242</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p>出现错误！OperationalError: (1366, “Incorrect string value: ‘\xE4\xB9\x8B\xE7\xBE\x8E’ for column ‘name’ at row 1”)</p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>数据库的编码规则没有使用 utf8，而在存储数据时添加了中文数据，导致报错。</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>删除数据库 (有数据先备份)</p><figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">drop</span> <span class="token keyword">database</span> <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><p>指定编码重建数据库 或者 修改数据库编码后重建数据库</p><figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">create</span> <span class="token keyword">database</span> <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span> <span class="token keyword">default</span> <span class="token keyword">character</span> <span class="token keyword">set</span> utf8 <span class="token keyword">collate</span> utf8_general_ci<span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>show variables like <span class="token string">'character%'</span><span class="token punctuation">;</span><span class="token operator">//</span> 查看mysql的编码</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token builtin">set</span> character_set_client<span class="token operator">=</span>utf8<span class="token punctuation">;</span><span class="token operator">//</span> 设置客户端的编码为utf8</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token builtin">set</span> character_set_connection<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token builtin">set</span> character_set_database<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token builtin">set</span> character_set_results<span class="token operator">=</span>utf8<span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token builtin">set</span> character_set_server<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token builtin">set</span> character_set_system<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>create database <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token operator">//</span> 新创建数据库使用的编码规则是utf8</pre></td></tr></tbody></table></figure><p>重新迁移数据库</p><figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>python manage<span class="token punctuation">.</span>py makemigrations</pre></td></tr><tr><td data-num="2"></td><td><pre>python manage<span class="token punctuation">.</span>py migrate</pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
-&lt;p&gt;Django 中连接数据库时出现错误，采用了一个大牛的博客解决的，这里附上链接 https://blog.csdn.net/Wathet_blue/a</summary>
-      
-    
-    
-    
-    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
-    
-    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
-    
-    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
-    
-    <category term="前端Django中常见的错误集合" scheme="https://ppxpython.github.io/categories/computer-science/python/django/django-error1/"/>
-    
-    
-    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01vue运行出错Cannot find module &#39;stylus&#39;</title>
-    <link href="https://ppxpython.github.io/computer-science/vue/vue-error1/01vue%E4%B8%AD%E5%8C%85%E5%AF%BC%E5%85%A5%E5%87%BA%E9%94%99code-ENOLOCAL/"/>
-    <id>https://ppxpython.github.io/computer-science/vue/vue-error1/01vue%E4%B8%AD%E5%8C%85%E5%AF%BC%E5%85%A5%E5%87%BA%E9%94%99code-ENOLOCAL/</id>
-    <published>2020-09-27T23:08:53.000Z</published>
-    <updated>2020-09-28T04:23:16.881Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1><p>本人小白记录在初学 vue 中的一些小问题，在使用 npm run serve 运行 vue 项目时，出现错误</p><p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p><h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1><p>出现错误<br><img data-src="https://img-blog.csdnimg.cn/20200928080259916.png#pic_center" alt="在这里插入图片描述"></p><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1><p>没有引入相关依赖</p><h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1><p>需要执行</p><figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>npm install</pre></td></tr></tbody></table></figure><p>引入相关依赖即可解决问题</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;项目场景&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#项目场景&quot;&gt;#&lt;/a&gt; 项目场景：&lt;/h1&gt;
-&lt;p&gt;本人小白记录在初学 vue 中的一些小问题，在使用 npm run serve 运行 vue 项目时，出现错误&lt;/p&gt;
-&lt;p&gt;&amp;lt;hr style</summary>
-      
-    
-    
-    
-    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
-    
-    <category term="Vue" scheme="https://ppxpython.github.io/categories/computer-science/vue/"/>
-    
-    <category term="前端Vue中常见问题集合" scheme="https://ppxpython.github.io/categories/computer-science/vue/vue-error1/"/>
-    
-    
-    <category term="Error" scheme="https://ppxpython.github.io/tags/Error/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>02django带app的网站创建</title>
-    <link href="https://ppxpython.github.io/computer-science/python/django/course-1/02django%E5%B8%A6app%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%9B%E5%BB%BA/"/>
-    <id>https://ppxpython.github.io/computer-science/python/django/course-1/02django%E5%B8%A6app%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%9B%E5%BB%BA/</id>
-    <published>2020-09-27T08:27:27.000Z</published>
-    <updated>2020-09-29T07:50:04.079Z</updated>
-    
-    <content type="html"><![CDATA[<p><span class="label">python</span><br><span class="label primary"> 前端框架</span><br><img data-src="https://img-blog.csdnimg.cn/20191006171226655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><figure class="highlight java"><figcaption data-lang="java"><span>标题</span></figcaption><table><tbody><tr class="marked"><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">Scanner</span> in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span> <span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">// 输入 Scan 之后，按下键盘 Alt + “/” 键，Eclipse 下自动补全。</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr class="marked"><td data-num="6"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span>println <span class="token punctuation">(</span>in<span class="token punctuation">.</span>nextLine <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr class="marked"><td data-num="7"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span>println <span class="token punctuation">(</span><span class="token string">"Hello"</span> <span class="token operator">+</span> <span class="token string">"world."</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td data-command="[root@localhost] $"></td><td><pre><span class="token builtin class-name">pwd</span></pre></td></tr><tr><td data-num="2"></td><td data-command=""></td><td><pre>/usr/home/chris/bin</pre></td></tr><tr><td data-num="3"></td><td data-command=""></td><td><pre><span class="token function">ls</span> -la</pre></td></tr><tr><td data-num="4"></td><td data-command="[admin@remotehost] #"></td><td><pre>total <span class="token number">2</span></pre></td></tr><tr><td data-num="5"></td><td data-command="[admin@remotehost] #"></td><td><pre>drwxr-xr-x   <span class="token number">2</span> chris  chris     <span class="token number">11</span> Jan <span class="token number">10</span> <span class="token number">16</span>:48 <span class="token builtin class-name">.</span></pre></td></tr><tr><td data-num="6"></td><td data-command="[admin@remotehost] #"></td><td><pre>drwxr--r-x  <span class="token number">45</span> chris  chris     <span class="token number">92</span> Feb <span class="token number">14</span> <span class="token number">11</span>:10 <span class="token punctuation">..</span></pre></td></tr><tr><td data-num="7"></td><td data-command=""></td><td><pre>-rwxr-xr-x   <span class="token number">1</span> chris  chris    <span class="token number">444</span> Aug <span class="token number">25</span>  <span class="token number">2013</span> backup</pre></td></tr><tr><td data-num="8"></td><td data-command=""></td><td><pre>-rwxr-xr-x   <span class="token number">1</span> chris  chris    <span class="token number">642</span> Jan <span class="token number">17</span> <span class="token number">14</span>:42 deploy</pre></td></tr></tbody></table></figure><ol><li class="quiz true"><p>编译时多态主要指运算符重载与函数重载，而运行时多态主要指虚函数。</p></li><li class="quiz multi"><p>有基类  <code>SHAPE</code> ，派生类  <code>CIRCLE</code> ，声明如下变量： </p><figure class="highlight cpp"><figcaption data-lang="C++"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>SHAPE shape1<span class="token punctuation">,</span><span class="token operator">*</span>p1<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>CIRCLE circle1<span class="token punctuation">,</span><span class="token operator">*</span>q1<span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><p>下列哪些项是 “派生类对象替换基类对象”。</p><ul class="options"><li class="correct"><code>p1=&amp;circle1;</code> </li><li><code>q1=&amp;shape1;</code></li><li class="correct"><code>shape1=circle1;</code> </li><li><code>circle1=shape1;</code></li></ul><blockquote><ul class="options"><li>✔️ 令基类对象的指针指向派生类对象</li><li>❌ 派生类指针指向基类的引用</li><li>✔️ 派生类对象给基类对象赋值</li><li>❌ 基类对象给派生类对象赋值</li></ul></blockquote></li><li class="quiz"><p>下列叙述正确的是 <span class="gap"></span> 。</p><ul class="options"><li>虚函数只能定义成无参函数</li><li>虚函数不能有返回值</li><li>能定义虚构造函数</li><li class="correct">A、B、C 都不对</li></ul></li><li class="quiz fill"><p>如果定义  <code>int e=8; double f=6.4, g=8.9;</code> ，则表达式  <code>f+int (e/3*int (f+g)/2)%4</code>  的值为 <span class="gap">9.4</span>。</p><blockquote><p>注意运算顺序和数据类型<br><span class="mistake"> 8.4</span></p></blockquote></li></ol><p>😘<br>💍<br>🎶</p><p><span class="label">python</span><br><span class="label primary">primary</span><br><span class="label info">info</span><br><span class="label success">✔️success</span><br><span class="label warning">warning</span><br><span class="label danger">💔danger</span></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;span class=&quot;label&quot;&gt;python&lt;/span&gt;&lt;br&gt;
-&lt;span class=&quot;label primary&quot;&gt; 前端框架&lt;/span&gt;&lt;br&gt;
-&lt;img data-src=&quot;https://img-blog.csdnimg.cn/20191006171</summary>
-      
-    
-    
-    
-    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
-    
-    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
-    
-    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
-    
-    <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/course-1/"/>
-    
-    
-    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01django-hello world简单例子</title>
-    <link href="https://ppxpython.github.io/computer-science/python/django/course-1/01django-hello-world%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90/"/>
-    <id>https://ppxpython.github.io/computer-science/python/django/course-1/01django-hello-world%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90/</id>
-    <published>2020-09-27T08:23:25.000Z</published>
-    <updated>2020-09-28T04:23:24.095Z</updated>
-    
-    <content type="html"><![CDATA[<p><span class="label">python</span><br><span class="label primary"> 前端框架</span></p><h2 id="01django-hello-world简单例子"><a class="anchor" href="#01django-hello-world简单例子">#</a> 01django-hello world 简单例子</h2><p><strong>加粗样式</strong><br>日期：2019——09——26<br>IT 人： 小海豚 学习内容：<br>创建一个新的 django 文件 命令：</p><pre><code class="language-bash"> django—admin startproject mywebsite创建文件 开启服务器</code></pre><p><img data-src="https://img-blog.csdnimg.cn/20190927111611939.png" alt="在这里插入图片描述"></p><pre><code class="language-bash"> Python manage.py runserver</code></pre><p>启动服务器<br>成功<br><img data-src="https://img-blog.csdnimg.cn/20190927111633701.png" alt="在这里插入图片描述"><br>创建一个 views 文件 Python 的 在其中编辑<br><img data-src="https://img-blog.csdnimg.cn/20190927111715673.png" alt="在这里插入图片描述"><br>在 url 中修改<br><img data-src="https://img-blog.csdnimg.cn/20190927111722806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在浏览器中进行刷新<br><img data-src="https://img-blog.csdnimg.cn/2019092711173328.png" alt="在这里插入图片描述"><br>注意：服务器要开启</p><pre><code class="language-bash">Python manage.py runserve </code></pre><pre><code> 原文出自[易百教程] 转载请保留原文链接: https://www.yiibai.com/geek/detail/1184</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;span class=&quot;label&quot;&gt;python&lt;/span&gt;&lt;br&gt;
-&lt;span class=&quot;label primary&quot;&gt; 前端框架&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;01django-hello-world简单例子&quot;&gt;&lt;a class=&quot;anchor&quot; hr</summary>
-      
-    
-    
-    
-    <category term="计算机科学" scheme="https://ppxpython.github.io/categories/computer-science/"/>
-    
-    <category term="Python" scheme="https://ppxpython.github.io/categories/computer-science/python/"/>
-    
-    <category term="Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/"/>
-    
-    <category term="零基础学Django框架" scheme="https://ppxpython.github.io/categories/computer-science/python/django/course-1/"/>
-    
-    
-    <category term="Django" scheme="https://ppxpython.github.io/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的第一篇博客文章</title>
-    <link href="https://ppxpython.github.io/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
-    <id>https://ppxpython.github.io/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</id>
-    <published>2020-09-26T15:29:07.000Z</published>
-    <updated>2020-09-27T00:58:27.613Z</updated>
-    
-    <content type="html"><![CDATA[<p>你好！ 这是你第一次使用 <strong>Markdown 编辑器</strong> 所展示的欢迎页。如果你想学习如何使用 Markdown 编辑器，可以仔细阅读这篇文章，了解一下 Markdown 的基本语法知识。</p><h2 id="新的改变"><a class="anchor" href="#新的改变">#</a> 新的改变</h2><p>我们对 Markdown 编辑器进行了一些功能拓展与语法支持，除了标准的 Markdown 编辑器功能，我们增加了如下几点新功能，帮助你用它写博客：</p><ol><li><strong>全新的界面设计</strong> ，将会带来全新的写作体验；</li><li>在创作中心设置你喜爱的代码高亮样式，Markdown <strong>将代码片显示选择的高亮样式</strong> 进行展示；</li><li>增加了 <strong>图片拖拽</strong> 功能，你可以将本地的图片直接拖拽到编辑区域直接展示；</li><li>全新的 <strong>KaTeX 数学公式</strong> 语法；</li><li>增加了支持<strong>甘特图的 mermaid 语法<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></strong> 功能；</li><li>增加了 <strong>多屏幕编辑</strong> Markdown 文章功能；</li><li>增加了 <strong>焦点写作模式、预览模式、简洁写作模式、左右区域同步滚轮设置</strong> 等功能，功能按钮位于编辑区域与预览区域中间；</li><li>增加了 <strong>检查列表</strong> 功能。</li></ol><h2 id="功能快捷键"><a class="anchor" href="#功能快捷键">#</a> 功能快捷键</h2><p>撤销：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Z&lt;/kbd&gt;<br> 重做：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Y&lt;/kbd&gt;<br> 加粗：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;B&lt;/kbd&gt;<br> 斜体：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;I&lt;/kbd&gt;<br> 标题：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;H&lt;/kbd&gt;<br> 无序列表：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;U&lt;/kbd&gt;<br> 有序列表：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;O&lt;/kbd&gt;<br> 检查列表：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt;<br> 插入代码：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;K&lt;/kbd&gt;<br> 插入链接：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;L&lt;/kbd&gt;<br> 插入图片：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;G&lt;/kbd&gt;<br> 查找：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;F&lt;/kbd&gt;<br> 替换：&lt;kbd&gt;Ctrl/Command&lt;/kbd&gt; + &lt;kbd&gt;G&lt;/kbd&gt;</p><h2 id="合理的创建标题有助于目录的生成"><a class="anchor" href="#合理的创建标题有助于目录的生成">#</a> 合理的创建标题，有助于目录的生成</h2><p>直接输入 1 次 &lt;kbd&gt;#&lt;/kbd&gt;，并按下 &lt; kbd&gt;space&lt;/kbd &gt; 后，将生成 1 级标题。<br>输入 2 次 &lt;kbd&gt;#&lt;/kbd&gt;，并按下 &lt; kbd&gt;space&lt;/kbd &gt; 后，将生成 2 级标题。<br>以此类推，我们支持 6 级标题。有助于使用 <code>TOC</code>  语法后生成一个完美的目录。</p><h2 id="如何改变文本的样式"><a class="anchor" href="#如何改变文本的样式">#</a> 如何改变文本的样式</h2><p><em>强调文本</em> <em>强调文本</em></p><p><strong>加粗文本</strong> <strong>加粗文本</strong></p><p><mark>标记文本</mark></p><p><s>删除文本</s></p><blockquote><p>引用文本</p></blockquote><p>H<sub>2</sub>O is 是液体。</p><p>2<sup>10</sup> 运算结果是 1024.</p><h2 id="插入链接与图片"><a class="anchor" href="#插入链接与图片">#</a> 插入链接与图片</h2><p>链接: <span class="exturl" data-url="aHR0cHM6Ly93d3cuY3Nkbi5uZXQv">link</span>.</p><p>图片: <img data-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw" alt="Alt"></p><p>带尺寸的图片: ![Alt](<span class="exturl" data-url="aHR0cHM6Ly9pbWdjb252ZXJ0LmNzZG5pbWcuY24vYUhSMGNITTZMeTloZG1GMFlYSXVZM05rYmk1dVpYUXZOeTgzTDBJdk1WOXlZV3htWDJoNE1UWXpZMjl0TG1wd1p3">https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw</span> =30x30)</p><p>居中的图片: <img data-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center" alt="Alt"></p><p>居中并且带尺寸的图片: ![Alt](<span class="exturl" data-url="aHR0cHM6Ly9pbWdjb252ZXJ0LmNzZG5pbWcuY24vYUhSMGNITTZMeTloZG1GMFlYSXVZM05rYmk1dVpYUXZOeTgzTDBJdk1WOXlZV3htWDJoNE1UWXpZMjl0TG1wd1p3I3BpY19jZW50ZXI=">https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center</span> =30x30)</p><p>当然，我们为了让用户更加便捷，我们增加了图片拖拽功能。</p><h2 id="如何插入一段漂亮的代码片"><a class="anchor" href="#如何插入一段漂亮的代码片">#</a> 如何插入一段漂亮的代码片</h2><p>去<span class="exturl" data-url="aHR0cHM6Ly9tcC5jc2RuLm5ldC9jb25zb2xlL2NvbmZpZ0Jsb2c=">博客设置</span>页面，选择一款你喜欢的代码片高亮样式，下面展示同样高亮的  <code>代码片</code> .</p><figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token comment">// An highlighted block</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token string">'bar'</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><h2 id="生成一个适合你的列表"><a class="anchor" href="#生成一个适合你的列表">#</a> 生成一个适合你的列表</h2><ul><li>项目<ul><li>项目<ul><li>项目</li></ul></li></ul></li></ul><ol><li>项目 1</li><li>项目 2</li><li>项目 3</li></ol><ul class="task-list"><li class="task-list-item"><input type="checkbox" id="cbx_0" disabled="true"><label for="cbx_0"> 计划任务</label></li><li class="task-list-item"><input type="checkbox" id="cbx_1" checked="true" disabled="true"><label for="cbx_1"> 完成任务</label></li></ul><h2 id="创建一个表格"><a class="anchor" href="#创建一个表格">#</a> 创建一个表格</h2><p>一个简单的表格是这么创建的：</p><table><thead><tr><th>项目</th><th>Value</th></tr></thead><tbody><tr><td>电脑</td><td>$1600</td></tr><tr><td>手机</td><td>$12</td></tr><tr><td>导管</td><td>$1</td></tr></tbody></table><h3 id="设定内容居中-居左-居右"><a class="anchor" href="#设定内容居中-居左-居右">#</a> 设定内容居中、居左、居右</h3><p>使用 <code>:---------:</code>  居中<br>使用 <code>:----------</code>  居左<br>使用 <code>----------:</code>  居右</p><table><thead><tr><th style="text-align:center">第一列</th><th style="text-align:right">第二列</th><th style="text-align:left">第三列</th></tr></thead><tbody><tr><td style="text-align:center">第一列文本居中</td><td style="text-align:right">第二列文本居右</td><td style="text-align:left">第三列文本居左</td></tr></tbody></table><h3 id="smartypants"><a class="anchor" href="#smartypants">#</a> SmartyPants</h3><p>SmartyPants 将 ASCII 标点字符转换为 “智能” 印刷标点 HTML 实体。例如：</p><table><thead><tr><th>TYPE</th><th>ASCII</th><th><abbr title="超文本标记语言">HTML</abbr></th></tr></thead><tbody><tr><td>Single backticks</td><td><code>'Isn't this fun?'</code></td><td>'Isn't this fun?'</td></tr><tr><td>Quotes</td><td><code>"Isn't this fun?"</code></td><td>"Isn't this fun?"</td></tr><tr><td>Dashes</td><td><code>-- is en-dash, --- is em-dash</code></td><td>-- is en-dash, --- is em-dash</td></tr></tbody></table><h2 id="创建一个自定义列表"><a class="anchor" href="#创建一个自定义列表">#</a> 创建一个自定义列表</h2><dl><dt>Markdown</dt><dd>Text-to-<abbr title="超文本标记语言">HTML</abbr> conversion tool</dd><dt>Authors</dt><dd>John</dd><dd>Luke</dd></dl><h2 id="如何创建一个注脚"><a class="anchor" href="#如何创建一个注脚">#</a> 如何创建一个注脚</h2><p>一个具有注脚的文本。<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p><h2 id="注释也是必不可少的"><a class="anchor" href="#注释也是必不可少的">#</a> 注释也是必不可少的</h2><p>Markdown 将文本转换为 <abbr title="超文本标记语言">HTML</abbr>。</p><h2 id="katex数学公式"><a class="anchor" href="#katex数学公式">#</a> KaTeX 数学公式</h2><p>您可以使用渲染 LaTeX 数学表达式 <span class="exturl" data-url="aHR0cHM6Ly9raGFuLmdpdGh1Yi5pby9LYVRlWC8=">KaTeX</span>:</p><p>Gamma 公式展示 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Γ</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mspace width="1em"></mspace><mi mathvariant="normal">∀</mi><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">N</mi></mrow><annotation encoding="application/x-tex">\Gamma(n) = (n-1)!\quad\foralln\in\mathbb N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">Γ</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:1em;"></span><span class="mord">∀</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord mathbb">N</span></span></span></span> 是通过欧拉积分</p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Γ</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><msup><mi>t</mi><mrow><mi>z</mi><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mi>d</mi><mi>t</mi><mtext> </mtext><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">Γ</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.326242em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.414292em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span><span style="top:-3.8129000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.864108em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.843556em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">t</span></span></span></span></span></span></span></span></span><span class="mord mathdefault">d</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span></span></span></span></span></p><blockquote><p>你可以找到更多关于的信息 <strong>LaTeX</strong> 数学表达式<span class="exturl" data-url="aHR0cDovL21ldGEubWF0aC5zdGFja2V4Y2hhbmdlLmNvbS9xdWVzdGlvbnMvNTAyMC9tYXRoamF4LWJhc2ljLXR1dG9yaWFsLWFuZC1xdWljay1yZWZlcmVuY2U="> here</span>.</p></blockquote><h2 id="新的甘特图功能丰富你的文章"><a class="anchor" href="#新的甘特图功能丰富你的文章">#</a> 新的甘特图功能，丰富你的文章</h2><pre>Error: Could not find browser revision 756035. Run "npm install" or "yarn install" to download a browser binary.</pre><ul><li>关于 <strong>甘特图</strong> 语法，参考 <span class="exturl" data-url="aHR0cHM6Ly9tZXJtYWlkanMuZ2l0aHViLmlvLw==">这儿</span>，</li></ul><h2 id="uml-图表"><a class="anchor" href="#uml-图表">#</a> UML 图表</h2><p>可以使用 UML 图表进行渲染。 <span class="exturl" data-url="aHR0cHM6Ly9tZXJtYWlkanMuZ2l0aHViLmlvLw==">Mermaid</span>. 例如下面产生的一个序列图：</p><pre>Error: Could not find browser revision 756035. Run "npm install" or "yarn install" to download a browser binary.</pre><p>这将产生一个流程图。:</p><pre>Error: Could not find browser revision 756035. Run "npm install" or "yarn install" to download a browser binary.</pre><ul><li>关于 <strong>Mermaid</strong> 语法，参考 <span class="exturl" data-url="aHR0cHM6Ly9tZXJtYWlkanMuZ2l0aHViLmlvLw==">这儿</span>，</li></ul><h2 id="flowchart流程图"><a class="anchor" href="#flowchart流程图">#</a> FLowchart 流程图</h2><p>我们依旧会支持 flowchart 的流程图：</p><pre>Error: Could not find browser revision 756035. Run "npm install" or "yarn install" to download a browser binary.</pre><ul><li>关于 <strong>Flowchart 流程图</strong> 语法，参考 <span class="exturl" data-url="aHR0cDovL2FkcmFpLmdpdGh1Yi5pby9mbG93Y2hhcnQuanMv">这儿</span>.</li></ul><h2 id="导出与导入"><a class="anchor" href="#导出与导入">#</a> 导出与导入</h2><h3 id="导出"><a class="anchor" href="#导出">#</a> 导出</h3><p>如果你想尝试使用此编辑器，你可以在此篇文章任意编辑。当你完成了一篇文章的写作，在上方工具栏找到 <strong>文章导出</strong> ，生成一个.md 文件或者.html 文件进行本地保存。</p><h3 id="导入"><a class="anchor" href="#导入">#</a> 导入</h3><p>如果你想加载一篇你写过的.md 文件，在上方工具栏可以选择导入功能进行对应扩展名的文件导入，<br>继续你的创作。</p><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p><span class="exturl" data-url="aHR0cHM6Ly9tZXJtYWlkanMuZ2l0aHViLmlvLw==">mermaid 语法说明</span> <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>注脚的解释 <a href="#fnref2" class="footnote-backref">↩︎</a></p></li></ol></section><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;你好！ 这是你第一次使用 &lt;strong&gt;Markdown 编辑器&lt;/strong&gt; 所展示的欢迎页。如果你想学习如何使用 Markdown 编辑器，可以仔细阅读这篇文章，了解一下 Markdown 的基本语法知识。&lt;/p&gt;
-&lt;h2 id=&quot;新的改变&quot;&gt;&lt;a class=&quot;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://ppxpython.github.io/hello-world/"/>
-    <id>https://ppxpython.github.io/hello-world/</id>
-    <published>2020-09-26T15:25:58.368Z</published>
-    <updated>2020-09-27T00:58:27.610Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">Hexo</span>! This is your very first post. Check <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv">documentation</span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=">troubleshooting</span> or you can ask me on <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==">GitHub</span>.</p><h2 id="quick-start"><a class="anchor" href="#quick-start">#</a> Quick Start</h2><h3 id="create-a-new-post"><a class="anchor" href="#create-a-new-post">#</a> Create a new post</h3><pre><code class="language-bash">$ hexo new "My New Post"</code></pre><p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s">Writing</span></p><h3 id="run-server"><a class="anchor" href="#run-server">#</a> Run server</h3><pre><code class="language-bash">$ hexo server</code></pre><p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=">Server</span></p><h3 id="generate-static-files"><a class="anchor" href="#generate-static-files">#</a> Generate static files</h3><pre><code class="language-bash">$ hexo generate</code></pre><p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s">Generating</span></p><h3 id="deploy-to-remote-sites"><a class="anchor" href="#deploy-to-remote-sites">#</a> Deploy to remote sites</h3><pre><code class="language-bash">$ hexo deploy</code></pre><p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s">Deployment</span></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9oZXhvLmlvLw==&quot;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&quot;exturl&quot;</summary>
-      
-    
-    
-    
     
   </entry>
   
