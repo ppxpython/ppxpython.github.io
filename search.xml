@@ -302,221 +302,6 @@ n\in\mathbb N</annotation></semantics></math></span><span class="katex-html" ari
       </script>]]></content>
   </entry>
   <entry>
-    <title>01钉钉小程序</title>
-    <url>/computer-science/DDapp/ddapp-study1/01%E9%92%89%E9%92%89%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="钉钉小程序学习记录"><a class="anchor" href="#钉钉小程序学习记录">#</a> 钉钉小程序学习记录</h1>
-<p>学习记录</p>
-<p></p><ul class="toc">
-<li><a href="#%E9%92%89%E9%92%89%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95">钉钉小程序学习记录</a></li>
-<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
-<li><a href="#%E4%B8%80-%E9%92%89%E9%92%89%E5%B0%8F%E7%A8%8B%E5%BA%8F">一、钉钉小程序</a></li>
-<li><a href="#%E4%BA%8C-%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4">二、使用步骤</a>
-<ul>
-<li><a href="#1%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83">1.搭建应用环境</a></li>
-</ul>
-</li>
-</ul>
-(文章目录)<p></p>
-<p>&lt;/font&gt;</p>
-<p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p>
-<h1 id="前言"><a class="anchor" href="#前言">#</a> 前言</h1>
-<p>小程序开发优点</p>
-<p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p>
-<p>1 轻量 便捷<br>
- 2 开发成本低<br>
- 3 用户集群大<br>
- 4 封装好的小程序语言，语法简单<br>
-由于开发时，发现钉钉小程序教程较少，因此在开发过程中作为纪录。适用于小白。</p>
-<h1 id="一-钉钉小程序"><a class="anchor" href="#一-钉钉小程序">#</a> 一、钉钉小程序</h1>
-<p>采用钉钉小程序的原因：<br>
-1 钉钉作为一中国企业管理而生的企业应用，用户集群大<br>
- 2 钉钉拥有完整的企业组织架构，无需其他应用人员导入<br>
- 3 钉钉提供丰富的 API 接口供开发者使用<br>
- 4 拥有监控平台更好管控 API 和数据的调用，实现实时监控，及时发现问题</p>
-<h1 id="二-使用步骤"><a class="anchor" href="#二-使用步骤">#</a> 二、使用步骤</h1>
-<h2 id="1搭建应用环境"><a class="anchor" href="#1搭建应用环境">#</a> 1. 搭建应用环境</h2>
-<p>本次将钉钉小程序作为前端<br>
-下载工具：<br>
-1 java<br>
-2 小程序开发者工具为开发工具<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmRpbmd0YWxrLmNvbS9kb2N1bWVudC9yZXNvdXJjZWRvd25sb2FkL21pbmlhcHAtdG9vbD9wbmFtZXNwYWNlPWFwcA==">小程序开发者工具下载地址</span><br>
-<img data-src="https://img-blog.csdnimg.cn/20210421175821647.png" alt="在这里插入图片描述"><br>
-此外钉钉开发者，提供接口调试工具，方便开发者调用 API 调参。</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmRpbmd0YWxrLmNvbS9kb2N1bWVudC9yZXNvdXJjZWRvd25sb2FkL2pzYXBpLWV4cGxvcmVyP3BuYW1lc3BhY2U9YXBw">钉钉小程序在线调参工具地址</span></p>
-<p><img data-src="https://img-blog.csdnimg.cn/20210421180315927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ol>
-<li>登陆钉钉后台<span class="exturl" data-url="aHR0cHM6Ly9vYS5kaW5ndGFsay5jb20vP3JlZGlyZWN0PWh0dHA6Ly9vYS5kaW5ndGFsay5jb20vb21wL2FwaS9taWNyb19hcHAvYWRtaW4vbGFuZGluZz9jb3JwaWQ9b3Blbi1kZXYuZGluZ3RhbGsuY29tJmFtcDtyZWRpcmVjdF91cmw9aHR0cDovL29wZW4tZGV2LmRpbmd0YWxrLmNvbS8jL2xvZ2lu">钉钉后台</span><br>
-<img data-src="https://img-blog.csdnimg.cn/20210421180538796.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-创建一个钉钉组织或者成为钉钉组织管理员</li>
-</ol>
-<p>2.<img data-src="https://img-blog.csdnimg.cn/20210421180640509.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ol start="3">
-<li>在弹出的创建应用页面中填写基本信息，然后单击确定创建。</li>
-</ol>
-<p>应用类型：选择小程序。</p>
-<p>开发方式：选择企业自助开发。</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20210421181101213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ol start="4">
-<li>应用创建完成后，在基础信息页面，复制应用的 AppKey 和 AppSecret 备用。<br>
-5.<img data-src="https://img-blog.csdnimg.cn/20210421181140972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-单击开发管理进入开发管理页面，然后单击修改，并根据以下内容配置开发信息。</li>
-</ol>
-<p>服务器出口 IP：输入调用钉钉服务端 API 时使用的 IP 即企业服务器的公网 IP，多个 IP 请以英文逗号 "," 隔开，支持带一个 * 号通配符的 IP 格式。</p>
-<p>本教程设置为本机的公网 IP：30.40.xx.xx。</p>
-<p>PC 端首页地址（可选）：输入在 PC 端钉钉工作台上打开本应用的地址。链接地址必须以 http 或 https 开头。</p>
-<p>本教程设置为：<span class="exturl" data-url="aHR0cHM6Ly9kaW5nLWRvYy5kaW5ndGFsay5jb20vJUUzJTgwJTgy">https://ding-doc.dingtalk.com/。</span></p>
-<p>管理后台地址（可选）：输入组织管理员在钉钉管理后台访问该应用的地址。<br>
-<img data-src="https://img-blog.csdnimg.cn/20210421181205965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>6 单击人员管理，然后单击添加人员添加开发人员。<br>
-<img data-src="https://img-blog.csdnimg.cn/20210421181234257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-单击安全中心，然后单击添加添加一个 HTTP 安全域名。</p>
-<p>当小程序的前端与服务端需要进行网络通信时，需要设置安全域名。小程序前端只能通过已设置的安全域名（或 IP）与服务端进行网络通信。当安全域名更新时，需要在小程序开发工具重新打包上传版本，设置的域名才会生效。</p>
-<p>安全域名是后端服务部署的服务器的公网 IP 或域名，本教程输入 127.0.0.1。</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20210421181259228.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-单击权限管理进入权限管理页面，然后根据以下配置添加接口调用权限。<br>
-权限范围选择全部员工，然后选择通讯录管理。</p>
-<p>选择通讯录部门信息读权限和通讯录部门成员读权限，然后单击申请权限。<br>
-<img data-src="https://img-blog.csdnimg.cn/20210421181340910.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>之后可以在小程序开发者工具中创建一个简单的 demo</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20210421182322826.png" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20210421182409241.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img data-src="https://img-blog.csdnimg.cn/20210421182503611.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-创建好后的目录<br>
-<img data-src="https://img-blog.csdnimg.cn/20210421182608774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-模拟器效果：<img data-src="https://img-blog.csdnimg.cn/20210421182723513.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
- 1 app.js 全文逻辑<br>
-用来设置全局变量，以及页面配置<br>
-<img data-src="https://img-blog.csdnimg.cn/20210421182823799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20210421183041431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-配置路由，创建一个新的页面必须，在这配置相对路径</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20210421183128492.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
-页面导航栏的设置<br>
-<img data-src="https://img-blog.csdnimg.cn/20210421183205639.png" alt="在这里插入图片描述"><br>
-存放照片</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20210421183227798.png" alt="在这里插入图片描述"><br>
-页面，主要在这编写代码</p>
-<p>每个页面由这几个组成<br>
-<img data-src="https://img-blog.csdnimg.cn/20210421183258739.png" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20210421183322126.png" alt="在这里插入图片描述"><br>
-公共资源存放</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>计算机科学</category>
-        <category>钉钉小程序</category>
-        <category>钉钉小程序学习</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>01vue标签指令</title>
-    <url>/computer-science/vue/vue-study1/01vue%E6%A0%87%E7%AD%BE%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<p><img data-src="https://img-blog.csdnimg.cn/20200928085720982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>计算机科学</category>
-        <category>Vue</category>
-        <category>初学Vue框架</category>
-      </categories>
-      <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>01web开发需要了解的技术2020-09-02</title>
-    <url>/computer-science/vue/vue-study1/01web%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E6%8A%80%E6%9C%AF2020-09-02/</url>
-    <content><![CDATA[<p>日期：2020——09——02<br>
-IT 人：小海豚<br>
-学习内容：<br>
-大数据<br>
- oop（面向对象的编程）<br>
-ood（面向对象的设计）<br>
-web 开发：<br>
-Html<br>
-Js（JavaScript）面向对象语言<br>
- Css<br>
- 前端框架：<br>
-Vue（js 库与后端的一套接口），jquery，react<br>
- 组件库：<br>
-Element UI（界面） 常与（VUE 框架一起）<br>
-Easy UI（界面）</p>
-<p>工具：<br>
-测试集成在开发过程中<br>
-移动布局<br>
- webscocket 协议<br>
- Git<br>
- 测试 / 调试工具<br>
- firebug，postmon<br>
- 后端：<br>
-java，python,C#,mysql (构建)<br>
- 后端框架<br>
- jsp/selvlet<br>
-ssm 框架（spring，struts，mybatis）<br>
-Spring boost：最新框架</p>
-<p>前端后端公共技术<br>
- svn/git 工具</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>计算机科学</category>
-        <category>Vue</category>
-        <category>初学Vue框架</category>
-      </categories>
-      <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>01vue运行出错Cannot find module &#39;stylus&#39;</title>
     <url>/computer-science/vue/vue-error1/01vue%E4%B8%AD%E5%8C%85%E5%AF%BC%E5%85%A5%E5%87%BA%E9%94%99code-ENOLOCAL/</url>
     <content><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1>
@@ -644,6 +429,311 @@ VueRouter.prototype.push=function push(location,onResolve,onReject)<ruby>
       </categories>
       <tags>
         <tag>Error</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>01vue标签指令</title>
+    <url>/computer-science/vue/vue-study1/01vue%E6%A0%87%E7%AD%BE%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<p><img data-src="https://img-blog.csdnimg.cn/20200928085720982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>计算机科学</category>
+        <category>Vue</category>
+        <category>初学Vue框架</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>01web开发需要了解的技术2020-09-02</title>
+    <url>/computer-science/vue/vue-study1/01web%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E6%8A%80%E6%9C%AF2020-09-02/</url>
+    <content><![CDATA[<p>日期：2020——09——02<br>
+IT 人：小海豚<br>
+学习内容：<br>
+大数据<br>
+ oop（面向对象的编程）<br>
+ood（面向对象的设计）<br>
+web 开发：<br>
+Html<br>
+Js（JavaScript）面向对象语言<br>
+ Css<br>
+ 前端框架：<br>
+Vue（js 库与后端的一套接口），jquery，react<br>
+ 组件库：<br>
+Element UI（界面） 常与（VUE 框架一起）<br>
+Easy UI（界面）</p>
+<p>工具：<br>
+测试集成在开发过程中<br>
+移动布局<br>
+ webscocket 协议<br>
+ Git<br>
+ 测试 / 调试工具<br>
+ firebug，postmon<br>
+ 后端：<br>
+java，python,C#,mysql (构建)<br>
+ 后端框架<br>
+ jsp/selvlet<br>
+ssm 框架（spring，struts，mybatis）<br>
+Spring boost：最新框架</p>
+<p>前端后端公共技术<br>
+ svn/git 工具</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>计算机科学</category>
+        <category>Vue</category>
+        <category>初学Vue框架</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>01钉钉小程序</title>
+    <url>/computer-science/DDapp/ddapp-study1/01%E9%92%89%E9%92%89%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="钉钉小程序学习记录"><a class="anchor" href="#钉钉小程序学习记录">#</a> 钉钉小程序学习记录</h1>
+<p>学习记录</p>
+<p></p><ul class="toc">
+<li><a href="#%E9%92%89%E9%92%89%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95">钉钉小程序学习记录</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E4%B8%80-%E9%92%89%E9%92%89%E5%B0%8F%E7%A8%8B%E5%BA%8F">一、钉钉小程序</a></li>
+<li><a href="#%E4%BA%8C-%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4">二、使用步骤</a>
+<ul>
+<li><a href="#1%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83">1.搭建应用环境</a></li>
+</ul>
+</li>
+</ul>
+(文章目录)<p></p>
+<p>&lt;/font&gt;</p>
+<p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p>
+<h1 id="前言"><a class="anchor" href="#前言">#</a> 前言</h1>
+<p>小程序开发优点</p>
+<p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p>
+<p>1 轻量 便捷<br>
+ 2 开发成本低<br>
+ 3 用户集群大<br>
+ 4 封装好的小程序语言，语法简单<br>
+由于开发时，发现钉钉小程序教程较少，因此在开发过程中作为纪录。适用于小白。</p>
+<h1 id="一-钉钉小程序"><a class="anchor" href="#一-钉钉小程序">#</a> 一、钉钉小程序</h1>
+<p>采用钉钉小程序的原因：<br>
+1 钉钉作为一中国企业管理而生的企业应用，用户集群大<br>
+ 2 钉钉拥有完整的企业组织架构，无需其他应用人员导入<br>
+ 3 钉钉提供丰富的 API 接口供开发者使用<br>
+ 4 拥有监控平台更好管控 API 和数据的调用，实现实时监控，及时发现问题</p>
+<h1 id="二-使用步骤"><a class="anchor" href="#二-使用步骤">#</a> 二、使用步骤</h1>
+<h2 id="1搭建应用环境"><a class="anchor" href="#1搭建应用环境">#</a> 1. 搭建应用环境</h2>
+<p>本次将钉钉小程序作为前端<br>
+下载工具：<br>
+1 java<br>
+2 小程序开发者工具为开发工具<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmRpbmd0YWxrLmNvbS9kb2N1bWVudC9yZXNvdXJjZWRvd25sb2FkL21pbmlhcHAtdG9vbD9wbmFtZXNwYWNlPWFwcA==">小程序开发者工具下载地址</span><br>
+<img data-src="https://img-blog.csdnimg.cn/20210421175821647.png" alt="在这里插入图片描述"><br>
+此外钉钉开发者，提供接口调试工具，方便开发者调用 API 调参。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmRpbmd0YWxrLmNvbS9kb2N1bWVudC9yZXNvdXJjZWRvd25sb2FkL2pzYXBpLWV4cGxvcmVyP3BuYW1lc3BhY2U9YXBw">钉钉小程序在线调参工具地址</span></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210421180315927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol>
+<li>登陆钉钉后台<span class="exturl" data-url="aHR0cHM6Ly9vYS5kaW5ndGFsay5jb20vP3JlZGlyZWN0PWh0dHA6Ly9vYS5kaW5ndGFsay5jb20vb21wL2FwaS9taWNyb19hcHAvYWRtaW4vbGFuZGluZz9jb3JwaWQ9b3Blbi1kZXYuZGluZ3RhbGsuY29tJmFtcDtyZWRpcmVjdF91cmw9aHR0cDovL29wZW4tZGV2LmRpbmd0YWxrLmNvbS8jL2xvZ2lu">钉钉后台</span><br>
+<img data-src="https://img-blog.csdnimg.cn/20210421180538796.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+创建一个钉钉组织或者成为钉钉组织管理员</li>
+</ol>
+<p>2.<img data-src="https://img-blog.csdnimg.cn/20210421180640509.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol start="3">
+<li>在弹出的创建应用页面中填写基本信息，然后单击确定创建。</li>
+</ol>
+<p>应用类型：选择小程序。</p>
+<p>开发方式：选择企业自助开发。</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210421181101213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol start="4">
+<li>应用创建完成后，在基础信息页面，复制应用的 AppKey 和 AppSecret 备用。<br>
+5.<img data-src="https://img-blog.csdnimg.cn/20210421181140972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+单击开发管理进入开发管理页面，然后单击修改，并根据以下内容配置开发信息。</li>
+</ol>
+<p>服务器出口 IP：输入调用钉钉服务端 API 时使用的 IP 即企业服务器的公网 IP，多个 IP 请以英文逗号 "," 隔开，支持带一个 * 号通配符的 IP 格式。</p>
+<p>本教程设置为本机的公网 IP：30.40.xx.xx。</p>
+<p>PC 端首页地址（可选）：输入在 PC 端钉钉工作台上打开本应用的地址。链接地址必须以 http 或 https 开头。</p>
+<p>本教程设置为：<span class="exturl" data-url="aHR0cHM6Ly9kaW5nLWRvYy5kaW5ndGFsay5jb20vJUUzJTgwJTgy">https://ding-doc.dingtalk.com/。</span></p>
+<p>管理后台地址（可选）：输入组织管理员在钉钉管理后台访问该应用的地址。<br>
+<img data-src="https://img-blog.csdnimg.cn/20210421181205965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>6 单击人员管理，然后单击添加人员添加开发人员。<br>
+<img data-src="https://img-blog.csdnimg.cn/20210421181234257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+单击安全中心，然后单击添加添加一个 HTTP 安全域名。</p>
+<p>当小程序的前端与服务端需要进行网络通信时，需要设置安全域名。小程序前端只能通过已设置的安全域名（或 IP）与服务端进行网络通信。当安全域名更新时，需要在小程序开发工具重新打包上传版本，设置的域名才会生效。</p>
+<p>安全域名是后端服务部署的服务器的公网 IP 或域名，本教程输入 127.0.0.1。</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210421181259228.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+单击权限管理进入权限管理页面，然后根据以下配置添加接口调用权限。<br>
+权限范围选择全部员工，然后选择通讯录管理。</p>
+<p>选择通讯录部门信息读权限和通讯录部门成员读权限，然后单击申请权限。<br>
+<img data-src="https://img-blog.csdnimg.cn/20210421181340910.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>之后可以在小程序开发者工具中创建一个简单的 demo</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210421182322826.png" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20210421182409241.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210421182503611.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+创建好后的目录<br>
+<img data-src="https://img-blog.csdnimg.cn/20210421182608774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+模拟器效果：<img data-src="https://img-blog.csdnimg.cn/20210421182723513.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+ 1 app.js 全文逻辑<br>
+用来设置全局变量，以及页面配置<br>
+<img data-src="https://img-blog.csdnimg.cn/20210421182823799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20210421183041431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+配置路由，创建一个新的页面必须，在这配置相对路径</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210421183128492.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+页面导航栏的设置<br>
+<img data-src="https://img-blog.csdnimg.cn/20210421183205639.png" alt="在这里插入图片描述"><br>
+存放照片</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210421183227798.png" alt="在这里插入图片描述"><br>
+页面，主要在这编写代码</p>
+<p>每个页面由这几个组成<br>
+<img data-src="https://img-blog.csdnimg.cn/20210421183258739.png" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20210421183322126.png" alt="在这里插入图片描述"><br>
+公共资源存放</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>计算机科学</category>
+        <category>钉钉小程序</category>
+        <category>钉钉小程序学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>01Springboot小白详细的安装教程</title>
+    <url>/computer-science/java/springboot/springboot-study1/01Springboot%E5%B0%8F%E7%99%BD%E8%AF%A6%E7%BB%86%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p>
+<h1 id="前言"><a class="anchor" href="#前言">#</a> 前言</h1>
+<p>初学 Springboot 的小白刚安装了 IDEA 分享一下安装教程吧<br>
+ &lt;hr style="border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p>
+<h1 id="一-idea是什么"><a class="anchor" href="#一-idea是什么">#</a> 一、IDEA 是什么？</h1>
+<p>IDEA 全称 IntelliJ IDEA，是 java 编程语言开发的集成环境。IntelliJ 在业界被公认为最好的 java 开发工具，尤其在智能代码助手、代码自动提示、重构、JavaEE 支持、各类版本工具 (git、svn 等)、JUnit、CVS 整合、代码分析、 创新的 GUI 设计等方面的功能可以说是超常的。IDEA 是 JetBrains 公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。它的旗舰版本还支持 HTML，CSS，PHP，MySQL，Python 等。免费版只支持 Java,Kotlin 等少数语言。<br>
+附上百度百科网址： <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9JbnRlbGxpSiUyMElERUEvOTU0ODM1Mz9mcm9tdGl0bGU9aWRlYSZhbXA7ZnJvbWlkPTE2NzE4MDMmYW1wO2ZyPWFsYWRkaW4=">百度百科了解 IDEA</span><br>
+IDEA 官网：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamV0YnJhaW5zLmNvbS8=">IDEA 官网</span></p>
+<h1 id="二-安装步骤"><a class="anchor" href="#二-安装步骤">#</a> 二、安装步骤</h1>
+<p>教程采用了微信公众号：软件安装管家<br>
+很强大，可以安装各种软件</p>
+<h2 id="1安装springboot"><a class="anchor" href="#1安装springboot">#</a> 1. 安装 SpringBoot</h2>
+<p><img data-src="https://img-blog.csdnimg.cn/20200928103032379.png#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103103351.png#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103120858.png#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103154977.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103207498.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103220927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103302209.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103329288.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200928103337491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103345331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103357647.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103406738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103413982.png#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103423218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/2020092810343116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103437688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103448506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103456333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/2020092810350573.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103522445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200928103533260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/2020092810354238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103550353.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103558616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103608978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/2020092810361991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200928103628254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103637757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/2020092810364676.png#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103653875.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103703420.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="2安装maven"><a class="anchor" href="#2安装maven">#</a> 2. 安装 maven</h2>
+<p>安装 maven<br>
+maven 下载官网地址：<span class="exturl" data-url="aHR0cDovL21hdmVuLmFwYWNoZS5vcmcvZG93bmxvYWQuY2dp">maven 下载官网地址</span></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200928103807392.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103948338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">解压后<br>
+<img data-src="https://img-blog.csdnimg.cn/20200928103959973.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">配置环境变量</p>
+<p><img data-src="https://img-blog.csdnimg.cn/2020092810403492.png#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928104043979.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928104055378.png#pic_center" alt="在这里插入图片描述">成功<br>
+进入 Springboot 官网中<br>
+ Springboot 官网：<span class="exturl" data-url="aHR0cHM6Ly9zcHJpbmcuaW8vcHJvamVjdHMvc3ByaW5nLWJvb3Q=">Springboot 官网</span><br>
+创建项目网址：<br>
+<span class="exturl" data-url="aHR0cHM6Ly9zdGFydC5zcHJpbmcuaW8v">创建项目网址</span><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928104116509.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+<img data-src="https://img-blog.csdnimg.cn/20200928104818559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
+添加架包<br>
+用 idea 打开制定架包<br>
+开启框架，开始代码</p>
+<h1 id="总结"><a class="anchor" href="#总结">#</a> 总结</h1>
+<p>安装完成，开始代码之旅吧<br>
+如有问题请在下方评论学习，共同进步</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>计算机科学</category>
+        <category>Java</category>
+        <category>SpringBoot框架</category>
+        <category>小白学SpringBoot框架</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
       </tags>
   </entry>
   <entry>
@@ -926,18 +1016,28 @@ VueRouter.prototype.push=function push(location,onResolve,onReject)<ruby>
       </tags>
   </entry>
   <entry>
-    <title>07Springboot--  导包运行报错IllegalStateException</title>
-    <url>/computer-science/java/springboot/springboot-error1/07Springboot-%E5%AF%BC%E5%8C%85%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99IllegalStateException/</url>
+    <title>08Springboot-- 依赖错误NoClassDefFoundError</title>
+    <url>/computer-science/java/springboot/springboot-error1/08Springboot-%E4%BE%9D%E8%B5%96%E9%94%99%E8%AF%AFNoClassDefFoundError/</url>
     <content><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1>
-<p>运行 IDEA 时出现错误</p>
+<p>前后端启动成功没有错误，但在登录是出现错误</p>
 <h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer</pre></td></tr></tbody></table></figure><p><img data-src="https://img-blog.csdnimg.cn/202010051712559.png#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1>
-<p>依赖</p>
+<p>前后端启动成功没有错误，但在登录是出现<img data-src="https://img-blog.csdnimg.cn/20201005171754870.png#pic_center" alt="在这里插入图片描述"><br>
+后端呢 SpringBoot 报出错误</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>ERROR c.e.c.f.w.e.GlobalExceptionHandler - <span class="token punctuation">[</span>handleException,83<span class="token punctuation">]</span> - Handler dispatch failed<span class="token punctuation">;</span> nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter</pre></td></tr></tbody></table></figure><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1>
+<p>JDK 版本号是：<br>
+<img data-src="https://img-blog.csdnimg.cn/20201005171833209.png#pic_center" alt="在这里插入图片描述"><br>
+今天在使用 JDK 13.0 环境下使用 IDEA 时候出现了这个错误，错误日志如下：<br>
+我是采用了增加依赖解决的<br>
+故障原因：<br>
+JAXB API 是 java EE 的 API，因此在 java SE 9.0 中不再包含这个 Jar 包。<br>
+java 9 中引入了模块的概念，默认情况下，Java SE 中将不再包含 java EE 的 Jar 包<br>
+而在 java 6/7 / 8 时关于这个 API 都是捆绑在一起的</p>
 <h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>		<span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>org.springframework.boot<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>		<span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring-boot-starter-tomcat<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">!</span>--	<span class="token operator">&lt;</span>scope<span class="token operator">&gt;</span>provided<span class="token operator">&lt;</span>/scope<span class="token operator">&gt;</span>--<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>	<span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><p>在 pom.xml 文件中将 scope 注释<br>
-再加上</p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>		<span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.servlet<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>		<span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>javax.servlet-api<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>		<span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">3.1</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>	<span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><script>
+<h2 id="解决方案一"><a class="anchor" href="#解决方案一">#</a> 解决方案一：</h2>
+<p>降低 JDK 版本到 JDK 8</p>
+<h2 id="解决方案二亲测可行"><a class="anchor" href="#解决方案二亲测可行">#</a> 解决方案二:（亲测可行）</h2>
+<p>手动加入这些依赖 Jar 包</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-api<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com.sun.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-impl<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com.sun.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-core<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.activation<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>activation<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">1.1</span>.<span class="token operator"><span class="token file-descriptor important">1</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -967,28 +1067,18 @@ VueRouter.prototype.push=function push(location,onResolve,onReject)<ruby>
       </tags>
   </entry>
   <entry>
-    <title>08Springboot-- 依赖错误NoClassDefFoundError</title>
-    <url>/computer-science/java/springboot/springboot-error1/08Springboot-%E4%BE%9D%E8%B5%96%E9%94%99%E8%AF%AFNoClassDefFoundError/</url>
+    <title>07Springboot--  导包运行报错IllegalStateException</title>
+    <url>/computer-science/java/springboot/springboot-error1/07Springboot-%E5%AF%BC%E5%8C%85%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99IllegalStateException/</url>
     <content><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1>
-<p>前后端启动成功没有错误，但在登录是出现错误</p>
+<p>运行 IDEA 时出现错误</p>
 <h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1>
-<p>前后端启动成功没有错误，但在登录是出现<img data-src="https://img-blog.csdnimg.cn/20201005171754870.png#pic_center" alt="在这里插入图片描述"><br>
-后端呢 SpringBoot 报出错误</p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>ERROR c.e.c.f.w.e.GlobalExceptionHandler - <span class="token punctuation">[</span>handleException,83<span class="token punctuation">]</span> - Handler dispatch failed<span class="token punctuation">;</span> nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter</pre></td></tr></tbody></table></figure><h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1>
-<p>JDK 版本号是：<br>
-<img data-src="https://img-blog.csdnimg.cn/20201005171833209.png#pic_center" alt="在这里插入图片描述"><br>
-今天在使用 JDK 13.0 环境下使用 IDEA 时候出现了这个错误，错误日志如下：<br>
-我是采用了增加依赖解决的<br>
-故障原因：<br>
-JAXB API 是 java EE 的 API，因此在 java SE 9.0 中不再包含这个 Jar 包。<br>
-java 9 中引入了模块的概念，默认情况下，Java SE 中将不再包含 java EE 的 Jar 包<br>
-而在 java 6/7 / 8 时关于这个 API 都是捆绑在一起的</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer</pre></td></tr></tbody></table></figure><p><img data-src="https://img-blog.csdnimg.cn/202010051712559.png#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1>
+<p>依赖</p>
 <h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1>
-<h2 id="解决方案一"><a class="anchor" href="#解决方案一">#</a> 解决方案一：</h2>
-<p>降低 JDK 版本到 JDK 8</p>
-<h2 id="解决方案二亲测可行"><a class="anchor" href="#解决方案二亲测可行">#</a> 解决方案二:（亲测可行）</h2>
-<p>手动加入这些依赖 Jar 包</p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-api<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com.sun.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-impl<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com.sun.xml.bind<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>jaxb-core<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">2.3</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.activation<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>activation<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">1.1</span>.<span class="token operator"><span class="token file-descriptor important">1</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><script>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>		<span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>org.springframework.boot<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>		<span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>spring-boot-starter-tomcat<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">!</span>--	<span class="token operator">&lt;</span>scope<span class="token operator">&gt;</span>provided<span class="token operator">&lt;</span>/scope<span class="token operator">&gt;</span>--<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>	<span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><p>在 pom.xml 文件中将 scope 注释<br>
+再加上</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>		<span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>javax.servlet<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>		<span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>javax.servlet-api<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>		<span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">3.1</span>.<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>/version<span class="token operator">&gt;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>	<span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span></pre></td></tr></tbody></table></figure><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1083,67 +1173,19 @@ Identify and stop the process that's listening on port 8080 or configure this ap
       </tags>
   </entry>
   <entry>
-    <title>01Springboot小白详细的安装教程</title>
-    <url>/computer-science/java/springboot/springboot-study1/01Springboot%E5%B0%8F%E7%99%BD%E8%AF%A6%E7%BB%86%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>&lt;hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p>
-<h1 id="前言"><a class="anchor" href="#前言">#</a> 前言</h1>
-<p>初学 Springboot 的小白刚安装了 IDEA 分享一下安装教程吧<br>
- &lt;hr style="border:solid; width:100px; height:1px;" color=#000000 size=1"&gt;</p>
-<h1 id="一-idea是什么"><a class="anchor" href="#一-idea是什么">#</a> 一、IDEA 是什么？</h1>
-<p>IDEA 全称 IntelliJ IDEA，是 java 编程语言开发的集成环境。IntelliJ 在业界被公认为最好的 java 开发工具，尤其在智能代码助手、代码自动提示、重构、JavaEE 支持、各类版本工具 (git、svn 等)、JUnit、CVS 整合、代码分析、 创新的 GUI 设计等方面的功能可以说是超常的。IDEA 是 JetBrains 公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。它的旗舰版本还支持 HTML，CSS，PHP，MySQL，Python 等。免费版只支持 Java,Kotlin 等少数语言。<br>
-附上百度百科网址： <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9JbnRlbGxpSiUyMElERUEvOTU0ODM1Mz9mcm9tdGl0bGU9aWRlYSZhbXA7ZnJvbWlkPTE2NzE4MDMmYW1wO2ZyPWFsYWRkaW4=">百度百科了解 IDEA</span><br>
-IDEA 官网：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamV0YnJhaW5zLmNvbS8=">IDEA 官网</span></p>
-<h1 id="二-安装步骤"><a class="anchor" href="#二-安装步骤">#</a> 二、安装步骤</h1>
-<p>教程采用了微信公众号：软件安装管家<br>
-很强大，可以安装各种软件</p>
-<h2 id="1安装springboot"><a class="anchor" href="#1安装springboot">#</a> 1. 安装 SpringBoot</h2>
-<p><img data-src="https://img-blog.csdnimg.cn/20200928103032379.png#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103103351.png#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103120858.png#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103154977.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103207498.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103220927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103302209.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103329288.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200928103337491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103345331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103357647.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103406738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103413982.png#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103423218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/2020092810343116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103437688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103448506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103456333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p><img data-src="https://img-blog.csdnimg.cn/2020092810350573.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103522445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200928103533260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/2020092810354238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103550353.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103558616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103608978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/2020092810361991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200928103628254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103637757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/2020092810364676.png#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103653875.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20200928103703420.png#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="2安装maven"><a class="anchor" href="#2安装maven">#</a> 2. 安装 maven</h2>
-<p>安装 maven<br>
-maven 下载官网地址：<span class="exturl" data-url="aHR0cDovL21hdmVuLmFwYWNoZS5vcmcvZG93bmxvYWQuY2dp">maven 下载官网地址</span></p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200928103807392.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103948338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">解压后<br>
-<img data-src="https://img-blog.csdnimg.cn/20200928103959973.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">配置环境变量</p>
-<p><img data-src="https://img-blog.csdnimg.cn/2020092810403492.png#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928104043979.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928104055378.png#pic_center" alt="在这里插入图片描述">成功<br>
-进入 Springboot 官网中<br>
- Springboot 官网：<span class="exturl" data-url="aHR0cHM6Ly9zcHJpbmcuaW8vcHJvamVjdHMvc3ByaW5nLWJvb3Q=">Springboot 官网</span><br>
-创建项目网址：<br>
-<span class="exturl" data-url="aHR0cHM6Ly9zdGFydC5zcHJpbmcuaW8v">创建项目网址</span><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928104116509.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img data-src="https://img-blog.csdnimg.cn/20200928104818559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-添加架包<br>
-用 idea 打开制定架包<br>
-开启框架，开始代码</p>
-<h1 id="总结"><a class="anchor" href="#总结">#</a> 总结</h1>
-<p>安装完成，开始代码之旅吧<br>
-如有问题请在下方评论学习，共同进步</p>
-<script>
+    <title>01Django中出现OperationalError问题</title>
+    <url>/computer-science/python/django/django-error1/01Django%E4%B8%AD%E5%87%BA%E7%8E%B0OperationalError%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1>
+<p>Django 中连接数据库时出现错误，采用了一个大牛的博客解决的，这里附上链接 https://blog.csdn.net/Wathet_blue/article/details/105401717?utm_medium=distribute.pc_relevant.none-task-blog-title-2&amp;spm=1001.2101.3001.4242</p>
+<h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1>
+<p>出现错误！OperationalError: (1366, “Incorrect string value: ‘\xE4\xB9\x8B\xE7\xBE\x8E’ for column ‘name’ at row 1”)</p>
+<h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1>
+<p>数据库的编码规则没有使用 utf8，而在存储数据时添加了中文数据，导致报错。</p>
+<h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1>
+<p>删除数据库 (有数据先备份)</p>
+<figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">drop</span> <span class="token keyword">database</span> <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><p>指定编码重建数据库 或者 修改数据库编码后重建数据库</p>
+<figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">create</span> <span class="token keyword">database</span> <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span> <span class="token keyword">default</span> <span class="token keyword">character</span> <span class="token keyword">set</span> utf8 <span class="token keyword">collate</span> utf8_general_ci<span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>show variables like <span class="token string">'character%'</span><span class="token punctuation">;</span>	<span class="token operator">//</span> 查看mysql的编码</pre></td></tr><tr><td data-num="2"></td><td><pre>	<span class="token builtin">set</span> character_set_client<span class="token operator">=</span>utf8<span class="token punctuation">;</span>		<span class="token operator">//</span> 设置客户端的编码为utf8</pre></td></tr><tr><td data-num="3"></td><td><pre>	<span class="token builtin">set</span> character_set_connection<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>	<span class="token builtin">set</span> character_set_database<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>	<span class="token builtin">set</span> character_set_results<span class="token operator">=</span>utf8<span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="6"></td><td><pre>	<span class="token builtin">set</span> character_set_server<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>	<span class="token builtin">set</span> character_set_system<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>	create database <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span><span class="token punctuation">;</span>	<span class="token operator">//</span> 新创建数据库使用的编码规则是utf8</pre></td></tr></tbody></table></figure><p>重新迁移数据库</p>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>python manage<span class="token punctuation">.</span>py makemigrations</pre></td></tr><tr><td data-num="2"></td><td><pre>	python manage<span class="token punctuation">.</span>py migrate</pre></td></tr></tbody></table></figure><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1164,12 +1206,12 @@ maven 下载官网地址：<span class="exturl" data-url="aHR0cDovL21hdmVuLmFwYW
       </script>]]></content>
       <categories>
         <category>计算机科学</category>
-        <category>Java</category>
-        <category>SpringBoot框架</category>
-        <category>小白学SpringBoot框架</category>
+        <category>Python</category>
+        <category>Django框架</category>
+        <category>前端Django中常见的错误集合</category>
       </categories>
       <tags>
-        <tag>SpringBoot</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
@@ -1342,110 +1384,6 @@ IT 人：小海豚<br>
 <p>效果生成<br>
 <img data-src="https://img-blog.csdnimg.cn/20201005154212477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <p><img data-src="https://img-blog.csdnimg.cn/20201005154221255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>计算机科学</category>
-        <category>Python</category>
-        <category>Django框架</category>
-        <category>零基础学Django框架</category>
-      </categories>
-      <tags>
-        <tag>Django</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>04django--整体讲解</title>
-    <url>/computer-science/python/django/course-1/04django-%E6%95%B4%E4%BD%93%E8%AE%B2%E8%A7%A3/</url>
-    <content><![CDATA[<p>日期：2019——09——27<br>
-IT 人：小海豚<br>
-学习内容：<br>
-导包的文件</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20201005154700648.png#pic_center" alt="在这里插入图片描述"></p>
-<p>​</p>
-<p>一般都不用但不能够删除</p>
-<p>​<img data-src="https://img-blog.csdnimg.cn/2020100515471044.png#pic_center" alt=""></p>
-<p>settings 配置文件<br>
- urls 统一资源编译器<br>
- wsgi 网管接口<br>
- app 中<br>
- News<br>
- 大部分功能在 app news 中完成<br>
- Mingrations</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20201005154746558.png#pic_center" alt="在这里插入图片描述"></p>
-<p>​</p>
-<p>数据库映射时使用，一般不修改<br>
-<img data-src="https://img-blog.csdnimg.cn/20201005154754927.png#pic_center" alt="在这里插入图片描述"></p>
-<p>​</p>
-<p>admin 管理文件<br>
- apps 定义 app 名字<br>
- models 模型写数据库<br>
- tests 测试文件<br>
- urls 配置 app 的 urls，和项目的 urls 进行交互<br>
- views 视图文件<br>
- Bd.sqlite3 默认使用的数据库<br>
- Manage.py 项目管理文件</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>计算机科学</category>
-        <category>Python</category>
-        <category>Django框架</category>
-        <category>零基础学Django框架</category>
-      </categories>
-      <tags>
-        <tag>Django</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>05django--mvt介绍</title>
-    <url>/computer-science/python/django/course-1/05django-mvt%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<p>日期：20019——09——27</p>
-<p>IT 人：小海豚</p>
-<p>学习内容：</p>
-<p>django 的设计模式</p>
-<p>Models 作用</p>
-<p>封装数据库，</p>
-<p>对数据库进行访问，</p>
-<p>对数据进行增删改查，</p>
-<p>Views 作用</p>
-<p>进行业务逻辑的处理，</p>
-<p>teplates 作用</p>
-<p>模板，主要进行展示，前端</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1704,19 +1642,37 @@ IT 人：小海豚<br>
       </tags>
   </entry>
   <entry>
-    <title>01Django中出现OperationalError问题</title>
-    <url>/computer-science/python/django/django-error1/01Django%E4%B8%AD%E5%87%BA%E7%8E%B0OperationalError%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="项目场景"><a class="anchor" href="#项目场景">#</a> 项目场景：</h1>
-<p>Django 中连接数据库时出现错误，采用了一个大牛的博客解决的，这里附上链接 https://blog.csdn.net/Wathet_blue/article/details/105401717?utm_medium=distribute.pc_relevant.none-task-blog-title-2&amp;spm=1001.2101.3001.4242</p>
-<h1 id="问题描述"><a class="anchor" href="#问题描述">#</a> 问题描述：</h1>
-<p>出现错误！OperationalError: (1366, “Incorrect string value: ‘\xE4\xB9\x8B\xE7\xBE\x8E’ for column ‘name’ at row 1”)</p>
-<h1 id="原因分析"><a class="anchor" href="#原因分析">#</a> 原因分析：</h1>
-<p>数据库的编码规则没有使用 utf8，而在存储数据时添加了中文数据，导致报错。</p>
-<h1 id="解决方案"><a class="anchor" href="#解决方案">#</a> 解决方案：</h1>
-<p>删除数据库 (有数据先备份)</p>
-<figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">drop</span> <span class="token keyword">database</span> <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><p>指定编码重建数据库 或者 修改数据库编码后重建数据库</p>
-<figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">create</span> <span class="token keyword">database</span> <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span> <span class="token keyword">default</span> <span class="token keyword">character</span> <span class="token keyword">set</span> utf8 <span class="token keyword">collate</span> utf8_general_ci<span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>show variables like <span class="token string">'character%'</span><span class="token punctuation">;</span>	<span class="token operator">//</span> 查看mysql的编码</pre></td></tr><tr><td data-num="2"></td><td><pre>	<span class="token builtin">set</span> character_set_client<span class="token operator">=</span>utf8<span class="token punctuation">;</span>		<span class="token operator">//</span> 设置客户端的编码为utf8</pre></td></tr><tr><td data-num="3"></td><td><pre>	<span class="token builtin">set</span> character_set_connection<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>	<span class="token builtin">set</span> character_set_database<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>	<span class="token builtin">set</span> character_set_results<span class="token operator">=</span>utf8<span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="6"></td><td><pre>	<span class="token builtin">set</span> character_set_server<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>	<span class="token builtin">set</span> character_set_system<span class="token operator">=</span>utf8<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>	create database <span class="token punctuation">[</span>database_name<span class="token punctuation">]</span><span class="token punctuation">;</span>	<span class="token operator">//</span> 新创建数据库使用的编码规则是utf8</pre></td></tr></tbody></table></figure><p>重新迁移数据库</p>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>python manage<span class="token punctuation">.</span>py makemigrations</pre></td></tr><tr><td data-num="2"></td><td><pre>	python manage<span class="token punctuation">.</span>py migrate</pre></td></tr></tbody></table></figure><script>
+    <title>04django--整体讲解</title>
+    <url>/computer-science/python/django/course-1/04django-%E6%95%B4%E4%BD%93%E8%AE%B2%E8%A7%A3/</url>
+    <content><![CDATA[<p>日期：2019——09——27<br>
+IT 人：小海豚<br>
+学习内容：<br>
+导包的文件</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20201005154700648.png#pic_center" alt="在这里插入图片描述"></p>
+<p>​</p>
+<p>一般都不用但不能够删除</p>
+<p>​<img data-src="https://img-blog.csdnimg.cn/2020100515471044.png#pic_center" alt=""></p>
+<p>settings 配置文件<br>
+ urls 统一资源编译器<br>
+ wsgi 网管接口<br>
+ app 中<br>
+ News<br>
+ 大部分功能在 app news 中完成<br>
+ Mingrations</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20201005154746558.png#pic_center" alt="在这里插入图片描述"></p>
+<p>​</p>
+<p>数据库映射时使用，一般不修改<br>
+<img data-src="https://img-blog.csdnimg.cn/20201005154754927.png#pic_center" alt="在这里插入图片描述"></p>
+<p>​</p>
+<p>admin 管理文件<br>
+ apps 定义 app 名字<br>
+ models 模型写数据库<br>
+ tests 测试文件<br>
+ urls 配置 app 的 urls，和项目的 urls 进行交互<br>
+ views 视图文件<br>
+ Bd.sqlite3 默认使用的数据库<br>
+ Manage.py 项目管理文件</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1739,7 +1695,51 @@ IT 人：小海豚<br>
         <category>计算机科学</category>
         <category>Python</category>
         <category>Django框架</category>
-        <category>前端Django中常见的错误集合</category>
+        <category>零基础学Django框架</category>
+      </categories>
+      <tags>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>05django--mvt介绍</title>
+    <url>/computer-science/python/django/course-1/05django-mvt%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>日期：20019——09——27</p>
+<p>IT 人：小海豚</p>
+<p>学习内容：</p>
+<p>django 的设计模式</p>
+<p>Models 作用</p>
+<p>封装数据库，</p>
+<p>对数据库进行访问，</p>
+<p>对数据进行增删改查，</p>
+<p>Views 作用</p>
+<p>进行业务逻辑的处理，</p>
+<p>teplates 作用</p>
+<p>模板，主要进行展示，前端</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>计算机科学</category>
+        <category>Python</category>
+        <category>Django框架</category>
+        <category>零基础学Django框架</category>
       </categories>
       <tags>
         <tag>Django</tag>
