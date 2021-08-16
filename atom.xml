@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>SUM</title>
-  <icon>https://www.gravatar.com/avatar/1a5da1ec42959634846ee2db53a69b07</icon>
+  <icon>https://www.gravatar.com/avatar/8e62e35b091b7fee7ef9056a51f0120c</icon>
   <subtitle>会者定离，一期一祈， 感谢在这与你相遇</subtitle>
   <link href="https://ppxpython.github.io/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>Yang shuping</name>
-    <email>1146729389@qq.com</email>
+    <email>yangshuping2021@163.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
