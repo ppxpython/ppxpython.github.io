@@ -3,6 +3,8 @@ title: win10专业版激活
 abbrlink: 42992
 date: 2021-07-03 11:59:02
 tags:
+categories:
+  - [ 电脑,电脑配置,win10 ]
 ---
 
 

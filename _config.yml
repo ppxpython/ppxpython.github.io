@@ -344,8 +344,11 @@ category_map: # edit for Theme.shoka
   自动化测试工具: automation-test2 
   移动测试工具: mobile-test2 
 #对应四级目录
+#接口测试工具
   Postman: postman
+  #性能测试工具
   Jmeter: jmeter
+  #自动化测试工具
   Selenium: selenium
   Appium: appium
 
@@ -367,21 +370,39 @@ category_map: # edit for Theme.shoka
 
  # ***************一级目录*********************
   心得记录: records
+
   #对应二级标题
-生活记录: live-record
+  生活记录: live-record
 #对应三级标题
-生活感悟: live-feel
+  生活感悟: live-feel
+  生活杂记: live-note
+  个人博客: live-blog
+  新创意点: new-idea
 
 
 
 #对应二级标题
-学习记录: study-record
+  学习记录: study-record
 #对应三级标题
-学习心得: study-feel
+  学习心得: study-feel
 
 
 
+#对应二级标题
+  书籍记录: book-record
+#对应三级标题
+  书籍心得: book-feel
 
+
+ # ***************一级目录*********************
+  电脑: computer
+  #对应二级标题
+  电脑配置: win
+  #对应三级标题
+  win10: win10
+   
+
+ 
 
 
 

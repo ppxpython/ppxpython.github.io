@@ -2,7 +2,9 @@
 title: 用hexo搭建一个自己的博客
 abbrlink: 16714
 date: 2020-10-22 16:51:04
-tags:
+categories:
+  - [心得记录,生活记录,个人博客]
+tags: 博客搭建
 ---
 # 系列文章目录
  
