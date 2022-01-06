@@ -398,8 +398,10 @@ category_map: # edit for Theme.shoka
   电脑: computer
   #对应二级标题
   电脑配置: win
+  软件配置: app
   #对应三级标题
   win10: win10
+  安装教程: install
    
 
  
