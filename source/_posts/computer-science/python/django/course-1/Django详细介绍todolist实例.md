@@ -2,7 +2,9 @@
 title: Django详细介绍todolist实例
 abbrlink: 15712
 date: 2022-01-05 10:41:40
-tags:
+tags: Django
+categories:
+- [计算机科学, Python, Django框架, 零基础学Django框架]
 ---
 ## 开发环境
 
@@ -258,7 +260,7 @@ C:\Users\yangs\Desktop\新建文件夹\todo\todo\settings.py
 
 再app tasks中创建视图函数 view index
 
-``` 
+```
 from django.shortcuts import render 
 from django.http import    HttpResponse 
 ## Create your views here. 
@@ -276,7 +278,7 @@ def index(request):
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2098c7e745784e928ce10d95c3608ea8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 """todo URL Configuration  The `urlpatterns` list routes URLs to views. 
 For more information please see:     https://docs.djangoproject.com/en/3.2/topics/http/urls/ 
 Examples: Function views  
@@ -315,7 +317,7 @@ path('',include('tasks.urls')) ]
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/fbafdc78d7664bdc91d7a9bcb09ecc50.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 from django.shortcuts import render
 from django.http import    HttpResponse
 # Create your views here.
@@ -335,7 +337,7 @@ def index(request):
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/d8ade6c117db426dac71a67fd7d2d6e4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 """
 Django settings for todo project.
 
@@ -472,7 +474,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/9d5c4dc54f3e46ddae7b54afc6b211da.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 from django.db import models
 
 # Create your models here.
@@ -520,7 +522,7 @@ python manage.py runserver
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/497a47161e8843a593304e2cf913a9ad.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 from django.contrib import admin
 from .models import *
 # Register your models here.
@@ -553,7 +555,7 @@ admin.site.register(Task)
 
 在app tasks中view修改
 
-```   
+```
 from django.shortcuts import render
 from django.http import    HttpResponse
 from .models import *
@@ -584,7 +586,7 @@ list.html
 
 ### 创建form
 
-``` 
+```
 from django import forms
 from django.forms import ModelForm
 from .models import *
@@ -601,7 +603,7 @@ class TaskForm(forms.ModelForm):
 
 在view中更改：
 
-``` 
+```
 from django.shortcuts import render
 from django.http import    HttpResponse
 from .models import *
@@ -620,7 +622,7 @@ def index(request):
 
 ### 更改模板文件：
 
-``` 
+```
 <h3>TO DO</h3>
 <form>
     {{form}}
@@ -641,7 +643,7 @@ def index(request):
 
 ### 修改模板html页面：
 
-``` 
+```
 <h3>TO DO</h3>
 <form method="POST" action="/">
     {{form}}
@@ -660,7 +662,7 @@ def index(request):
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/14e11bc7a06342dabb153b71940adc9d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 from django.shortcuts import render,redirect
 from django.http import    HttpResponse
 from .models import *
@@ -688,7 +690,7 @@ def index(request):
 
 ### 修改html
 
-``` 
+```
 <h3>TO DO</h3>
 <form method="POST" action="/">
     #csrf_token  #数据发送django自带保护机制
@@ -716,7 +718,7 @@ def index(request):
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/be2db14b4a5d40c99ae5743b66b4a2f3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 <h3>Update Task</h3>
 <form>
     <input type="submit" name="Update Task">
@@ -729,7 +731,7 @@ def index(request):
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/3c61cee232a8445ca413c0bc5fbdffc4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 from django.shortcuts import render,redirect
 from django.http import    HttpResponse
 from .models import *
@@ -770,14 +772,9 @@ urlpatterns = [
 ]
 ```
 
- 
-
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/1e7c6195ce054c7fadc1c39b45092167.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
- 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/849a9c84760c4754b44ef7bdf0be220b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16)
-
- 
 
 ![这里插入图片](https://img-blog.csdnimg.cn/a98842752aaf4568a25c06ee15b92a60.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
@@ -785,7 +782,7 @@ urlpatterns = [
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/e8dc00773f9747cea7b9488478b1076c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 from django.shortcuts import render,redirect
 from django.http import    HttpResponse
 from .models import *
@@ -819,7 +816,7 @@ def updateTask(request,pk):
 ```html
 <h3>Update Task</h3>
 <form>
-    
+  
     {{form}}
     <input type="submit" name="Update Task">
 </form>
@@ -838,10 +835,10 @@ def updateTask(request,pk):
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/1b53e85217b3439a80dddf58d2620cff.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 <h3>Update Task</h3>
 <form method="post" action="">
-     
+   
     {{form}}
     <input type="submit" name="Update Task">
 </form>
@@ -851,7 +848,7 @@ def updateTask(request,pk):
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/8c801893c4004ce8bb6949f76bf1f1b3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 from django.shortcuts import render,redirect
 from django.http import    HttpResponse
 from .models import *
@@ -895,14 +892,14 @@ def updateTask(request,pk):
 
 创建删除模板
 
-``` 
+```
 <p>Are you sure want to delete "{{item}}" ?</p>
 <a href="`{% url 'tasks:list'%}`">Cancel</a>
 ```
 
 ### 修改views
 
-``` 
+```
 from django.shortcuts import render,redirect
 from django.http import    HttpResponse
 from .models import *
@@ -940,7 +937,7 @@ def deleteTask(request,pk):
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c763e1af2ab34a71b332ec5842c54ea3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-``` 
+```
 from django.urls import path
 from . import views
 
@@ -954,7 +951,7 @@ urlpatterns = [
 
 ### 再次修改view文件
 
-``` 
+```
 from django.shortcuts import render,redirect
 from django.http import    HttpResponse
 from .models import *
@@ -998,7 +995,7 @@ def deleteTask(request,pk):
 
 ### 修改html删除页面
 
-``` 
+```
 <p>Are you sure want to delete "{{item}}" ?</p>
 <a href="`{% url 'tasks:list' %}`">Cancel</a>
 <form method="POST" action="">
@@ -1017,7 +1014,7 @@ def deleteTask(request,pk):
 
 ### 修改views文件
 
-``` 
+```
 from django.shortcuts import render,redirect
 from django.http import    HttpResponse
 from .models import *
@@ -1063,10 +1060,10 @@ def deleteTask(request,pk):
 
 ## 修改一下list的html页面：
 
-``` 
+```
 <h3>TO DO</h3>
 <form method="POST" action="/">
-    
+  
     {{form}}
     <input type="submit" name="create Task">
 </form>
