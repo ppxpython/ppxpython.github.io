@@ -273,7 +273,7 @@ yq.aliyun.com)，也可以不包含它(如：.aliyun.com，则对于aliyun.com�
 一般测试人员在测试的时候只需要：
 1.获取token（抓包，直接查看）
 2.设置headers
-
+    
  
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020102010245681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDA1NDc1Ng==,size_16,color_FFFFFF,t_70#pic_center)
 ## 8.cllection容器
@@ -500,4 +500,7 @@ postman中
  [http请求方式](https://www.cnblogs.com/weibanggang/p/9454581.html)
  [cookie](https://blog.csdn.net/zhangquan_zone/article/details/77627899)
  [collection集合](https://baijiahao.baidu.com/s?id=1668989802350553884&wfr=spider&for=pc)
+
+
+ 
 

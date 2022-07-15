@@ -79,8 +79,8 @@ theme: shoka
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'   
-  repo: https://github.com/ppxpython/ppxpython.github.io.git  
-  # repo: git@github.com:ppxpython/ppxpython.github.io.git  
+  # repo: https://github.com/ppxpython/ppxpython.github.io.git  
+  repo: git@github.com:ppxpython/ppxpython.github.io.git  
   branch: master  
 
 #   # feed
