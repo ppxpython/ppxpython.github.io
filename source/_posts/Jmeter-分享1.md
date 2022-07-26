@@ -70,6 +70,11 @@ Apache JMeter是Apache组织开发的基于Java的**压力测试**工具。用�
   * 方法：发送HTTP请求的方法，可用方法包括GET、POST、HEAD、PUT、OPTIONS、TRACE、DELETE等。
   * 路径：目标URL路径（URL中去掉服务器地址、端口及参数后剩余部分）
   * Content encoding ：编码方式，默认为ISO-8859-1编码，这里配置为utf-8。
+  * 前置处理器：主要用来对其覆盖范围内采样器请求和响应的内容进行修改或截获。url的分配
+
+setUP线程组：在测试任务ThreadGroup 运行前先被运行。通常用在运行测试任务前，做初始化工作。例如建立数据库连接初始分化工作、用户登录
+tearDown线程组：在测试任务线程组运行结束后被运行。通常用来做清理测试脏数据、登出、关闭资源等工作。例如关闭数据库连接
+线程组： 执行核心任务
 
 ![](https://pic.imgdb.cn/item/62cea14cf54cd3f937161cdb.jpg)
 

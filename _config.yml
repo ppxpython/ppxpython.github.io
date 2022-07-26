@@ -314,7 +314,7 @@ category_map: # edit for Theme.shoka
   接口测试: api-testing
   安全性测试: security-testing
 #对应的四级目录
-  #性能
+  #性能:performance-testing
   基准测试: benchmarking
   负载测试: load-test
   压力测试: stress-testing
@@ -328,7 +328,7 @@ category_map: # edit for Theme.shoka
 # 对应三级目录
   接口自动化测试: Interface-automation-test
   UI自动化测试: ui-automation-test
-#对应四级目录框架
+#对应四级目录框架 Interface-automation-test
   unitTest框架: unittest
 
 
