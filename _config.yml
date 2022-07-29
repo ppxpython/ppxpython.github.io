@@ -116,7 +116,11 @@ deploy:
 #   styles:
 #   localEmojis:
 
-
+# emoji:
+#   enable: true
+#   className: github-emoji
+#   styles:
+#   customEmojis:
 
 
 markdown:
