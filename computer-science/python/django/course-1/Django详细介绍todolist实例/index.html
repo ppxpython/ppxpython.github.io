@@ -1,0 +1,463 @@
+<!-- build time:Tue Dec 05 2023 18:47:58 GMT+0800 (中国标准时间) --><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#FFF"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"><link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" type="application/rss+xml" title="SUM" href="https://ppxpython.github.io/rss.xml"><link rel="alternate" type="application/atom+xml" title="SUM" href="https://ppxpython.github.io/atom.xml"><link rel="alternate" type="application/json" title="SUM" href="https://ppxpython.github.io/feed.json"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="/css/app.css?v=0.2.5"><meta name="keywords" content="Django"><link rel="canonical" href="https://ppxpython.github.io/computer-science/python/django/course-1/Django%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8Dtodolist%E5%AE%9E%E4%BE%8B/"><title>Django详细介绍todolist实例 - 零基础学Django框架 - Django框架 - Python - 计算机科学 | Sumya = SUM = 会者定离，一期一祈， 感谢在这与你相遇</title><meta name="generator" content="Hexo 5.2.0"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">Django详细介绍todolist实例</h1><div class="meta"><span class="item" title="创建时间：2022-01-05 10:41:40"><span class="icon"><i class="ic i-calendar"></i> </span><span class="text">发表于</span> <time itemprop="dateCreated datePublished" datetime="2022-01-05T10:41:40+08:00">2022-01-05</time></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span> <span class="line"></span> <span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">Sumya</a></li></ul><ul class="right"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div id="imgs" class="pjax"><ul><li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li><li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li><li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li><li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li><li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li><li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"/><use xlink:href="#gentle-wave" x="48" y="3"/><use xlink:href="#gentle-wave" x="48" y="5"/><use xlink:href="#gentle-wave" x="48" y="7"/></g></svg></div><main><div class="inner"><div id="main" class="pjax"><div class="article wrap"><div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i> <span><a href="/">首页</a></span><i class="ic i-angle-right"></i> <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学"><span itemprop="name">计算机科学</span></a><meta itemprop="position" content="1"></span><i class="ic i-angle-right"></i> <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/python/" itemprop="item" rel="index" title="分类于 Python"><span itemprop="name">Python</span></a><meta itemprop="position" content="2"></span><i class="ic i-angle-right"></i> <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/python/django/" itemprop="item" rel="index" title="分类于 Django框架"><span itemprop="name">Django框架</span></a><meta itemprop="position" content="3"></span><i class="ic i-angle-right"></i> <span class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/python/django/course-1/" itemprop="item" rel="index" title="分类于 零基础学Django框架"><span itemprop="name">零基础学Django框架</span></a><meta itemprop="position" content="4"></span></div><article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://ppxpython.github.io/computer-science/python/django/course-1/Django%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8Dtodolist%E5%AE%9E%E4%BE%8B/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.jpg"><meta itemprop="name" content="Yang shuping"><meta itemprop="description" content="会者定离，一期一祈， 感谢在这与你相遇, "></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="SUM"></span><div class="body md" itemprop="articleBody"><h2 id="开发环境"><a class="anchor" href="#开发环境">#</a> 开发环境</h2><p>python3.7</p><p>django</p><p>win10（64 位）</p><h2 id="什么是框架"><a class="anchor" href="#什么是框架">#</a> 什么是框架</h2><p>通俗的说，框架是实现某种功能的半成品，提供了一些常用的工具类和一些基础通用化的组件，可以供开发人员在此基础上，更高效的满足各自的业务需求。</p><h2 id="为什么要使用框架"><a class="anchor" href="#为什么要使用框架">#</a> 为什么要使用框架</h2><p>一个优秀的的框架，它相当于是一个模板代码库，很多基础性的功能，底层功能操作都已经帮我们实现了，我们只需要专心的实现所需要的业务逻辑就可以了。这样，就大大提高了我们的开发效率，所以技术的发展，多数情况下是为了满足业务的需求。</p><p>简单，快捷，高效，响应，兼容</p><h2 id="什么是django"><a class="anchor" href="#什么是django">#</a> 什么是 django</h2><p>我们都知道，Django 是基于 Python 的 Web 开发框架。</p><p>百度百科介绍：</p><p>Django 是一个开放<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTYlQkElOTAlRTQlQkIlQTMlRTclQTAlODEvMzgxNDIxMw==">源代码</span>的<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9XZWIlRTUlQkElOTQlRTclOTQlQTglRTYlQTElODYlRTYlOUUlQjYvNDI2MjIzMw=="> Web 应用框架</span>，由<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9QeXRob24vNDA3MzEz"> Python</span> 写成。采用了 MTV 的框架模式，即模型 M，视图 V 和模版 T。它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站的，即是 CMS（内容管理系统）软件。并于 2005 年 7 月在<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9CU0QlRTglQUUlQjglRTUlOEYlQUYlRTglQUYlODEvMTA2NDI0MTI="> BSD 许可证</span>下发布。</p><p>这套框架是以比利时的吉普赛<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTclODglQjUlRTUlQTMlQUIlRTUlOTAlODklRTQlQkIlOTYvNDY5NjIwMQ==">爵士吉他</span>手 Django Reinhardt 来命名的。</p><p>有一家劳伦斯的出版社，说白了就想新浪。这种网站会涉及到什么问题呢我们来看一下：</p><p><img data-src="https://img-blog.csdnimg.cn/c05a55328e394c1da23a9a7f66787826.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>只需进行数据库替换，采用此模板样式不变，那网站的开发速率提高</p><h2 id="django目的和用途"><a class="anchor" href="#django目的和用途">#</a> django 目的和用途</h2><p>django 的主要目的是<strong>简便，快速</strong>的开发<strong>数据库驱动</strong>的网站，他强调代码复用。</p><p>多个组件看依方便的以 “插件” 形式服务整个框架</p><p><strong>所有的 web 框架的意义都在于：</strong></p><ol><li>搭建框架应用</li><li>免去不同 web 应用相同代码的部分重复编写，只需关心应用核心的业务实现</li></ol><p>}}}</p><p>}}}</p><h2 id="django的特点"><a class="anchor" href="#django的特点">#</a> django 的特点</h2><p>对比 Flask 框架，Django 原生提供了众多的功能组件，让开发更便捷</p><ol><li>提供项目工程管理的自动脚手工具（脚手架工具）</li><li>数据库 ORM 支持（对象关系映射）[外链图片转存失败，源站可能有防盗链机制，建议将图片保存下来直接上传 (img-GygyZD04-1632645131208)(assets/image-20210921214755-gc5rj3l.png)]【不会 sql 语句也可以实现】</li><li>模板【replace，可以通过变量将模板和数据打通。使用数据替换模板变量，达到动态展示效果】</li><li>表单【表单获取直接转化成对象处理】</li><li>admin 管理站点【自动生成后台】</li><li>文件管理</li><li>认证权限</li><li>session 机制</li><li>缓存</li></ol><p><img data-src="https://img-blog.csdnimg.cn/757319e9e9534c6fbb7fc517f248c1ea.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_13,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>如果 Django 类似于精装修的房子，自带豪华家具、非常齐全功能强大的家电，什么都有了，拎包入住即可，十分方便。重量级框架，快捷。</p><p><img data-src="https://img-blog.csdnimg.cn/5c06637e024842678528696dc46b3345.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_13,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>而 Flask 类似于毛坯房，自己想把房子装修成什么样自己找材料，买家具自己装。材料和家具种类非常丰富，并且都是现成免费的，直接拿过去用即可。轻量级，灵活。</p><h2 id="mvt设计模式"><a class="anchor" href="#mvt设计模式">#</a> MVT 设计模式</h2><p><img data-src="https://img-blog.csdnimg.cn/2fb652d4bc814b5789d1f1bd439f3de7.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt=""></p><p>前端客户端发起请求，请求可能是用户点击浏览器发起的，app，ajax 请求或是爬虫程序，</p><p>服务器：接受和解析 http 请求报文，他的服务对象是 http 请求</p><p ”request_path“：request="">框架：后端服务框架，服务器解析成字典格式</p><p>视图：定义数据处理方法：index（）然后经处理完的结果变成响应对象，发送给服务器</p><p>中间层：装饰器</p><p>作用：在不添加源代码的情况下增加功能</p><p>#补充知识点#</p><p>((20210923102902-68l094i))</p><p>WSGI 只是一个<strong> PythonWeb 服务器网关接口协议</strong>，或者说是一份标准，用来描述 Server 与 Framework 之间的通信接口。</p><p>这样，一些符合 WSGI 标准的 Framework 如 Flask、Django、web.py 等等就可以与同样符合 WSGI 标准的 Server 库进行无缝对接。</p><p>只要你的 Framework 符合 WSGi 规范，那么在以后有了效率更高的 Server 的时候，你可以毫不费力地将代码迁移过去。</p><p>#场景 #：开发了几个应用后，发现每个应用都完成了从监听网络端口到建立连接、解析请求的参数、进行回应、发送 Response 数据包等等一系列的工作，每次都要在获取请求、解析请求、发送请求这些一成不变的步骤上花费大量时间，不如写个 Server 模块，把这些功能单独实现，以后再有新的需求，只需要考虑 Framework 部分即可，这样就可以避免 “重复造轮子” 了。当自己写好了一套 server 程序，隔壁老王听说你写了个 Server 程序很牛掰，想要借用一下你的代码。你本着开源精神将 Server 模块分享给他，可是，老王拿到代码一看就傻眼了 —— 天啊，你的 Server 部分的数据接口、函数调用方式和他自己写的 Framework 完全不搭，改动起来难度颇大，还不如自己再写一个 Server 来得方便。应该整一套接口规范出来，让老王在编写自己的 Framework 的时候就按照你设计的规范来写，这样写出来的程序才能够互相 “契合”，便于调试和使用。就是 WSGI（Python Web Server Gateway）</p><h3 id="mvc"><a class="anchor" href="#mvc">#</a> <strong>MVC</strong></h3><p>程序设计模式：MVC，核心思想 **：分工，解耦 **，让不同的代码块之间降低耦合，增强代码的可扩展性和可移植性，实现向后兼容<br><img data-src="https://img-blog.csdnimg.cn/a73b713de951442fba00f3e7b32906c7.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p><strong>M</strong> 全拼为 Model，主要封装对数据库的访问，对数据库中<strong>数据进行增删改查</strong>操作</p><p><strong>V</strong> 全拼为 View，用于封装结果，<strong>生成页面展示的 html</strong></p><p><strong>C</strong> 全拼 Controller，用于接收请求，<strong>处理业务逻辑</strong>，与 Model 和 View 进行交互，返回结果</p><h3 id="mvt"><a class="anchor" href="#mvt">#</a> <strong>MVT</strong></h3><p>原理就是 mvc 不过自己将名字改了</p><p><img data-src="https://img-blog.csdnimg.cn/327ef1142afe453fbe8800ae1ab8d1bd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p><strong>M</strong> 全拼为 Model，与 MVC 中的<strong> M</strong> 功能相同，主要封装对数据库的访问，对数据库中<strong>数据进行增删改查</strong>操作</p><p><strong>V</strong> 全拼为 View，与 MVC 中的<strong> C</strong> 功能相同，用于接收请求，<strong>处理业务逻辑</strong>，与 Model 和 View 进行交互，返回结果</p><p><strong>T</strong> 全拼 Template，与 MVC 中的<strong> V</strong> 功能相同，用于封装结果，<strong>负责封装构造要返回的 htm</strong>l</p><p>((20210924115549-5h51jh6))</p><h2 id="虚拟环境"><a class="anchor" href="#虚拟环境">#</a> 虚拟环境</h2><h3 id="什么场景需要用虚拟环境"><a class="anchor" href="#什么场景需要用虚拟环境">#</a> 什么场景需要用虚拟环境</h3><p><img data-src="https://img-blog.csdnimg.cn/246673b637ec44fdb412970e4f387173.png" alt="在这里插入图片描述"><br><img data-src="https://img-blog.csdnimg.cn/61c59d045ab1428baa225725f4a81d23.png" alt="在这里插入图片描述"></p><p>比如两个项目在并行，然后用到的 python 和 django 版本不一样</p><p>解释器一样包都可能不一样</p><h3 id="虚拟环境效果"><a class="anchor" href="#虚拟环境效果">#</a> 虚拟环境效果</h3><p>[ <img data-src="https://img-blog.csdnimg.cn/4071780b82744bf1ac2f342e6d32517b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>((20210923111014-udk4aum))</p><h1 id="实战"><a class="anchor" href="#实战">#</a> 实战</h1><h2 id="搭建环境"><a class="anchor" href="#搭建环境">#</a> 搭建环境</h2><p>默认会下载最新版本</p><p><code>pip install django</code><br><img data-src="https://img-blog.csdnimg.cn/be491549204b49389d43e65bd6feee63.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="创建工程"><a class="anchor" href="#创建工程">#</a> 创建工程</h2><p>进入<strong>想要创建的项目目录</strong>下</p><p><img data-src="https://img-blog.csdnimg.cn/5d6b11a591e64531bd88e10428da796f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_12,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>再命令行中输入</p><p><code>django-admin startproject todo</code></p><p><img data-src="https://img-blog.csdnimg.cn/79c5201413144fcaa2111b728ffe957d.png" alt=""></p><p>查看文件</p><p><img data-src="https://img-blog.csdnimg.cn/33b77bcecfe44e7994b73c5e160797bc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_9,color_FFFFFF,t_70,g_se,x_16" alt=" "></p><p>采用 pycharm 打开项目</p><p>然后进入项目中</p><p><code>cd todo</code></p><p><img data-src="https://img-blog.csdnimg.cn/a8f201c1ccd84932937b953ae45a42c8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>尝试启动服务器</p><p>在开发阶段，未来能够快速预览到开发效果<br>django 提供了一个纯 python 编写的轻量级 web 服务器，仅在开发阶段使用。</p><p><code>python manage.py runserver</code></p><p><img data-src="https://img-blog.csdnimg.cn/b46ee99650114e10a5c009e4b629e43a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p><img data-src="https://img-blog.csdnimg.cn/fea8ecb71797494388a82374415be90c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>这样这是成功</p><p><code>python manage.py migrate</code></p><p><img data-src="https://img-blog.csdnimg.cn/d5f9a09d1695496abe4426475c2a1e46.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="创建管理员账号"><a class="anchor" href="#创建管理员账号">#</a> 创建管理员账号</h2><p><code>python manage.py createsuperuser</code></p><p><img data-src="https://img-blog.csdnimg.cn/e71995c4f6ae4aa082b7cae285e6abe4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>重新启动服务器：</p><p><img data-src="https://img-blog.csdnimg.cn/8763318a678c4f2ca0bde9a353dd45ab.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>登陆刚注册号的账号密码</p><p>进入数据管理页面 <span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo4MDAwL2FkbWlu">http://localhost:8000/admin</span></p><p><img data-src="https://img-blog.csdnimg.cn/6ac41ecab9494bc6913c0413faef1536.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>终止服务器， <code>Ctrl+C</code></p><h2 id="创建子应用"><a class="anchor" href="#创建子应用">#</a> 创建子应用</h2><p><code>python manage.py startapp tasks</code></p><p><img data-src="https://img-blog.csdnimg.cn/8716443073e74fb69c461122a65fb827.png" alt="在这里插入图片描述"></p><p>查看目录中的结构</p><p><img data-src="https://img-blog.csdnimg.cn/9893fc6b9b364286a31e1fac81a8ee97.png" alt="在这里插入图片描述"></p><h2 id="配置app路径"><a class="anchor" href="#配置app路径">#</a> 配置 app 路径</h2><p>然计算机找到创建的 app</p><p>在添加</p><pre><code class="language-、">'tasks'
+</code></pre><p>查找定位到 app 的路径</p><p><img data-src="https://img-blog.csdnimg.cn/6e1517522c4347709927b6fa6cf2a83e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>跟项目路径：</p><p>之前 django2.x</p><pre><code class="language-、">BASE_DIR =as.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+</code></pre><p>引入 path 之后</p><pre><code>BASE_DIR = Path(__file__).resolve().parent.parent
+</code></pre><p>C:\Users\yangs\Desktop\ 新建文件夹 \todo\todo\<span class="exturl" data-url="aHR0cDovL3NldHRpbmdzLnB5">settings.py</span></p><h2 id="创建视图函数"><a class="anchor" href="#创建视图函数">#</a> 创建视图函数</h2><p>再 app tasks 中创建视图函数 view index</p><pre><code>from django.shortcuts import render 
+from django.http import    HttpResponse 
+## Create your views here. 
+def index(request):   
+    return HttpResponse('hello djangho')
+</code></pre><p><img data-src="https://img-blog.csdnimg.cn/515b6f25f89d442cac395ea3c46de68e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="创建urls路由"><a class="anchor" href="#创建urls路由">#</a> 创建 urls 路由</h2><p><img data-src="https://img-blog.csdnimg.cn/8058ae65f1674bc6800e422b18d878ca.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="配置项目urls"><a class="anchor" href="#配置项目urls">#</a> 配置项目 urls</h2><p><img data-src="https://img-blog.csdnimg.cn/2098c7e745784e928ce10d95c3608ea8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>"""todo URL Configuration  The `urlpatterns` list routes URLs to views. 
+For more information please see:     https://docs.djangoproject.com/en/3.2/topics/http/urls/ 
+Examples: Function views  
+1. Add an import:  from my_app import views   
+2. Add a URL to urlpatterns:  path('', views.home, name='home') Class-based views  
+1. Add an import:  from other_app.views import Home   
+2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home') Including another URLconf   
+1. Import the include() function: from django.urls import include, path   
+2. Add a URL to urlpatterns:  path('blog/', include('blog.urls')) """ 
+from django.contrib import admin 
+from django.urls import path,include  
+urlpatterns = [
+path('admin/', admin.site.urls),   
+path('',include('tasks.urls')) ]
+</code></pre><h2 id="重启服务器"><a class="anchor" href="#重启服务器">#</a> 重启服务器</h2><p>重新启动服务器 <code>python manage.py runserver</code></p><p><img data-src="https://img-blog.csdnimg.cn/e338878352404f65b447d5cf5ec3b627.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="创建模板"><a class="anchor" href="#创建模板">#</a> 创建模板</h2><p>创建文件夹 templates 中再创建 tasks 文件夹中创建 list.html</p><p>[外链图片转存失败，源站可能有防盗链机制，建议将图片保存下来直接上传 (img-Yhxl9wbo-1632645131300)(assets/clipboard-20210921230301-1lv02wo-20210924095934-379n9oy.png)]</p><figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>TODO<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span></pre></td></tr></tbody></table></figure><h2 id="修改视图"><a class="anchor" href="#修改视图">#</a> 修改视图</h2><p>修改 app tasks 中的 views</p><p><img data-src="https://img-blog.csdnimg.cn/fbafdc78d7664bdc91d7a9bcb09ecc50.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>from django.shortcuts import render
+from django.http import    HttpResponse
+# Create your views here.
+def index(request):
+    return render(request,'tasks/list.html')
+</code></pre><p>此时出现</p><p><img data-src="https://img-blog.csdnimg.cn/f552b6c933154fa497ca5edda577e676.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>别着急看看错误提示</p><h2 id="配置模板默认路径"><a class="anchor" href="#配置模板默认路径">#</a> 配置模板默认路径</h2><p>显示找不到 list.html 文件，所以我们将从配置 setting 中设置</p><p><img data-src="https://img-blog.csdnimg.cn/d8ade6c117db426dac71a67fd7d2d6e4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>"""
+Django settings for todo project.
+
+Generated by 'django-admin startproject' using Django 3.2.6.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/3.2/topics/settings/
+
+For the full list of settings and their values, see
+https://docs.djangoproject.com/en/3.2/ref/settings/
+"""
+import os
+from pathlib import Path
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-+(9j8^8xt6(5aa79o^bp8g8#t#lpuif3u424yx55bz=yrk@)d%'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+# Application definition
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'tasks',
+]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+ROOT_URLCONF = 'todo.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #连接成模板目录
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'todo.wsgi.application'
+
+
+# Database
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
+# Password validation
+# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
+
+# Internationalization
+# https://docs.djangoproject.com/en/3.2/topics/i18n/
+
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+STATIC_URL = '/static/'
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+</code></pre><p>此时刷新一下：</p><p><img data-src="https://img-blog.csdnimg.cn/94a972ec67a5460fbb958d1565528f10.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="创建模型"><a class="anchor" href="#创建模型">#</a> 创建模型</h2><p>之后我们来创建 model 文件</p><p><img data-src="https://img-blog.csdnimg.cn/9d5c4dc54f3e46ddae7b54afc6b211da.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>from django.db import models
+
+# Create your models here.
+
+class Task(models.Model):
+    title=models.CharField(max_length=200)
+    complete=models.BooleanField(default=False)
+    create=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+</code></pre><p>再命令行中输入：</p><h2 id="更新数据库"><a class="anchor" href="#更新数据库">#</a> 更新数据库</h2><p>python <span class="exturl" data-url="aHR0cDovL21hbmFnZS5weQ==">manage.py</span> makemigrations</p><p><img data-src="https://img-blog.csdnimg.cn/c44e88709d274af1a8831890b80809c0.png" alt="在这里插入图片描述"></p><p>python <span class="exturl" data-url="aHR0cDovL21hbmFnZS5weQ==">manage.py</span> migrate</p><p><img data-src="https://img-blog.csdnimg.cn/db4bccd56562420c813c8bcfeccfa59b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>将数据库进行更新</p><h2 id="启动服务器"><a class="anchor" href="#启动服务器">#</a> 启动服务器：</h2><p>python <span class="exturl" data-url="aHR0cDovL21hbmFnZS5weQ==">manage.py</span> runserver</p><p><img data-src="https://img-blog.csdnimg.cn/305b61c394204d74a168fc5918e91543.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>访问 8000:/admin</p><p><img data-src="https://img-blog.csdnimg.cn/01fe157ce7d74a23b6f1a1941909257a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="<span data-type=">[外链图片转存失败，源站可能有防盗链机制，建议将图片保存下来直接上传 (img-KLguiQfn-1632645131322)(assets/clipboard-20210921230301-svzfg5q-20210924095934-vw2uo7h.png)]" /&gt;</p><p>没有发现新建的 model</p><h2 id="用户和model进行关联"><a class="anchor" href="#用户和model进行关联">#</a> 用户和 model 进行关联</h2><p>需要将用户和 model 进行关联</p><p>在 app tasks 中 admin 中</p><p><img data-src="https://img-blog.csdnimg.cn/497a47161e8843a593304e2cf913a9ad.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>from django.contrib import admin
+from .models import *
+# Register your models here.
+admin.site.register(Task)
+</code></pre><p>重新刷新页面 <img data-src="https://img-blog.csdnimg.cn/a31bad1777e243c7a863dddba34617f3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>其中新创建的模块</p><h2 id="添加数据库数据"><a class="anchor" href="#添加数据库数据">#</a> 添加数据库数据</h2><p>添加数据并在数据库中查看数据：</p><p><img data-src="https://img-blog.csdnimg.cn/1de7e6a02d1a408b9f539fa45434de63.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>&lt;br /&gt;</p><p><img data-src="https://img-blog.csdnimg.cn/00154d7c0c714d40972aad77605565da.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>现在我们想要将数据库中的数据显示在 views 中</p><p>将 models 中映射的数据放在 view 中展示出来</p><h2 id="展示数据"><a class="anchor" href="#展示数据">#</a> 展示数据</h2><p><img data-src="https://img-blog.csdnimg.cn/abfc94f318f14fb4b3383dbff559b9c3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h3 id="修改view"><a class="anchor" href="#修改view">#</a> 修改 view</h3><p>在 app tasks 中 view 修改</p><pre><code>from django.shortcuts import render
+from django.http import    HttpResponse
+from .models import *
+
+# Create your views here.
+def index(request):
+    tasks=Task.objects.all()
+    context={'tasks',tasks}
+    return render(request,'tasks/list.html',context)
+</code></pre><h3 id="修改html"><a class="anchor" href="#修改html">#</a> 修改 html</h3><p>将数据传入模板当中</p><p>list.html</p><p><img data-src="https://img-blog.csdnimg.cn/dc5d97b9d81b49058789cd34ac5c0a05.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>TO DO<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment"></span></pre></td></tr></tbody></table></figure><p>在 app tasks 中创建 form 文件</p><h3 id="创建form"><a class="anchor" href="#创建form">#</a> 创建 form</h3><pre><code>from django import forms
+from django.forms import ModelForm
+from .models import *
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model=Task
+        fields='__all__'
+</code></pre><p><img data-src="https://img-blog.csdnimg.cn/f33ff9da2cdf4856a874e091eb29ea2d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h3 id="修改view-2"><a class="anchor" href="#修改view-2">#</a> 修改 view</h3><p>在 view 中更改：</p><pre><code>from django.shortcuts import render
+from django.http import    HttpResponse
+from .models import *
+from .forms import *
+# Create your views here.
+def index(request):
+    tasks=Task.objects.all()
+    form=TaskForm()
+    context={'tasks':tasks,'form':form}
+    return render(request,'tasks/list.html',context)
+</code></pre><p>&lt;br /&gt;</p><p><img data-src="https://img-blog.csdnimg.cn/47aefcae44c847eb965b469acb91a7e3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h3 id="更改模板文件"><a class="anchor" href="#更改模板文件">#</a> 更改模板文件：</h3><pre><code>&lt;h3&gt;TO DO&lt;/h3&gt;
+&lt;form&gt;
+    {{form}}
+    &lt;input type="submit" name="create Task"&gt;
+&lt;/form&gt;
+{% for task in tasks %}
+<p>{{task.title}}</p>
+{% endfor %}
+</code></pre><p><img data-src="https://img-blog.csdnimg.cn/ff397403c7e34dc4bd6022890b1703d4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>查看页面：</p><p><img data-src="https://img-blog.csdnimg.cn/ad8bb0edb98e4963a7d7f3e45bcfbf1a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="添加数据"><a class="anchor" href="#添加数据">#</a> 添加数据</h2><h3 id="修改模板html页面"><a class="anchor" href="#修改模板html页面">#</a> 修改模板 html 页面：</h3><pre><code>&lt;h3&gt;TO DO&lt;/h3&gt;
+&lt;form method="POST" action="/"&gt;
+    {{form}}
+    &lt;input type="submit" name="create Task"&gt;
+&lt;/form&gt;
+{% for task in tasks %}
+<p>{{task.title}}</p>
+{% endfor %}
+</code></pre><p>&lt;br /&gt;</p><p><img data-src="https://img-blog.csdnimg.cn/56925a483e6d41b791553d3d59bf2ae2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>&lt;br /&gt;</p><p><img data-src="https://img-blog.csdnimg.cn/14e11bc7a06342dabb153b71940adc9d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>from django.shortcuts import render,redirect
+from django.http import    HttpResponse
+from .models import *
+from .forms import *
+# Create your views here.
+def index(request):
+    tasks=Task.objects.all()
+    form=TaskForm()
+    if request.method=='POST':
+        form=TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+    context={'tasks':tasks,'form':form}
+    return render(request,'tasks/list.html',context)
+</code></pre><p>启动发现：</p><p>输入数据点击提交</p><p><img data-src="https://img-blog.csdnimg.cn/53553f3f7f0949c39f5f2c54cbb39232.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>此时我们设置一下 list,html</p><h3 id="修改html-2"><a class="anchor" href="#修改html-2">#</a> 修改 html</h3><pre><code>&lt;h3&gt;TO DO&lt;/h3&gt;
+&lt;form method="POST" action="/"&gt;
+    #csrf_token  #数据发送django自带保护机制
+    {{form}}
+    &lt;input type="submit" name="create Task"&gt;
+&lt;/form&gt;
+{% for task in tasks %}
+<p>{{task.title}}</p>
+{% endfor %}
+</code></pre><p><img data-src="https://img-blog.csdnimg.cn/2ae75fcef9bf4772ba03bcd79809a260.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>在页面上测试添加</p><p><img data-src="https://img-blog.csdnimg.cn/a7d5216c120142898778d82a89d64c62.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>成功，现在我们来编写</p><h2 id="修改页面"><a class="anchor" href="#修改页面">#</a> 修改页面</h2><p>先在模板下创建 update_task.html 页面</p><h3 id="修改html-3"><a class="anchor" href="#修改html-3">#</a> 修改 html</h3><p><img data-src="https://img-blog.csdnimg.cn/be2db14b4a5d40c99ae5743b66b4a2f3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>&lt;h3&gt;Update Task&lt;/h3&gt;
+&lt;form&gt;
+    &lt;input type="submit" name="Update Task"&gt;
+&lt;/form&gt;
+</code></pre><h3 id="修改view-3"><a class="anchor" href="#修改view-3">#</a> 修改 view</h3><p>在 views 页面中进行修改：</p><p><img data-src="https://img-blog.csdnimg.cn/3c61cee232a8445ca413c0bc5fbdffc4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>from django.shortcuts import render,redirect
+from django.http import    HttpResponse
+from .models import *
+from .forms import *
+# Create your views here.
+def index(request):
+    tasks=Task.objects.all()
+    form=TaskForm()
+    if request.method=='POST':
+        form=TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
+    context={'tasks':tasks,'form':form}
+    return render(request,'tasks/list.html',context)
+def updateTask(request,pk):
+    task=Task.objects.all(id=pk)
+    return render(request,'tasks/update_task.html')
+</code></pre><p>&lt;br /&gt;</p><p><img data-src="https://img-blog.csdnimg.cn/c5a48a4282a9490f902f48528bef972a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h3 id="修改url"><a class="anchor" href="#修改url">#</a> 修改 url</h3><p>修改 app task 中的 urls</p><figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>from django.urls import path</pre></td></tr><tr><td data-num="2"></td><td><pre>from . import views</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>app_name = 'tasks'</pre></td></tr><tr><td data-num="5"></td><td><pre>urlpatterns = [</pre></td></tr><tr><td data-num="6"></td><td><pre>    path('', views.index, name='list'),</pre></td></tr><tr><td data-num="7"></td><td><pre>    path('update_task/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">str:</span>pk</span><span class="token punctuation">&gt;</span></span>',views.updateTask,name='update_task'),</pre></td></tr><tr><td data-num="8"></td><td><pre>]</pre></td></tr></tbody></table></figure><p><img data-src="https://img-blog.csdnimg.cn/1e7c6195ce054c7fadc1c39b45092167.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p><img data-src="https://img-blog.csdnimg.cn/849a9c84760c4754b44ef7bdf0be220b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p><img data-src="https://img-blog.csdnimg.cn/a98842752aaf4568a25c06ee15b92a60.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="这里插入图片"></p><p>接着我们需要在修改页面写入响应的数据和输入框</p><p><img data-src="https://img-blog.csdnimg.cn/e8dc00773f9747cea7b9488478b1076c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>from django.shortcuts import render,redirect
+from django.http import    HttpResponse
+from .models import *
+from .forms import *
+# Create your views here.
+def index(request):
+    tasks=Task.objects.all()
+    form=TaskForm()
+    if request.method=='POST':
+        form=TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
+    context={'tasks':tasks,'form':form}
+    return render(request,'tasks/list.html',context)
+
+def updateTask(request,pk):
+    task=Task.objects.get(id=pk)
+    form=TaskForm(instance=task)
+    context={'form':form}
+    return render(request,'tasks/update_task.html',context=context)
+</code></pre><h3 id="修改html-4"><a class="anchor" href="#修改html-4">#</a> 修改 html</h3><p>修改模板 update_task 页面：</p><p><img data-src="https://img-blog.csdnimg.cn/bd6a63b2256a46e4b825b76b63d4e379.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Update Task<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>  </pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token comment"></span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Update Task<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></pre></td></tr></tbody></table></figure><p>页面显示<br><img data-src="https://img-blog.csdnimg.cn/ca13287a29a44109a081852081ae0180.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>&lt;br /&gt;</p><p><img data-src="https://img-blog.csdnimg.cn/fb497bd0b1094c45a0c657ea8c7bb1cd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>这里只是显示出来还不能修改</p><p>修改页面</p><p><img data-src="https://img-blog.csdnimg.cn/1b53e85217b3439a80dddf58d2620cff.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>&lt;h3&gt;Update Task&lt;/h3&gt;
+&lt;form method="post" action=""&gt;
+   
+    {{form}}
+    &lt;input type="submit" name="Update Task"&gt;
+&lt;/form&gt;
+</code></pre><h3 id="修改view文件"><a class="anchor" href="#修改view文件">#</a> <strong>修改 view 文件：</strong></h3><p><img data-src="https://img-blog.csdnimg.cn/8c801893c4004ce8bb6949f76bf1f1b3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>from django.shortcuts import render,redirect
+from django.http import    HttpResponse
+from .models import *
+from .forms import *
+# Create your views here.
+def index(request):
+    tasks=Task.objects.all()
+    form=TaskForm()
+    if request.method=='POST':
+        form=TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
+    context={'tasks':tasks,'form':form}
+    return render(request,'tasks/list.html',context)
+
+def updateTask(request,pk):
+    task=Task.objects.get(id=pk)
+    form=TaskForm(instance=task)
+    if request.method=='POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context={'form':form}
+    return render(request,'tasks/update_task.html',context=context)
+</code></pre><p><code>&lt;br /&gt;</code> <img data-src="https://img-blog.csdnimg.cn/b31e74e28bb64627ae8b602a72440052.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>修改功能实现</p><h2 id="删除功能"><a class="anchor" href="#删除功能">#</a> 删除功能</h2><p>开始删除功能</p><h3 id="新建html"><a class="anchor" href="#新建html">#</a> 新建 html</h3><p><img data-src="https://img-blog.csdnimg.cn/611c026fd0a44cd4ab67cf0b41f43ce5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>创建删除模板</p><pre><code>&lt;p&gt;Are you sure want to delete "{{item}}" ?&lt;/p&gt;
+&lt;a href="`{% url 'tasks:list'%}`"&gt;Cancel&lt;/a&gt;
+</code></pre><h3 id="修改views"><a class="anchor" href="#修改views">#</a> 修改 views</h3><pre><code>from django.shortcuts import render,redirect
+from django.http import    HttpResponse
+from .models import *
+from .forms import *
+#Create your views here.
+def index(request):
+    tasks=Task.objects.all()
+    form=TaskForm()
+    if request.method=='POST':
+        form=TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
+    context={'tasks':tasks,'form':form}
+    return render(request,'tasks/list.html',context)
+
+def updateTask(request,pk):
+    task=Task.objects.get(id=pk)
+    form=TaskForm(instance=task)
+    if request.method=='POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context={'form':form}
+    return render(request,'tasks/update_task.html',context=context)
+def deleteTask(request,pk):
+    return render(request,'tasks/delete.html')
+</code></pre><p><img data-src="https://img-blog.csdnimg.cn/b7b56309767749a3863e9bc333a5b42b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h3 id="修改url文件"><a class="anchor" href="#修改url文件">#</a> 修改 url 文件</h3><p><img data-src="https://img-blog.csdnimg.cn/c763e1af2ab34a71b332ec5842c54ea3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><pre><code>from django.urls import path
+from . import views
+
+app_name = 'tasks'
+urlpatterns = [
+    path('', views.index, name='list'),
+    path('update_task/&lt;str:pk&gt;',views.updateTask,name='update_task'),
+    path('delete/&lt;str:pk&gt;', views.deleteTask, name='delete_task'),
+]
+</code></pre><h3 id="再次修改view文件"><a class="anchor" href="#再次修改view文件">#</a> 再次修改 view 文件</h3><pre><code>from django.shortcuts import render,redirect
+from django.http import    HttpResponse
+from .models import *
+from .forms import *
+
+Create your views here.
+
+def index(request):
+    tasks=Task.objects.all()
+    form=TaskForm()
+    if request.method=='POST':
+        form=TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
+    context={'tasks':tasks,'form':form}
+    return render(request,'tasks/list.html',context)
+def updateTask(request,pk):
+    task=Task.objects.get(id=pk)
+    form=TaskForm(instance=task)
+    if request.method=='POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context={'form':form}
+    return render(request,'tasks/update_task.html',context=context)
+
+def deleteTask(request,pk):
+    item=Task.objects.get(id=pk)
+    context={'item':item}
+    return render(request,'tasks/delete.html',context)&lt;br /&gt;
+</code></pre><h3 id="查看页面"><a class="anchor" href="#查看页面">#</a> 查看页面</h3><p><img data-src="https://img-blog.csdnimg.cn/0d2799bebe374092811a0264cdd42b0d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>&lt;br /&gt;</p><h3 id="修改html删除页面"><a class="anchor" href="#修改html删除页面">#</a> 修改 html 删除页面</h3><pre><code>&lt;p&gt;Are you sure want to delete "{{item}}" ?&lt;/p&gt;
+&lt;a href="`{% url 'tasks:list' %}`"&gt;Cancel&lt;/a&gt;
+&lt;form method="POST" action=""&gt;
+  
+    &lt;input type="submit" name="Confirm"&gt;
+&lt;/form&gt;
+</code></pre><p>&lt;br /&gt;</p><p><img data-src="https://img-blog.csdnimg.cn/25e741dd87b64a809b914e04732840a0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>页面展示</p><p><img data-src="https://img-blog.csdnimg.cn/bf97e14b2c5544ff8493b1ee4a01a781.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h3 id="修改views文件"><a class="anchor" href="#修改views文件">#</a> 修改 views 文件</h3><pre><code>from django.shortcuts import render,redirect
+from django.http import    HttpResponse
+from .models import *
+from .forms import *
+# Create your views here.
+def index(request):
+    tasks=Task.objects.all()
+    form=TaskForm()
+    if request.method=='POST':
+        form=TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
+    context={'tasks':tasks,'form':form}
+    return render(request,'tasks/list.html',context)
+
+def updateTask(request,pk):
+    task=Task.objects.get(id=pk)
+    form=TaskForm(instance=task)
+    if request.method=='POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context={'form':form}
+    return render(request,'tasks/update_task.html',context=context)
+
+
+def deleteTask(request,pk):
+    item=Task.objects.get(id=pk)
+    if request.method=='POST':
+        item.delete()
+        return redirect('/')
+    context={'item':item}
+    return render(request,'tasks/delete.html',context=context)
+</code></pre><p><img data-src="https://img-blog.csdnimg.cn/44dc60890efd44289014cf5c4c9459f8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>页面展示可以成功删除：<br><img data-src="https://img-blog.csdnimg.cn/f7b1dc88b9b1425997b76f6bb206687a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="修改一下list的html页面"><a class="anchor" href="#修改一下list的html页面">#</a> 修改一下 list 的 html 页面：</h2><pre><code>&lt;h3&gt;TO DO&lt;/h3&gt;
+&lt;form method="POST" action="/"&gt;
+  
+    {{form}}
+    &lt;input type="submit" name="create Task"&gt;
+&lt;/form&gt;
+`{% for task in tasks %}`
+<div>
+    <a href="{% url 'tasks:update_task' task.id %}">Update</a>
+    <a href="{% url 'tasks:delete' task.id %}">Delete</a>
+    {% if 'task.complete==True' %}
+    <strike>{{task}}</strike>
+    {% else %}
+    <span>{{task}}</span>
+    {% endif %}
+
+</div>
+
+`{% endfor %}`
+</code></pre><p><img data-src="https://img-blog.csdnimg.cn/d7b27def3b24469ba1624d6c1886a74c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h2 id="完成的项目-在这里插入图片描述"><a class="anchor" href="#完成的项目-在这里插入图片描述">#</a> 完成的项目 <img data-src="https://img-blog.csdnimg.cn/10ced2fbc2cd443195c2cbd5d42f33e4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></h2><p><code>&lt;br /&gt;</code> <img data-src="https://img-blog.csdnimg.cn/8656b5cc13eb4b5fbb5773512ddfc2f4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>&lt;br /&gt;</p><p><img data-src="https://img-blog.csdnimg.cn/810cc0c5287740b5a8c6c0d4dd6baaa8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>最终效果</p><p><img data-src="https://img-blog.csdnimg.cn/3bb4f446140449e4b58b81942509e2d0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><script>document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });</script><div class="tags"><a href="/tags/Django/" rel="tag"><i class="ic i-tag"></i> Django</a></div></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i> </span><span class="text">更新于</span> <time title="修改时间：2023-11-30 17:56:16" itemprop="dateModified" datetime="2023-11-30T17:56:16+08:00">2023-11-30</time></span></div><div id="copyright"><ul><li class="author"><strong>本文作者： </strong>Yang shuping <i class="ic i-at"><em>@</em></i>SUM</li><li class="link"><strong>本文链接：</strong> <a href="https://ppxpython.github.io/computer-science/python/django/course-1/Django%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8Dtodolist%E5%AE%9E%E4%BE%8B/" title="Django详细介绍todolist实例">https://ppxpython.github.io/computer-science/python/django/course-1/Django详细介绍todolist实例/</a></li><li class="license"><strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/records/live-record/new-idea/%E7%9C%8B%E5%88%9B%E4%B8%9A%E6%96%B0%E9%97%BB%E6%84%9F%E6%82%9F/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfb3vzhj20zk0m8wny.jpg" title="看创业新闻感悟"><span class="type">上一篇</span> <span class="category"><i class="ic i-flag"></i> 新创意点</span><h3>看创业新闻感悟</h3></a></div><div class="item right"><a href="/python%E5%AD%A6%E4%B9%A0%E5%BB%96%E9%9B%AA%E5%B3%B0/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeyhsblkj20zk0m81kx.jpg" title="python学习廖雪峰"><span class="type">下一篇</span> <span class="category"><i class="ic i-flag"></i></span><h3>python学习廖雪峰</h3></a></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">什么是框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6"><span class="toc-number">3.</span> <span class="toc-text">为什么要使用框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFdjango"><span class="toc-number">4.</span> <span class="toc-text">什么是 django</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#django%E7%9B%AE%E7%9A%84%E5%92%8C%E7%94%A8%E9%80%94"><span class="toc-number">5.</span> <span class="toc-text">django 目的和用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#django%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">6.</span> <span class="toc-text">django 的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mvt%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">MVT 设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mvc"><span class="toc-number">7.1.</span> <span class="toc-text">MVC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mvt"><span class="toc-number">7.2.</span> <span class="toc-text">MVT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">8.</span> <span class="toc-text">虚拟环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E9%9C%80%E8%A6%81%E7%94%A8%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">8.1.</span> <span class="toc-text">什么场景需要用虚拟环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%95%88%E6%9E%9C"><span class="toc-number">8.2.</span> <span class="toc-text">虚拟环境效果</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number"></span> <span class="toc-text">实战</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">创建工程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E5%8F%B7"><span class="toc-number">3.</span> <span class="toc-text">创建管理员账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%90%E5%BA%94%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">创建子应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEapp%E8%B7%AF%E5%BE%84"><span class="toc-number">5.</span> <span class="toc-text">配置 app 路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">创建视图函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAurls%E8%B7%AF%E7%94%B1"><span class="toc-number">7.</span> <span class="toc-text">创建 urls 路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AEurls"><span class="toc-number">8.</span> <span class="toc-text">配置项目 urls</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">9.</span> <span class="toc-text">重启服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%A8%A1%E6%9D%BF"><span class="toc-number">10.</span> <span class="toc-text">创建模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A7%86%E5%9B%BE"><span class="toc-number">11.</span> <span class="toc-text">修改视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF%E9%BB%98%E8%AE%A4%E8%B7%AF%E5%BE%84"><span class="toc-number">12.</span> <span class="toc-text">配置模板默认路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9E%8B"><span class="toc-number">13.</span> <span class="toc-text">创建模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">14.</span> <span class="toc-text">更新数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">15.</span> <span class="toc-text">启动服务器：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%92%8Cmodel%E8%BF%9B%E8%A1%8C%E5%85%B3%E8%81%94"><span class="toc-number">16.</span> <span class="toc-text">用户和 model 进行关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE"><span class="toc-number">17.</span> <span class="toc-text">添加数据库数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA%E6%95%B0%E6%8D%AE"><span class="toc-number">18.</span> <span class="toc-text">展示数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9view"><span class="toc-number">18.1.</span> <span class="toc-text">修改 view</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9html"><span class="toc-number">18.2.</span> <span class="toc-text">修改 html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAform"><span class="toc-number">18.3.</span> <span class="toc-text">创建 form</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9view-2"><span class="toc-number">18.4.</span> <span class="toc-text">修改 view</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6"><span class="toc-number">18.5.</span> <span class="toc-text">更改模板文件：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-number">19.</span> <span class="toc-text">添加数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%A8%A1%E6%9D%BFhtml%E9%A1%B5%E9%9D%A2"><span class="toc-number">19.1.</span> <span class="toc-text">修改模板 html 页面：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9html-2"><span class="toc-number">19.2.</span> <span class="toc-text">修改 html</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B5%E9%9D%A2"><span class="toc-number">20.</span> <span class="toc-text">修改页面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9html-3"><span class="toc-number">20.1.</span> <span class="toc-text">修改 html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9view-3"><span class="toc-number">20.2.</span> <span class="toc-text">修改 view</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9url"><span class="toc-number">20.3.</span> <span class="toc-text">修改 url</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9html-4"><span class="toc-number">20.4.</span> <span class="toc-text">修改 html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9view%E6%96%87%E4%BB%B6"><span class="toc-number">20.5.</span> <span class="toc-text">修改 view 文件：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%8A%9F%E8%83%BD"><span class="toc-number">21.</span> <span class="toc-text">删除功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAhtml"><span class="toc-number">21.1.</span> <span class="toc-text">新建 html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9views"><span class="toc-number">21.2.</span> <span class="toc-text">修改 views</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9url%E6%96%87%E4%BB%B6"><span class="toc-number">21.3.</span> <span class="toc-text">修改 url 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%8D%E6%AC%A1%E4%BF%AE%E6%94%B9view%E6%96%87%E4%BB%B6"><span class="toc-number">21.4.</span> <span class="toc-text">再次修改 view 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%A1%B5%E9%9D%A2"><span class="toc-number">21.5.</span> <span class="toc-text">查看页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9html%E5%88%A0%E9%99%A4%E9%A1%B5%E9%9D%A2"><span class="toc-number">21.6.</span> <span class="toc-text">修改 html 删除页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9views%E6%96%87%E4%BB%B6"><span class="toc-number">21.7.</span> <span class="toc-text">修改 views 文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%80%E4%B8%8Blist%E7%9A%84html%E9%A1%B5%E9%9D%A2"><span class="toc-number">22.</span> <span class="toc-text">修改一下 list 的 html 页面：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE-%E5%9C%A8%E8%BF%99%E9%87%8C%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E6%8F%8F%E8%BF%B0"><span class="toc-number">23.</span> <span class="toc-text">完成的项目</span></a></li></ol></li></div><div class="related panel pjax" data-title="系列文章"><ul><li><a href="/computer-science/python/django/course-1/01django-hello-world%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90/" rel="bookmark" title="01django-hello world简单例子">01django-hello world简单例子</a></li><li><a href="/computer-science/python/django/course-1/02django%E5%B8%A6app%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%9B%E5%BB%BA/" rel="bookmark" title="02django带app的网站创建">02django带app的网站创建</a></li><li><a href="/computer-science/python/django/course-1/03django-%E5%B8%A6%E6%9C%89%E6%A8%A1%E6%9D%BF%E7%9A%84html%E6%96%87%E4%BB%B6%E7%99%BE%E5%BA%A6/" rel="bookmark" title="03django--带有模板的html文件百度">03django--带有模板的html文件百度</a></li><li><a href="/computer-science/python/django/course-1/04django-%E6%95%B4%E4%BD%93%E8%AE%B2%E8%A7%A3/" rel="bookmark" title="04django--整体讲解">04django--整体讲解</a></li><li><a href="/computer-science/python/django/course-1/05django-mvt%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="05django--mvt介绍">05django--mvt介绍</a></li><li><a href="/computer-science/python/django/course-1/06django-url%E7%9A%84%E8%AE%B2%E8%A7%A3/" rel="bookmark" title="06django--url的讲解">06django--url的讲解</a></li><li><a href="/computer-science/python/django/course-1/07django-path%E7%9A%84%E8%AF%AD%E6%B3%95/" rel="bookmark" title="07django--path的语法">07django--path的语法</a></li><li><a href="/computer-science/python/django/course-1/08django-%E7%9A%84%E8%A3%85%E6%8D%A2%E5%99%A8/" rel="bookmark" title="08django---的装换器">08django---的装换器</a></li><li class="active"><a href="/computer-science/python/django/course-1/Django%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8Dtodolist%E5%AE%9E%E4%BE%8B/" rel="bookmark" title="Django详细介绍todolist实例">Django详细介绍todolist实例</a></li></ul></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="image" itemprop="image" alt="Yang shuping" data-src="/images/avatar.jpg"><p class="name" itemprop="name">Yang shuping</p><div class="description" itemprop="description"></div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">52</span> <span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">30</span> <span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">10</span> <span class="name">标签</span></a></div></nav><div class="social"></div><ul class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li></ul></div></div></div><ul id="quick"><li class="prev pjax"><a href="/records/live-record/new-idea/%E7%9C%8B%E5%88%9B%E4%B8%9A%E6%96%B0%E9%97%BB%E6%84%9F%E6%82%9F/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/python%E5%AD%A6%E4%B9%A0%E5%BB%96%E9%9B%AA%E5%B3%B0/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"><a href="/categories/computer/" title="分类于 电脑">电脑</a> <i class="ic i-angle-right"></i> <a href="/categories/computer/app/" title="分类于 软件配置">软件配置</a> <i class="ic i-angle-right"></i> <a href="/categories/computer/app/install/" title="分类于 安装教程">安装教程</a></div><span><a href="/computer/app/cmder%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" title="cmder使用配置教程">cmder使用配置教程</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a> <i class="ic i-angle-right"></i> <a href="/categories/computer-science/python/" title="分类于 Python">Python</a> <i class="ic i-angle-right"></i> <a href="/categories/computer-science/python/django/" title="分类于 Django框架">Django框架</a> <i class="ic i-angle-right"></i> <a href="/categories/computer-science/python/django/course-1/" title="分类于 零基础学Django框架">零基础学Django框架</a></div><span><a href="/computer-science/python/django/course-1/04django-%E6%95%B4%E4%BD%93%E8%AE%B2%E8%A7%A3/" title="04django--整体讲解">04django--整体讲解</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/computer/" title="分类于 电脑">电脑</a> <i class="ic i-angle-right"></i> <a href="/categories/computer/app/" title="分类于 软件配置">软件配置</a> <i class="ic i-angle-right"></i> <a href="/categories/computer/app/install/" title="分类于 安装教程">安装教程</a></div><span><a href="/computer/app/mvn%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" title="mvn安装配置教程">mvn安装配置教程</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/records/" title="分类于 心得记录">心得记录</a> <i class="ic i-angle-right"></i> <a href="/categories/records/live-record/" title="分类于 生活记录">生活记录</a> <i class="ic i-angle-right"></i> <a href="/categories/records/live-record/live-blog/" title="分类于 个人博客">个人博客</a></div><span><a href="/records/live-record/live-blog/%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="用hexo搭建一个自己的博客">用hexo搭建一个自己的博客</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/computer/" title="分类于 电脑">电脑</a> <i class="ic i-angle-right"></i> <a href="/categories/computer/win/" title="分类于 电脑配置">电脑配置</a> <i class="ic i-angle-right"></i> <a href="/categories/computer/win/win10/" title="分类于 win10">win10</a></div><span><a href="/computer/win/win10/win10%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB/" title="win10专业版激活">win10专业版激活</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/software-test/" title="分类于 软件测试">软件测试</a> <i class="ic i-angle-right"></i> <a href="/categories/software-test/test-tools/" title="分类于 软件测试工具学习">软件测试工具学习</a> <i class="ic i-angle-right"></i> <a href="/categories/software-test/test-tools/api-testing2/" title="分类于 接口测试工具">接口测试工具</a> <i class="ic i-angle-right"></i> <a href="/categories/software-test/test-tools/api-testing2/postman/" title="分类于 Postman">Postman</a></div><span><a href="/software-test/test-tools/api-testing2/postman/01postman%E5%AD%A6%E4%B9%A0/" title="01postman学习">01postman学习</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a> <i class="ic i-angle-right"></i> <a href="/categories/computer-science/python/" title="分类于 Python">Python</a> <i class="ic i-angle-right"></i> <a href="/categories/computer-science/python/django/" title="分类于 Django框架">Django框架</a> <i class="ic i-angle-right"></i> <a href="/categories/computer-science/python/django/course-1/" title="分类于 零基础学Django框架">零基础学Django框架</a></div><span><a href="/computer-science/python/django/course-1/05django-mvt%E4%BB%8B%E7%BB%8D/" title="05django--mvt介绍">05django--mvt介绍</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/records/" title="分类于 心得记录">心得记录</a> <i class="ic i-angle-right"></i> <a href="/categories/records/live-record/" title="分类于 生活记录">生活记录</a> <i class="ic i-angle-right"></i> <a href="/categories/records/live-record/live-blog/" title="分类于 个人博客">个人博客</a></div><span><a href="/records/live-record/live-blog/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" title="我的第一篇博客文章">我的第一篇博客文章</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/jmeter%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B/" title="jmeter官网实例">jmeter官网实例</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/computer/" title="分类于 电脑">电脑</a> <i class="ic i-angle-right"></i> <a href="/categories/computer/app/" title="分类于 软件配置">软件配置</a> <i class="ic i-angle-right"></i> <a href="/categories/computer/app/install/" title="分类于 安装教程">安装教程</a></div><span><a href="/computer/app/win10%E4%B8%8A%E5%AE%89%E8%A3%85-Emscripten-%E5%AE%89%E8%A3%85/" title="win10上安装 Emscripten 安装">win10上安装 Emscripten 安装</a></span></li></ul></div><div><h2>最新评论</h2><ul class="leancloud-recent-comment"></ul></div></div><div class="status"><div class="copyright">&copy; 2010 – <span itemprop="copyrightYear">2023</span> <span class="with-love"><i class="ic i-sakura rotate"></i> </span><span class="author" itemprop="copyrightHolder">Yang shuping @ Sumya</span></div><div class="powered-by">基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL={path:"computer-science/python/django/course-1/Django详细介绍todolist实例/",favicon:{show:"（●´3｀●）やれやれだぜ",hide:"(´Д｀)大変だ！"},search:{placeholder:"文章搜索",empty:"关于 「 ${query} 」，什么也没搜到",stats:"${time} ms 内找到 ${hits} 条结果"},valine:!0,fancybox:!0,copyright:'复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',ignores:[function(e){return e.includes("#")},function(e){return new RegExp(LOCAL.path+"$").test(e)}]}</script><script src="https://cdn.polyfill.io/v2/polyfill.js"></script><script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script><script src="/js/app.js?v=0.2.5"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({model:{jsonPath:"live2d-widget-model-miku"},display:{position:"right",width:140,height:260},mobile:{show:!0},log:!1,pluginJsPath:"lib/",pluginModelPath:"assets/",pluginRootPath:"live2dw/",tagMode:!1})</script></body></html><!-- rebuild by hrmmi -->
