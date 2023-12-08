@@ -10,8 +10,33 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Thu, 30 Nov 2023 17:56:16 +0800</pubDate>
-        <lastBuildDate>Thu, 30 Nov 2023 17:56:16 +0800</lastBuildDate>
+        <pubDate>Fri, 08 Dec 2023 14:38:26 +0800</pubDate>
+        <lastBuildDate>Fri, 08 Dec 2023 14:38:26 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">https://ppxpython.github.io/hexo%E5%8D%9A%E5%AE%A2-%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/</guid>
+            <title>hexo博客 个性化优化设置</title>
+            <link>https://ppxpython.github.io/hexo%E5%8D%9A%E5%AE%A2-%E4%B8%AA%E6%80%A7%E5%8C%96%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/</link>
+            <pubDate>Fri, 08 Dec 2023 14:38:26 +0800</pubDate>
+            <description><![CDATA[ &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://ppxpython.github.io/hello-world/</guid>
             <title>Hello World</title>
@@ -6248,72 +6273,6 @@ def deleteTask(request,pk):
 &lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/810cc0c5287740b5a8c6c0d4dd6baaa8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_14,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34;&gt;&lt;/p&gt;
 &lt;p&gt;最终效果&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/3bb4f446140449e4b58b81942509e2d0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2VpeGluXzQ0MDU0NzU2,size_20,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34;&gt;&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement(&#39;img&#39;);
-            img.style = &#39;display:none !important;&#39;;
-            img.src = el.dataset.src;
-            img.addEventListener(&#39;error&#39;, () =&gt; {
-              img.remove();
-              el.style.color = &#39;inherit&#39;;
-              el.style.backgroundImage = &#39;none&#39;;
-              el.style.background = &#39;none&#39;;
-            });
-            img.addEventListener(&#39;load&#39;, () =&gt; {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      &lt;/script&gt; ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://ppxpython.github.io/records/live-record/new-idea/%E7%9C%8B%E5%88%9B%E4%B8%9A%E6%96%B0%E9%97%BB%E6%84%9F%E6%82%9F/</guid>
-            <title>看创业新闻感悟</title>
-            <link>https://ppxpython.github.io/records/live-record/new-idea/%E7%9C%8B%E5%88%9B%E4%B8%9A%E6%96%B0%E9%97%BB%E6%84%9F%E6%82%9F/</link>
-            <category term="心得记录" scheme="https://ppxpython.github.io/categories/records/" />
-            <category term="生活记录" scheme="https://ppxpython.github.io/categories/records/live-record/" />
-            <category term="新创意点" scheme="https://ppxpython.github.io/categories/records/live-record/new-idea/" />
-            <category term="创业" scheme="https://ppxpython.github.io/tags/%E5%88%9B%E4%B8%9A/" />
-            <pubDate>Wed, 08 Sep 2021 17:37:41 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;5g时代新生行业&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5g时代新生行业&#34;&gt;#&lt;/a&gt; 5g 时代新生行业；&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;5g 时代的到来必然会替代一些重复性的体力工作，但同时也会诞生出新的产业和工作。所以我们不用太过忧心工作问题。&lt;/li&gt;
-&lt;li&gt;而且 5g 发展是一个阶段性的发展，而不是突然人们就进入 5g 时代，需要过度时期。&lt;/li&gt;
-&lt;li&gt;5g 创业是一个较大的长期投资，相较于短期收益，5g 是一个比较砸钱的投资，需要长期投入资金而且短期内很难看到收益。投资有风险创业需谨慎。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;ofo小黄车摩拜单车的转型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ofo小黄车摩拜单车的转型&#34;&gt;#&lt;/a&gt; ofo 小黄车摩拜单车的转型&lt;/h2&gt;
-&lt;p&gt;在新闻中听说 ofo 单车欠缺资金链多年，但好像从未倒闭。甚至时至今日，还在去上班的路上发现。有小黄车，但相较于支付宝的用户小黄车的使用集群很少；听到 2018 年北京总部大楼已空空如也的小心我并不惊讶，让我仿佛想到了诺基亚的发展。想要独占市场，不想有第三方接入打兆品牌效应固然是没有问题，但支付宝的用户集群和快捷程度。作为一个用户打工人每天共享单车会选择哈罗单车&lt;/p&gt;
-&lt;p&gt;我认为导致 ofo 小黄车失败几点原因：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;时机；&lt;/p&gt;
-&lt;p&gt;2014 在刚开始创业时，正值创业大潮，4 个喜欢骑行的年轻人创建了 ofo，提出了” 只连接车，不生产车 “的理念。抓住这个时机很重要；但之后又有两个时间节点，一个是 2017 年初 ofo 和摩拜已经大规模在中国投入单车市场，ofo 还完成了 d 轮融资。此时资本想要将这两个市场巨头进行合并但 ofo 拒绝了；不敢保障对于这个确定是错误还是正确的，但对于企业是一个选择性的转机；还有一个节点是 2018 年在摩拜单车已经选择离开市场，行业出现大的变动，热钱不再涌入，带助力的小蓝车杀入市场。但 ofo 仍然想自己发展走出世界。这个决定可以用一意孤行形容了。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;创始人理想与投资人形成冲突&lt;/strong&gt;；&lt;/p&gt;
-&lt;p&gt;2018 年有大量投资人进行谈判但创始人都认为还可以更好，长时间以往导致融资失败。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;公关处理；&lt;/p&gt;
-&lt;p&gt;对于融资失败大量新闻出现，未及时处理公关事件，导致大量用户进行退款，这算是压死骆驼的最后一稻草。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;用户意识；&lt;/p&gt;
-&lt;p&gt;刚兴起共享单车大潮时，大量用户的心理，出钱借用。出现大面积人为破坏的共享单车、将共享单车进行搬入家中以及后来共享单车出现在咸鱼市场上售卖等现象。这个时代环境所致人为不能变动。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;脱发衍生出来的产业&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#脱发衍生出来的产业&#34;&gt;#&lt;/a&gt; 脱发衍生出来的产业&lt;/h2&gt;
-&lt;p&gt;之前脱发行业大多用户均是 40 来岁的中年男性，近几年随着生活压力和年轻人熬夜，脱发产品的用户集群已经驱于年轻化。现有统计第一大用户集群仍然是中年男性，但位居第二居然是 90 后的年轻人，数据有点吓人。据统计 2014 年在脱发产品市场占比仅仅只有 0.07%，2017 年的时候已经到达了 12% 左右。可见市场用户的火热程度，平均中国 6 个人中就有一个有脱发症状。2020-2025 将是火速发展的几年。&lt;/p&gt;
-&lt;p&gt;脱发产业将衍生出来的几个新方向：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;脱发洗发水，洗发水中填入脱发字样的销量会比其他关键字的销量好很多；&lt;/li&gt;
-&lt;li&gt;生发产品的推出；&lt;/li&gt;
-&lt;li&gt;养发产品&lt;/li&gt;
-&lt;li&gt;假发产品&lt;/li&gt;
-&lt;li&gt;生发药物 - 医疗&lt;/li&gt;
-&lt;/ol&gt;
 &lt;script&gt;
         document.querySelectorAll(&#39;.github-emoji&#39;)
           .forEach(el =&gt; {
