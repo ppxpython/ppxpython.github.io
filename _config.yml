@@ -196,12 +196,16 @@ minify:
 
 
 algolia:
-  appId: "IKK183PEGG"
-  applicationID: "IKK183PEGG"
-  apiKey: "3953e85749e69aefe38d9a9d27665d12"
-  adminApiKey: "4d33950a93906305d29ea3075b311553"
+  # appId: "IKK183PEGG"
+  # applicationID: "IKK183PEGG"
+  # apiKey: "3953e85749e69aefe38d9a9d27665d12"
+  # adminApiKey: "4d33950a93906305d29ea3075b311553"
+  appId: "PTQKWTQEP9"
+  applicationID: "PTQKWTQEP9"
+  apiKey: "ea8c6569f4a14b690ef21005700cb709"
+  adminApiKey: "d3315189539d46c39fd128f8436e3af9"
   chunkSize: 5000
-  indexName: "search"
+  indexName: "hexo"
   fields:
     - title #必须配置
     - path   #必须配置
@@ -210,8 +214,13 @@ algolia:
     - gallery
     - photos
     - tags
+    
+algolia_search:
+  enable: true
+  hits:
+    per_page: 6
 
-keywords: 关键词1,关键词2
+keywords: #关键词1,关键词2
 
 feed:
     limit: 20
@@ -254,6 +263,7 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+#高亮设置
 highlight:
   enable: false # edit for Theme.shoka
   line_number: true
@@ -261,6 +271,14 @@ highlight:
   tab_replace: ''
 prismjs:
   enable: false # edit for Theme.shoka
+
+# 本文博主： 木 白 @ Moe Hz首页卡翻转效果
+
+
+autoprefixer:
+  exclude:
+    - '*.min.css'
+    # edit for Theme.shoka
 
 # Category & Tag
 default_category: uncategorized
@@ -437,11 +455,26 @@ since: 2020   # 建站年份
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 
 
+# search:
+#     path: search.xml
+#     field: post
+#     format: html
+#     limit: 10000
+#  本文作者： Linn @林・初夏
+#  本文链接： https://linn-ylz.com/Hexo/blog-search-config/
+# 版权声明： 本站所有文章除特别声明外，均采用 (CC)BY-NC-SA 许可协议。转载请注明出处！
+
 search:
-    path: search.xml
-    field: post
-    format: html
-    limit: 10000
+  enable: true
+  path: search.xml #search.json
+  field: post
+  format: html
+  limit: 10000
+  content: true
+  unescape: true
+  preload:  true
+  trigger: "auto"
+  top_n_per_article: 10
 
 local_search:
   enable: true
